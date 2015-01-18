@@ -1,0 +1,1 @@
+get customer list for DEFAULT without output template

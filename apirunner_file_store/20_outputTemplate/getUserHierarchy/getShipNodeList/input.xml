@@ -1,0 +1,12 @@
+<User>
+  <AccessibleOrganizations>
+    <EnterpriseList>
+      <Enterprise />
+    </EnterpriseList>
+    <ShipNodeList>
+      <ShipNode>
+        <ShipNodePersonInfo/>
+      </ShipNode>
+    </ShipNodeList>
+  </AccessibleOrganizations>
+</User>

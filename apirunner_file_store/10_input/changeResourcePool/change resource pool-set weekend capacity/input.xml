@@ -1,0 +1,19 @@
+<ResourcePool CapacityOrganizationCode="AEO_US" Node="AEO00067" 
+
+ResourcePoolId="AEO00067" >
+
+    <EffectiveDateRanges>
+
+     <EffectiveDateRange EffectiveEndDate="2014-06-10" EffectiveStartDate="2013-06-01" >
+
+    <CapacitiesPerSlot>
+
+      <CapacityPerSlot CapacityUnitOfMeasure="RELEASE" SundayCapacity="35" MondayCapacity="15" TuesdayCapacity="5" WednesdayCapacity="5" ThursdayCapacity="5" FridayCapacity="5" SaturdayCapacity="35" />
+
+      </CapacitiesPerSlot>
+
+  </EffectiveDateRange>
+
+    </EffectiveDateRanges>
+
+</ResourcePool>

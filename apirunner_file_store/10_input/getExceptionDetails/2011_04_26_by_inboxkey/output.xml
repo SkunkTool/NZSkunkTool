@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Inbox ActiveFlag="Y" ApiName="generateWorkOrder" AssignedToUserId=""
+  AssignedToUserKey="" AutoResolvedFlag="N" ClosedOn=""
+  ConsolidationCount="2" Description="UI Exception" DetailDescription=""
+  EnterpriseKey="" ErrorReason="VAS00068" ErrorType="NONREPROCESS"
+  ExceptionEscalatedFlag="" ExceptionType="UIEXCEPTION"
+  ExpirationDays="7" FlowName="YCD_ResolveAddressHold_1.0"
+  FollowupDate="2011-04-26T14:15:13-04:00"
+  GeneratedOn="2011-04-26T14:15:13-04:00"
+  InboxKey="20110426141514118902" InboxType="" ItemId=""
+  LastExceedAlert="2011-04-26T14:15:13-04:00"
+  LastOccurredOn="2011-04-26T14:49:07-04:00" LastUnassignAlert=""
+  LastUnresolveAlert="" ListDescription="" LockedByUserKey=""
+  LockedFlag="N" LockedOn="2011-04-26" OrderLineKey="" OwnerKey=""
+  OwnerType="" ParentInboxKey="" Priority="1.00" QueueId="" QueueKey=""
+  ResolutionDate="" ResolveBy="2011-04-26T14:15:13-04:00"
+  ResolvedByUserId="" ShipnodeKey="" Status="OPEN" SubFlowName=""
+  SupplierKey="" ViewId="">
+  <InboxReferencesList>
+    <InboxReferences InboxKey="20110426141514118902"
+      InboxReferenceKey="20110426141514118904" Name="ApiName"
+      ReferenceType="TEXT" Value="generateWorkOrder"/>
+    <InboxReferences InboxKey="20110426141514118902"
+      InboxReferenceKey="20110426141514118910" Name="DATE"
+      ReferenceType="TEXT" Value="2011-04-26"/>
+    <InboxReferences InboxKey="20110426141514118902"
+      InboxReferenceKey="20110426141514118907" Name="ERRORCODE"
+      ReferenceType="TEXT" Value="VAS00068"/>
+    <InboxReferences InboxKey="20110426141514118902"
+      InboxReferenceKey="20110426141514118912" Name="ERRORCOUNT"
+      ReferenceType="TEXT" Value="2"/>
+    <InboxReferences InboxKey="20110426141514118902"
+      InboxReferenceKey="20110426141514118906" Name="ERRORDESCRIPTION"
+      ReferenceType="TEXT" Value="Ship node can not be determined based on the order lines and sourcing configuration."/>
+    <InboxReferences InboxKey="20110426141514118902"
+      InboxReferenceKey="20110426141514118909" Name="ERRORSTACKTRACE"
+      ReferenceType="TEXT" Value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;Stack>com.yantra.yfc.util.YFCException&#xa;&#x9;at com.yantra.vas.business.workorder.VASCreateWorkOrder.setShipnodeAndProvidedOrd(VASCreateWorkOrder.java:560)&#xa;&#x9;at com.yantra.vas.business.workorder.VASCreateWorkOrder.handleWorkOrder(VASCreateWorkOrder.java:488)&#xa;&#x9;at com.yantra.vas.business.workorder.VASCreateWorkOrder.handleUpdates(VASCreateWorkOrder.java:203)&#xa;&#x9;at com.yantra.vas.business.workorder.VASCreateWorkOrder.createWorkOrder(VASCreateWorkOrder.java:196)&#xa;&#x9;at com.yantra.vas.business.workorder.VASCreateWorkOrder.createWorkOrder(VASCreateWorkOrder.java:143)&#xa;&#x9;at com.yantra.vas.business.workorder.VASWorkOrderManagerImpl.createWorkOrder(VASWorkOrderManagerImpl.java:53)&#xa;&#x9;at com.yantra.omp.business.order.workorder.YFSWorkOrderGenerator.updateWorkOrderObject(YFSWorkOrderGenerator.java:660)&#xa;&#x9;at com.yantra.omp.business.order.workorder.YFSWorkOrderGenerator.validateOptionsAndUpdateObjects(YFSWorkOrderGenerator.java:544)&#xa;&#x9;at com.yantra.omp.business.order.workorder.YFSWorkOrderGenerator.generateWorkOrders(YFSWorkOrderGenerator.java:304)&#xa;&#x9;at com.yantra.omp.business.order.workorder.YFSWorkOrderGenerator.generateWorkOrder(YFSWorkOrderGenerator.java:120)&#xa;&#x9;at com.yantra.omp.api.YFSApiImpl.generateWorkOrder(YFSApiImpl.java:2325)&#xa;&#x9;at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)&#xa;&#x9;at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:39)&#xa;&#x9;at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)&#xa;&#x9;at java.lang.reflect.Method.invoke(Method.java:597)&#xa;&#x9;at com.yantra.interop.services.api.ApiHelper.invoke(ApiHelper.java:540)&#xa;&#x9;at com.yantra.integration.adapter.DefaultIntegrationFlow.invoke(DefaultIntegrationFlow.java:191)&#xa;&#x9;at com.yantra.integration.adapter.DefaultIntegrationFlow.invoke(DefaultIntegrationFlow.java:91)&#xa;&#x9;at com.yantra.interop.services.api.ApiRequestDispatcher.invoke(ApiRequestDispatcher.java:79)&#xa;&#x9;at com.yantra.ycp.api.YCPMultiApiImpl.multiApi(YCPMultiApiImpl.java:159)&#xa;&#x9;at com.ya"/>
+    <InboxReferences InboxKey="20110426141514118902"
+      InboxReferenceKey="20110426141514118908" Name="ERRORTYPE"
+      ReferenceType="TEXT" Value="NONREPROCESS"/>
+    <InboxReferences InboxKey="20110426141514118902"
+      InboxReferenceKey="20110426141514118915" Name="EnterpriseCode"
+      ReferenceType="TEXT" Value="XYZ-RETAIL"/>
+    <InboxReferences InboxKey="20110426141514118902"
+      InboxReferenceKey="20110426141514118913"
+      Name="ErrorUniqueExceptionId" ReferenceType="TEXT" Value="127.0.1.113038453142810000000000002"/>
+    <InboxReferences InboxKey="20110426141514118902"
+      InboxReferenceKey="20110426141514118911" Name="LastOccurredOn"
+      ReferenceType="TEXT" Value="2011-04-26T14:49:07-04:00"/>
+    <InboxReferences InboxKey="20110426141514118902"
+      InboxReferenceKey="20110426141514118905" Name="LoginId"
+      ReferenceType="TEXT" Value="xyzs1admin"/>
+    <InboxReferences InboxKey="20110426141514118902"
+      InboxReferenceKey="20110426141514118903" Name="ServiceName"
+      ReferenceType="TEXT" Value="YCD_ResolveAddressHold_1.0"/>
+    <InboxReferences InboxKey="20110426141514118902"
+      InboxReferenceKey="20110426141514118914" Name="WorkOrderNo"
+      ReferenceType="TEXT" Value="66"/>
+  </InboxReferencesList>
+  <InboxAuditList>
+    <InboxAudit FromQueueKey="" FromStatus="" FromUserKey=""
+      InboxAuditKey="20110426141514118916"
+      InboxKey="20110426141514118902" OwnerKey="" OwnerType=""
+      ReasonCode="" ReasonText="" ToQueueKey="" ToStatus="OPEN"
+      ToUserKey="" TransactionType="CREATED"/>
+  </InboxAuditList>
+</Inbox>

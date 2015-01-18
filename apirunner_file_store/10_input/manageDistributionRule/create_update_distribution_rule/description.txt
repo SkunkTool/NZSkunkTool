@@ -1,0 +1,1 @@
+Create or update a distribution rule. Remove all shipnodes that are not on the list from the existing distribution rule.

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ItemShipNodeList>
+    <ItemShipNode ActiveFlag="Y" CostCurrency="" DistributionRuleId="AEO_IDC_THEN_STORE_DG" EffectiveEndDate="2500-01-01" EffectiveStartDate="1900-01-01" Inventorytype="" ItemId="ALL" ItemType="ALL" ItemshipnodeKey="20130709102410204267" OwnerKey="AEO_US" Priority="400.00" ShipNodeItem="" ShipnodeKey="AEO00066" SourceFromOrganization="" UnitCost="0.00"/>
+    <ItemShipNode ActiveFlag="Y" CostCurrency="" DistributionRuleId="AEO_STORE_DG" EffectiveEndDate="2500-01-01" EffectiveStartDate="1900-01-01" Inventorytype="" ItemId="ALL" ItemType="ALL" ItemshipnodeKey="20130711031926228647" OwnerKey="AEO_US" Priority="300.00" ShipNodeItem="" ShipnodeKey="AEO00066" SourceFromOrganization="" UnitCost="0.00"/>
+    <ItemShipNode ActiveFlag="Y" CostCurrency="" DistributionRuleId="AEO_STORE_THEN_IDC_DG" EffectiveEndDate="2500-01-01" EffectiveStartDate="1900-01-01" Inventorytype="" ItemId="ALL" ItemType="ALL" ItemshipnodeKey="20130709102730204282" OwnerKey="AEO_US" Priority="300.00" ShipNodeItem="" ShipnodeKey="AEO00066" SourceFromOrganization="" UnitCost="0.00"/>
+</ItemShipNodeList>

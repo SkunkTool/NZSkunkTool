@@ -1,0 +1,16 @@
+<Order Currency="USD" CustomerID="100000002" EnterpriseCode="XYZ-RETAIL"
+  OrderReference="2011022517440994363" OrganizationCode="XYZ_S1"
+  PricingDate="2011-03-07T17:45:22-05:00" SuppressRuleExecution="N" SuppressShipping="N">
+    <SelectionCriteria CustomerType="03" >
+      <PersonInfo AddressLine6="1727" Country="US" />
+    </SelectionCriteria>
+    <ManualAdjustments/>
+    <Shipping CarrierServiceCode="" MinimizeNumberOfShipments="N"/>
+    <OrderLines>
+      <OrderLine EligibleForShippingDiscount="Y" IsPriceLocked="N"
+        ItemID="185900" LineID="2011022517440994364" Quantity="1.00" UnitOfMeasure="EACH">
+        <ManualAdjustments/>
+      </OrderLine>
+    </OrderLines>
+    <!--</Coupons>-->
+  </Order>

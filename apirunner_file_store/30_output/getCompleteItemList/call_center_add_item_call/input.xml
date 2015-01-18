@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ItemList CallingOrganizationCode="COSTCO_BD" Currency="USD" DemandType="OPEN_ORDER" InheritAttributesFromClassification="Y" LastItemKey="2014122316380322374" LastRecordSet="Y" PriceProgramKey="" PriceProgramName="" TotalItemList="1" TotalNumberOfRecords="1">
+	<Item CanUseAsServiceTool="N" GlobalItemID="" ItemGroupCode="PROD" ItemID="6358" ItemKey="2014122316380322374" OrganizationCode="COSTCO" UnitOfMeasure="Lbs">
+		<PrimaryInformation CapacityPerOrderedQty="0.00" CapacityQuantityStrategy="" ComputedUnitCost="0.00" CostCurrency="USD" CountryOfOrigin="" CreditWOReceipt="N" DefaultProductClass="" Description="BLACK FOREST HAM 9 LB RW" ExtendedDescription="" FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00" InvoiceBasedOnActuals="N" InvolvesSegmentChange="N" IsAirShippingAllowed="Y" IsFreezerRequired="Y" IsHazmat="N" IsParcelShippingAllowed="Y" IsPickupAllowed="Y" IsProcurementAllowed="Y" IsReturnService="N" IsShippingAllowed="Y" IsStandaloneService="" ItemType="PFP" KitCode="" ManufacturerItem="" ManufacturerItemDesc="" ManufacturerName="" MasterCatalogID="" MaxOrderQuantity="0.00" MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00" PricingQuantityConvFactor="0.00" PricingQuantityStrategy="IQTY" PricingUOM="Lbs" PricingUOMStrategy="INV" PrimaryEnterpriseCode="" PrimarySupplier="" ProductLine="" RequiresProdAssociation="N" SerializedFlag="N" ServiceTypeID="" ShortDescription="FLETCHER HAM" Status="3000" TaxableFlag="N" UnitCost="0.00" UnitHeight="0.00" UnitHeightUOM="" UnitLength="0.00" UnitLengthUOM="" UnitVolume="0.00" UnitVolumeUOM="" UnitWeight="0.00" UnitWeightUOM="" UnitWidth="0.00" UnitWidthUOM=""/>
+		<InventoryParameters ATPRule="COSTCO_BD" DefaultExpirationDays="0" InventoryMonitorRule="" IsSerialTracked="N" NodeLevelInventoryMonitorRule="" ProcessingTime="0" TagControlFlag="N" TagReqAtReceipt="" TagReqAtShipment="" TimeSensitive="N"/>
+		<ClassificationCodes CommodityCode="" ECCNNo="" HarmonizedCode="" HazmatClass="" NAICSCode="" NMFCClass="" NMFCCode="" OperationalConfigurationComplete="N" PickingType="" PostingClassification="" Schedule_B_Code="" StorageType="" TaxProductCode="FDS-10" UNSPSC="" VelocityCode=""/>
+		<ItemAliasList/>
+		<ItemAttributeGroupTypeList/>
+		<AssociationTypeList>
+			<AssociationType CodeLongDescription="Supersessions" CodeShortDescription="Supersessions" Type="Substitutions">
+				<AssociationList/>
+			</AssociationType>
+		</AssociationTypeList>
+	</Item>
+</ItemList>

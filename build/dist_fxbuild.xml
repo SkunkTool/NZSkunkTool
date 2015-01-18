@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Ned Zhang SkunkTool3" default="do-custom-dist" basedir="../fxbuild" xmlns:fx="javafx:com.sun.javafx.tools.ant">
+	<description>
+        This ant tool creates the distribution version of skunktool. It depends on fxbuild 
+		to create the build.xml in the fxbuild folder
+    </description>
+
+	<import file="../fxbuild/build.xml" />
+
+	<property name="dist.dir" value="dist" />
+
+	<property name="resource.src.dir" value="../resource" />
+	<property name="resource.dst.dir" value="${dist.dir}/resource" />
+
+	<property name="properties.src.dir" value="../properties" />
+	<property name="properties.dst.dir" value="${dist.dir}/properties" />
+
+	<property name="jar.file" value="${dist.dir}/nzskunktool3.jar" />
+	
+	<property name="dist.zip.file" value="${dist.dir}/nzskunktool3.zip" />
+
+	<target name="do-custom-init">
+		<delete dir="${dist.dir}" />
+	</target>
+
+	<target name="do-custom-dist" depends="do-custom-init, do-deploy" description="customer distribution build">
+
+		<!--
+		<delete dir="${resource.dst.dir}" />
+		<delete dir="${properties.dst.dir}" />
+		-->
+
+		<copy todir="${resource.dst.dir}">
+			<fileset dir="${resource.src.dir}">
+				<include name="*" />
+			</fileset>
+		</copy>
+
+		<copy todir="${dist.dir}/lib_app">
+			<fileset dir="../lib">
+				<include name="*" />
+			</fileset>
+		</copy>
+
+		<copy todir="${dist.dir}/apirunner_file_store">
+			<fileset dir="../apirunner_file_store">
+				<include name="**" />
+			</fileset>
+		</copy>
+
+		<mkdir dir="${properties.dst.dir}" />
+		<!--
+		<copy todir="${properties.dst.dir}">
+			<fileset dir="${properties.src.dir}">
+				<include name="*" />
+			</fileset>
+		</copy>
+		-->
+
+		<mkdir dir="${dist.dir}/lib_ear" />
+
+		<copy todir="dist">
+			<fileset dir="../build">
+				<include name="skunktool3.sh" />
+				<include name="skunktool3.bat" />
+			</fileset>
+		</copy>
+
+		<zip destfile="${dist.zip.file}">
+			<zipfileset dir="${dist.dir}" prefix="nzskunktool3" >
+				<exclude name="${dist.zip.file}"/>
+				<exclude name="libs/**" />
+			</zipfileset>
+		</zip>
+
+	</target>
+</project>

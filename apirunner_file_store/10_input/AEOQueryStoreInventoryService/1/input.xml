@@ -1,0 +1,5 @@
+<GetSurroundingNodeList DistanceToConsider="50" DistanceToConsiderUOM="MILE" OrganizationCode="AEO_US">										
+   <ShipToAddress   ZipCode="15203"/>										
+   <Item ItemID="0011131304" UOM="EACH" ProductClass="GOOD" />										
+</GetSurroundingNodeList>										
+										

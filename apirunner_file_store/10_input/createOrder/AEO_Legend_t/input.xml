@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Order
+    AuthorizedClient="Store"
+    BillToID="100000000"
+    CustomerEMailID="jasper.cole@email.com"
+    DisplayLocalizedFieldInLocale="en_US_EST"
+    DocumentType="0001"
+    DraftOrderFlag="Y"
+    EnterpriseCode="Matrix-R"
+    EntryType="Store"
+    SellerOrganizationCode="Mtrx_Store_2"
+    ShipToID="100000000"
+    EnteredBy="bsmith" >
+
+    <OrderLines>
+
+        <OrderLine
+            Action="CREATE"
+            DeliveryMethod="SHP"
+            ItemGroupCode="PROD"
+            OrderedQty="1"
+            TransactionalLineId="1"
+            ValidateItem="N" >
+
+            <Item
+                ItemID="11647205549MM"
+                ItemShortDesc="AE LEGEND RINGER T SIZE M"
+                ItemWeight="0.50"
+                ItemWeightUOM="LBS"
+                OrderedQty="1"
+                ProductClass="Good"
+                UnitOfMeasure="EACH" />
+
+<!--            <LinePriceInfo
+                ActualPricingQty="1.00"
+                DiscountPercentage="0.00"
+                InvoicedPricingQty="0.00"
+                IsPriceLocked="Y"
+                LineTotal="15.99"
+                ListPrice="15.99"
+                OrderedPricingQty="1.00"
+                PricingQtyConversionFactor="0.00"
+                PricingUOM="EACH"
+                RetailPrice="0.00"
+                SettledAmount="0.00"
+                SettledQuantity="0.00"
+                TaxableFlag="N"
+                UnitPrice="15.99" />
+                -->
+        </OrderLine>
+    </OrderLines>
+
+    <PersonInfoShipTo
+        AddressLine1="123 MAIN LINE 1 ST"
+        AddressLine2=""
+        AddressLine3=""
+        AddressLine4=""
+        AddressLine5=""
+        AddressLine6=""
+        AlternateEmailID=""
+        Beeper=""
+        City="PITTSBURGH"
+        Company=""
+        Country="US"
+        DayFaxNo=""
+        DayPhone="4163334444"
+        Department=""
+        EMailID="jasper.cole@email.com"
+        EveningFaxNo=""
+        EveningPhone=""
+        FirstName="Jasper"
+        JobTitle=""
+        LastName="Cole"
+        MiddleName=""
+        MobilePhone=""
+        OtherPhone=""
+        PersonID=""
+        PersonInfoKey="2013040205383054217"
+        State="PA"
+        Suffix=""
+        Title=""
+        ZipCode="15203" />
+
+    <PersonInfoBillTo
+        AddressLine1="123 MAIN LINE 1 ST"
+        AddressLine2=""
+        AddressLine3=""
+        AddressLine4=""
+        AddressLine5=""
+        AddressLine6=""
+        AlternateEmailID=""
+        Beeper=""
+        City="PITTSBURGH"
+        Company=""
+        Country="US"
+        DayFaxNo=""
+        DayPhone="4163334444"
+        Department=""
+        EMailID="jasper.cole@email.com"
+        EveningFaxNo=""
+        EveningPhone=""
+        FirstName="Jasper"
+        JobTitle=""
+        LastName="Cole"
+        MiddleName=""
+        MobilePhone=""
+        OtherPhone=""
+        PersonID=""
+        PersonInfoKey="2013040205383054217"
+        State="PA"
+        Suffix=""
+        Title=""
+        ZipCode="15203" />
+
+
+    <PaymentMethods>
+
+        <PaymentMethod
+            CheckNo=""
+            CheckReference=""
+            CreditCardExpDate="10/2016"
+            CreditCardName=""
+            CreditCardNo="4111111111111111"
+            CreditCardType="Visa"
+            CustomerPONo=""
+            DisplayCreditCardNo="1111"
+            DisplayCustomerAccountNo=""
+            DisplayPaymentReference1=""
+            DisplaySvcNo=""
+            FundsAvailable="0.00"
+            GetFundsAvailableUserExitInvoked="N"
+            PaymentReference1=""
+            PaymentReference2=""
+            PaymentReference3=""
+            PaymentType="CREDIT_CARD" />
+    </PaymentMethods>
+
+</Order>

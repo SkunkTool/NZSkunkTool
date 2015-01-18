@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OrderList LastOrderHeaderKey="2012112712382530023" LastRecordSet="Y"
+  ReadFromHistory="" TotalOrderList="1">
+  <Order AllocationRuleID="SYSTEM"
+    AuthorizationExpirationDate="2012-11-27T12:46:45-05:00"
+    BillToID="100000020" CarrierAccountNo="" CarrierServiceCode=""
+    ChargeActualFreightFlag="N" CustCustPONo="" CustomerPONo=""
+    DeliveryCode="" Division="" DocumentType="0001" DraftOrderFlag="N"
+    EnterpriseCode="XYZ-RETAIL" EntryType="Store" FreightTerms=""
+    HoldFlag="N" HoldReasonCode="" MaxOrderStatus="2160"
+    MaxOrderStatusDesc="Procurement Transfer Order Created"
+    MinOrderStatus="2160"
+    MinOrderStatusDesc="Procurement Transfer Order Created"
+    NotifyAfterShipmentFlag="N" OrderDate="2012-11-27T12:38:31-05:00"
+    OrderHeaderKey="2012112712382530023" OrderName="SterlingOrder"
+    OrderNo="Y100000020" OrderType="" OriginalTax="0.00"
+    OriginalTotalAmount="3999.95" OtherCharges="0.00"
+    PaymentStatus="AUTHORIZED" PersonalizeCode="" PriorityCode=""
+    PriorityNumber="0" Purpose="" SCAC="" ScacAndService=""
+    ScacAndServiceKey="" SearchCriteria1="" SearchCriteria2=""
+    SellerOrganizationCode="XYZ_S11" ShipToID="100000020"
+    Status="Procurement Transfer Order Created" TaxExemptFlag="N"
+    TaxExemptionCertificate="" TaxJurisdiction="" TaxPayerId=""
+    TermsCode="" TotalAdjustmentAmount="0.00" isHistory="N">
+    <PriceInfo Currency="USD" EnterpriseCurrency="USD"
+      ReportingConversionDate="2012-11-27T12:38:31-05:00"
+      ReportingConversionRate="1.00" TotalAmount="3999.95"/>
+    <OverallTotals GrandCharges="0.00" GrandDiscount="0.00"
+      GrandTax="0.00" GrandTotal="3999.95" HdrCharges="0.00"
+      HdrDiscount="0.00" HdrTax="0.00" HdrTotal="0.00" LineSubTotal="3999.95"/>
+    <InvoicedTotals GrandCharges="0.00" GrandDiscount="0.00"
+      GrandTax="0.00" GrandTotal="0.00" HdrCharges="0.00"
+      HdrDiscount="0.00" HdrTax="0.00" HdrTotal="0.00" LineSubTotal="0.00"/>
+    <RemainingTotals GrandCharges="0.00" GrandDiscount="0.00"
+      GrandTax="0.00" GrandTotal="3999.95" HdrCharges="0.00"
+      HdrDiscount="0.00" HdrTax="0.00" HdrTotal="0.00" LineSubTotal="3999.95"/>
+  </Order>
+</OrderList>

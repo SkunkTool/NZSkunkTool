@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Shipment Action="Modify" CancelShipmentOnZeroTotalQuantity="Y"
+    CarrierServiceCode="UPS MAIL INNOVATION" SCAC="UM"
+    ShipmentKey="20140108213407397714339" ShipmentNo="100879075" Status="1100">
+    <Containers>
+        <Container ContainerGrossWeight=".64000"
+            ContainerNo="00040000000033738754" IsReceived="N"
+            ShipmentKey="20140108213407397714339" TrackingNo="9274890000788704314915">
+            <Extn ExtnContainerShipped="Y" ExtnContainerShippedDate="2014-01-09T21:01:27"/>
+            <ContainerDetails>
+                <ContainerDetail ItemID="0020090650" ProductClass="GOOD"
+                    Quantity="1" ShipmentContainerKey=""
+                    ShipmentLineKey="20140108213407397714338" UnitOfMeasure="EACH">
+                    <ShipmentLine PrimeLineNo="9" Quantity="1" ShipmentLineKey="20140108213407397714338"/>
+                </ContainerDetail>
+                <ContainerDetail ItemID="0020347878" ProductClass="GOOD"
+                    Quantity="1" ShipmentContainerKey=""
+                    ShipmentLineKey="20140108213407397714335" UnitOfMeasure="EACH">
+                    <ShipmentLine PrimeLineNo="6" Quantity="1" ShipmentLineKey="20140108213407397714335"/>
+                </ContainerDetail>
+                <ContainerDetail ItemID="0020348157" ProductClass="GOOD"
+                    Quantity="1" ShipmentContainerKey=""
+                    ShipmentLineKey="20140108213407397714336" UnitOfMeasure="EACH">
+                    <ShipmentLine PrimeLineNo="7" Quantity="1" ShipmentLineKey="20140108213407397714336"/>
+                </ContainerDetail>
+                <ContainerDetail ItemID="0020556619" ProductClass="GOOD"
+                    Quantity="1" ShipmentContainerKey=""
+                    ShipmentLineKey="20140108213407397714337" UnitOfMeasure="EACH">
+                    <ShipmentLine PrimeLineNo="8" Quantity="1" ShipmentLineKey="20140108213407397714337"/>
+                </ContainerDetail>
+                <ContainerDetail ItemID="0020832457" ProductClass="GOOD"
+                    Quantity="1" ShipmentContainerKey=""
+                    ShipmentLineKey="20140108213407397714334" UnitOfMeasure="EACH">
+                    <ShipmentLine PrimeLineNo="5" Quantity="1" ShipmentLineKey="20140108213407397714334"/>
+                </ContainerDetail>
+                <ContainerDetail ItemID="0020995114" ProductClass="GOOD"
+                    Quantity="1" ShipmentContainerKey=""
+                    ShipmentLineKey="20140108213407397714333" UnitOfMeasure="EACH">
+                    <ShipmentLine PrimeLineNo="4" Quantity="1" ShipmentLineKey="20140108213407397714333"/>
+                </ContainerDetail>
+                <ContainerDetail ItemID="0020995213" ProductClass="GOOD"
+                    Quantity="1" ShipmentContainerKey=""
+                    ShipmentLineKey="20140108213407397714332" UnitOfMeasure="EACH">
+                    <ShipmentLine PrimeLineNo="3" Quantity="1" ShipmentLineKey="20140108213407397714332"/>
+                </ContainerDetail>
+                <ContainerDetail ItemID="0020995312" ProductClass="GOOD"
+                    Quantity="1" ShipmentContainerKey=""
+                    ShipmentLineKey="20140108213407397714330" UnitOfMeasure="EACH">
+                    <ShipmentLine PrimeLineNo="1" Quantity="1" ShipmentLineKey="20140108213407397714330"/>
+                </ContainerDetail>
+                <ContainerDetail ItemID="0020995361" ProductClass="GOOD"
+                    Quantity="1" ShipmentContainerKey=""
+                    ShipmentLineKey="20140108213407397714331" UnitOfMeasure="EACH">
+                    <ShipmentLine PrimeLineNo="2" Quantity="1" ShipmentLineKey="20140108213407397714331"/>
+                </ContainerDetail>
+            </ContainerDetails>
+        </Container>
+    </Containers>
+    <ShipmentLines>
+        <ShipmentLine DocumentType="0001"
+            EnterpriseCode="AEO_US_SOFTLAUNCH" PrimeLineNo="9"
+            Quantity="1" ShipmentKey="20140108213407397714339" ShipmentLineKey="20140108213407397714338"/>
+        <ShipmentLine DocumentType="0001" PrimeLineNo="6" Quantity="1"
+            ShipmentKey="20140108213407397714339" ShipmentLineKey="20140108213407397714335"/>
+        <ShipmentLine DocumentType="0001" PrimeLineNo="7" Quantity="1"
+            ShipmentKey="20140108213407397714339" ShipmentLineKey="20140108213407397714336"/>
+        <ShipmentLine DocumentType="0001" PrimeLineNo="8" Quantity="1"
+            ShipmentKey="20140108213407397714339" ShipmentLineKey="20140108213407397714337"/>
+        <ShipmentLine DocumentType="0001" PrimeLineNo="5" Quantity="1"
+            ShipmentKey="20140108213407397714339" ShipmentLineKey="20140108213407397714334"/>
+        <ShipmentLine DocumentType="0001" PrimeLineNo="4" Quantity="1"
+            ShipmentKey="20140108213407397714339" ShipmentLineKey="20140108213407397714333"/>
+        <ShipmentLine DocumentType="0001" PrimeLineNo="3" Quantity="1"
+            ShipmentKey="20140108213407397714339" ShipmentLineKey="20140108213407397714332"/>
+        <ShipmentLine DocumentType="0001" PrimeLineNo="1" Quantity="1"
+            ShipmentKey="20140108213407397714339" ShipmentLineKey="20140108213407397714330"/>
+        <ShipmentLine DocumentType="0001" PrimeLineNo="2" Quantity="1"
+            ShipmentKey="20140108213407397714339" ShipmentLineKey="20140108213407397714331"/>
+    </ShipmentLines>
+    <AdditionalDates/>
+</Shipment>

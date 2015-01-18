@@ -1,0 +1,1 @@
+activate shipnode from all distribution group

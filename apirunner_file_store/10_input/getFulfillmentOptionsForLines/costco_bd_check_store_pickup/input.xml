@@ -1,0 +1,11 @@
+<Promise IgnoreUnpromised="Y" IsPartialSubstitutionAllowed="N"
+    IsSubstitutionAllowed="Y" OrganizationCode="COSTCO_BD">
+<!--    <EvaluateOrder EnterpriseCode="COSTCO_BD" OrderHeaderKey="201501020030361022530"/> -->
+    <EvaluateOptions>
+        <EvaluateOption DeliveryMethod="PICK" Node="115" OptionNo="0"/>
+    </EvaluateOptions>
+    <PromiseLines>
+        <PromiseLine GiftWrap="N" ItemID="22992" LevelOfService=""
+            RequiredQty="1" UnitOfMeasure="Lbs"/>
+    </PromiseLines>
+</Promise>

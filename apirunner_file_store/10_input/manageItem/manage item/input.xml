@@ -1,0 +1,51 @@
+<ItemList >
+    <Item ItemID="0020590642"  OrganizationCode="AEO_US"
+        UnitOfMeasure="EACH">
+        
+        <InventoryParameters InventoryMonitorRule="AEO_MON_THRESHHOLD_1"
+            OnhandSafetyFactorQuantity="0" />
+      
+      
+      
+    </Item>
+
+<Item ItemID="0020212023"  OrganizationCode="AEO_US"
+        UnitOfMeasure="EACH">
+        
+        <InventoryParameters InventoryMonitorRule="AEO_MON_THRESHHOLD_1"
+            OnhandSafetyFactorQuantity="0" />
+      
+      
+      
+    </Item>
+
+<Item ItemID="0020433348"  OrganizationCode="AEO_US"
+        UnitOfMeasure="EACH">
+        
+        <InventoryParameters InventoryMonitorRule="AEO_MON_THRESHHOLD_1"
+            OnhandSafetyFactorQuantity="0" />
+      
+      
+      
+    </Item>
+
+<Item ItemID="0017672791"  OrganizationCode="AEO_US"
+        UnitOfMeasure="EACH">
+        
+        <InventoryParameters InventoryMonitorRule="AEO_MON_THRESHHOLD_1"
+            OnhandSafetyFactorQuantity="0" />
+      
+      
+      
+    </Item>
+
+<Item ItemID="0018832956"  OrganizationCode="AEO_US"
+        UnitOfMeasure="EACH">
+        
+        <InventoryParameters InventoryMonitorRule="AEO_MON_THRESHHOLD_1"
+            OnhandSafetyFactorQuantity="0" />
+
+</Item>
+      
+
+</ItemList>

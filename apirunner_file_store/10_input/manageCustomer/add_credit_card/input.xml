@@ -1,0 +1,14 @@
+<Customer CustomerID="100000000" CustomerType="02" OrganizationCode="Matrix-R">
+    <CustomerPaymentMethodList>
+        <CustomerPaymentMethod
+            CreditCardExpDate="10/2016"
+            CreditCardNo="4111111111111111"
+            CreditCardType="Visa" 
+            DisplayCreditCardNo="1111"
+            FirstName="Jasper"
+            Lastname="Cole"
+            PaymentType="CREDIT_CARD"
+            />
+    </CustomerPaymentMethodList>
+    
+</Customer>

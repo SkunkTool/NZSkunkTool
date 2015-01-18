@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet  version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+	xmlns:xalan="http://xml.apache.org/xslt">
+	<xsl:output method="xml" indent="yes" xalan:indent-amount="2" />
+	<xsl:template match="/Traces">
+	    <MultiApi>
+		<API FlowName="" IsExtendedDbApi="" Name="modifyTraces" Version="">
+		  <Input>
+		   <Traces>
+			<xsl:for-each select="Trace">
+
+					<Trace Action="DELETE">
+							<xsl:attribute name="Name">
+								<xsl:value-of select="@Name" />
+							</xsl:attribute>
+
+							<xsl:attribute name="Type">
+								<xsl:value-of select="@Type" />
+							</xsl:attribute>
+					</Trace>
+
+			</xsl:for-each>
+		   </Traces>
+                  </Input>
+		</API>
+	    </MultiApi>
+	</xsl:template>
+</xsl:stylesheet>

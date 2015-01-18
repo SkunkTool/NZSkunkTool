@@ -1,0 +1,12 @@
+<!--
+<TriggerAgent CriteriaId="SCHEDULE.0001" />
+-->
+<!--
+<TriggerAgent CriteriaId="RELEASE.0001" />
+-->
+<!--
+<TriggerAgent CriteriaId="CONSOLIDATE_TO_SHIPMENT" />
+-->
+<!--
+<TriggerAgent CriteriaId="CREATE_SHMNT_INVOICE.0001" />
+-->

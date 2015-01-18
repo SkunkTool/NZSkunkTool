@@ -1,0 +1,8 @@
+<ItemList>
+<Item Action="Modify" OrganizationCode="XYZ-CORP" ItemID="DYNAMIC_INSTALL"  UnitOfMeasure="EACH">
+<Components Reset="">
+<Component ComponentOrganizationCode="XYZ-CORP" ComponentUnitOfMeasure="EACH" KitQuantity="1"  ComponentItemID="79456_BDB52AB5N" Operation=""/>
+<Component ComponentOrganizationCode="XYZ-CORP" ComponentUnitOfMeasure="EACH" KitQuantity="1"  ComponentItemID="21643_D2052-76.2ABZ" Operation=""/>
+</Components>
+</Item>
+</ItemList>

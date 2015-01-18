@@ -1,0 +1,9 @@
+<Items ApplyDifferences="" CompleteInventoryFlag="" ReasonCode="TEST_LOAD" ReasonText="Ned Zhang Test load" ShipNode="00001" ValidateItems="N" YantraMessageGroupID="NZ_LOAD2">
+	<Item InventoryOrganizationCode="AEO_US" ItemID="I-NZ-003" ProductClass="GOOD" UnitOfMeasure="EACH">
+		<Supplies>
+			<Supply AvailabilityType="TRACK" ETA="" Quantity="11" Segment="" SegmentType="" ShipByDate="" SupplyLineReference="" SupplyReference="" SupplyReferenceType="" SupplyType="ONHAND">
+				<!--<Tag BatchNo="" LotAttribute1="" LotAttribute2="" LotAttribute3="" LotKeyReference="" LotNumber="" ManufacturingDate="" RevisionNo=""/>-->
+			</Supply>
+		</Supplies>
+	</Item>
+</Items>

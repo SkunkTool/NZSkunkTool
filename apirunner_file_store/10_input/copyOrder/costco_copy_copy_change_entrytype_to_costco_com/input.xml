@@ -1,0 +1,5 @@
+<Order CopyFromDocumentType="0001" CopyFromEnterpriseCode="COSTCO_BD" EntryType="Costco.com" CopyFromOrderNo="OM1000059" OrderNo="CC1000010" >
+	<OrderHoldTypes>
+		<OrderHoldType HoldType="ENT" ReasonText=""/>
+	</OrderHoldTypes>
+</Order>

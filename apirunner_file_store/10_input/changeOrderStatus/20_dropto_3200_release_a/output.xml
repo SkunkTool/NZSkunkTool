@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OrderStatusChange OrderHeaderKey="2012112712382530023" TransactionId="SHIP_SHIPMENT">
+  <OrderLines>
+    <OrderLine BaseDropStatus="3700" ChangeForAllAvailableQty="Y"
+      OrderHeaderKey="2012112712382530023" OrderLineKey="2012112712454430212"/>
+  </OrderLines>
+</OrderStatusChange>

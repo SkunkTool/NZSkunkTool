@@ -1,0 +1,6 @@
+<Organization Operation="Manage" OrganizationCode="00001">						
+<CarrierPreferences>
+		<CarrierPreference Action="delete" ScacKey="UPSN" RecordType="SUPPLIER" />
+	</CarrierPreferences>
+ </Organization>
+

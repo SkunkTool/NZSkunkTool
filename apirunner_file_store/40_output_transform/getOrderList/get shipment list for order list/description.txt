@@ -1,0 +1,1 @@
+get shipments for each order in the list

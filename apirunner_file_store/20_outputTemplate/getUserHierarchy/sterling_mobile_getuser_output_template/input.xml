@@ -1,0 +1,15 @@
+<User Loginid="" UserKey="" Username="" EnterpriseCode="" OrganizationKey="" OrganizationCode="">
+                <AccessibleOrganizations>
+                    <EnterpriseList>
+                        <Enterprise Enterprisecode=""/>
+                    </EnterpriseList>
+                    <ShipNodeList>
+                        <ShipNode Description="" ShipNode="" ShipNodeKey="">
+                            <ShipNodePersonInfo AddressLine1=""
+                                AddressLine2="" City="" Company=""
+                                Country="" DayPhone="" EMailID=""
+                                Latitude="" Longitude="" State="" ZipCode=""/>
+                        </ShipNode>
+                    </ShipNodeList>
+                </AccessibleOrganizations>
+</User>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AtpRulesList>
+  <AtpRules AccumulationDays="730" AdvanceNotificationTime="0"
+    AtpRule="LOWES_ATP_RULE" AtpRuleName="Lowes ATP Rule"
+    BackwardConsumptionDays="730" ConsiderPoForAlloc=""
+    ForwardConsumptionDays="730" MaxInventoryHoldDays="0"
+    OrganizationCode="LOWES" PastDueDemandDays="730"
+    PastDueSupplyDays="730" ProcessingTime="0"/>
+</AtpRulesList>

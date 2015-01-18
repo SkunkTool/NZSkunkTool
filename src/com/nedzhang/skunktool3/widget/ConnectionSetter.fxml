@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.web.*?>
+<?import np.com.ngopal.control.*?>
+
+<fx:root type="javafx.scene.layout.VBox" minHeight="-1.0" minWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
+  <children>
+    <HBox prefHeight="-1.0" prefWidth="-1.0" spacing="24.0" VBox.vgrow="NEVER">
+      <children>
+        <CheckBox fx:id="chkHttpClient" mnemonicParsing="false" onMouseClicked="#onChkHttpClientClicked" selected="true" text="Http Tester" />
+        <ComboBox fx:id="cbxHttpTesterUrl" editable="true" minWidth="240.0" promptText="URL of the http tester" HBox.hgrow="ALWAYS">
+          <items>
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="Item 1" />
+              <String fx:value="Item 2" />
+              <String fx:value="Item 3" />
+            </FXCollections>
+          </items>
+          <HBox.margin>
+            <Insets />
+          </HBox.margin>
+        </ComboBox>
+      </children>
+      <padding>
+        <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+      </padding>
+    </HBox>
+    <HBox prefHeight="-1.0" prefWidth="-1.0" spacing="8.0">
+      <children>
+        <Label text="User Name:" />
+        <TextField fx:id="txtUserName" prefWidth="200.0" />
+        <Label text="Password:" />
+        <PasswordField fx:id="txtPassword" prefWidth="200.0" />
+      </children>
+      <padding>
+        <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+      </padding>
+    </HBox>
+  </children>
+</fx:root>

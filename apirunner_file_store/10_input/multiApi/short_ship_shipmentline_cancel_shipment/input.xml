@@ -1,0 +1,15 @@
+<MultiApi xmlns:xalan="http://xml.apache.org/xslt">
+  <API Version="" Name="changeShipment" IsExtendedDbApi="" FlowName="">
+    <Input>
+      <Shipment BackOrderRemovedQuantity="Y" Action="Cancel" ShipmentKey="201310201339055801837">
+        <ShipmentLines>
+          <ShipmentLine ShortageQty="1" Quantity="0.00" BackroomPickedQuantity="0.00" ShipmentLineKey="201310201339055801835"/>
+          <ShipmentLine ShortageQty="1" Quantity="0.00" BackroomPickedQuantity="0.00" ShipmentLineKey="201310201339055801836"/>
+        </ShipmentLines>
+      </Shipment>
+    </Input>
+    <Template>
+      <Shipment Status="" ShipmentKey=""/>
+    </Template>
+  </API>
+</MultiApi>

@@ -1,0 +1,14 @@
+<ResourcePool AllRegionsServiced="Y" AssociateRegionBySlot="N"
+    CapacityInfoAvailable="Y" CapacityMaintainAtResourceLevel="N"
+    CapacityOrganizationCode="AEO_US" CapacityUnitOfMeasure="RELEASE"
+    ItemGroupCode="PROD" Node="R2" 
+    ProvidesAllServices="Y" Purpose="INVENTORY" 
+    >
+    <EffectiveDateRanges>
+	<EffectiveDateRange EffectiveEndDate="2018-06-10" EffectiveStartDate="2013-06-01">
+	<CapacitiesPerSlot>
+	<CapacityPerSlot CapacityUnitOfMeasure="RELEASE" FridayCapacity="4"  MondayCapacity="12" SaturdayCapacity="1" SundayCapacity="1"  ThursdayCapacity="4" TuesdayCapacity="4" WednesdayCapacity="4" />
+	</CapacitiesPerSlot>
+	</EffectiveDateRange>
+    </EffectiveDateRanges>
+</ResourcePool>

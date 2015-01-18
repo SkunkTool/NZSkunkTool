@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.web.*?>
+<?import javafx.scene.web.WebView?>
+
+<AnchorPane prefHeight="363.0" prefWidth="646.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.nedzhang.skunktool3.apiRunner.DialogMaterialController">
+  <!-- TODO Add Nodes -->
+  <children>
+    <VBox prefHeight="383.0" prefWidth="528.0" spacing="8.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <children>
+        <AnchorPane maxHeight="24.0" minHeight="24.0" prefHeight="24.0" prefWidth="-1.0" style="">
+          <children>
+            <Label fx:id="lblTitle" layoutY="0.0" text="Material Dialog" AnchorPane.leftAnchor="20.0">
+              <font>
+                <Font name="System Bold" size="14.0" />
+              </font>
+            </Label>
+          </children>
+        </AnchorPane>
+        <SplitPane id="SplitPane" dividerPositions="0.32075471698113206" VBox.vgrow="ALWAYS">
+          <items>
+            <AnchorPane id="AnchorPane" minWidth="156.0" prefHeight="192.0" prefWidth="156.0">
+              <children>
+                <ListView fx:id="lstMaterialName" maxWidth="320.0" minHeight="180.0" minWidth="158.0" prefHeight="180.0" prefWidth="174.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+              </children>
+              <padding>
+                <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" fx:id="x1" />
+              </padding>
+            </AnchorPane>
+            <AnchorPane id="AnchorPane" padding="$x1" prefHeight="-1.0" prefWidth="-1.0" style="">
+              <children>
+                <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <children>
+                    <HBox minHeight="32.0" prefHeight="32.0" prefWidth="-1.0" VBox.vgrow="NEVER">
+                      <children>
+                        <Label maxWidth="80.0" minWidth="80.0" prefWidth="80.0" text="Name" />
+                        <TextField fx:id="txtMaterialName" prefWidth="-1.0" HBox.hgrow="ALWAYS" />
+                      </children>
+                    </HBox>
+                    <HBox prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+                      <children>
+                        <Label maxWidth="80.0" minWidth="80.0" prefWidth="80.0" text="Description" />
+                        <TextArea fx:id="txtMaterialDescription" maxHeight="-1.0" maxWidth="-1.0" minHeight="-1.0" minWidth="-1.0" prefWidth="-1.0" wrapText="true" HBox.hgrow="ALWAYS" />
+                      </children>
+                    </HBox>
+                    <HBox prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+                      <children>
+                        <Label maxWidth="80.0" minWidth="80.0" prefWidth="80.0" text="Material" />
+                        <TextArea fx:id="txtMaterialContent" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="300.0" prefWidth="0.0" HBox.hgrow="ALWAYS" editable="false" >
+                          <HBox.margin>
+                            <Insets />
+                          </HBox.margin>
+                        </TextArea>
+                      </children>
+                    </HBox>
+                  </children>
+                </VBox>
+              </children>
+            </AnchorPane>
+          </items>
+        </SplitPane>
+        <AnchorPane prefHeight="-1.0" prefWidth="-1.0">
+          <children>
+            <HBox alignment="CENTER_RIGHT" prefHeight="21.0" prefWidth="464.0" spacing="12.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+              <children>
+                <Button defaultButton="true" mnemonicParsing="false" onMouseClicked="#onBtnOkClicked" prefWidth="58.0" text="OK" />
+                <Button cancelButton="true" mnemonicParsing="false" onMouseClicked="#onBtnCancelClicked" text="Cancel" />
+              </children>
+              <padding>
+                <Insets bottom="6.0" left="18.0" right="18.0" top="6.0" />
+              </padding>
+            </HBox>
+          </children>
+        </AnchorPane>
+      </children>
+      <padding>
+        <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+      </padding>
+    </VBox>
+  </children>
+</AnchorPane>

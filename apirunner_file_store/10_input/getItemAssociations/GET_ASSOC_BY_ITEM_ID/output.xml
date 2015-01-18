@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AssociationList>
+  <Association AssociatedKey="2010111109520843602"
+    AssociatedQuantity="1.00" AssociationType="CrossSell"
+    EffectiveFrom="2011-09-01" EffectiveTo="2020-09-30" Priority="0.00">
+    <Item CanUseAsServiceTool="N" ItemID="103183"
+      ItemKey="2010111109520843602" OrganizationCode="XYZ-CORP" UnitOfMeasure="EACH"/>
+  </Association>
+  <Association AssociatedKey="2010111109332543092"
+    AssociatedQuantity="1.00" AssociationType="UpSell"
+    EffectiveFrom="2011-09-01" EffectiveTo="2020-09-30" Priority="0.00">
+    <Item CanUseAsServiceTool="N" ItemID="294981"
+      ItemKey="2010111109332543092" OrganizationCode="XYZ-CORP" UnitOfMeasure="EACH"/>
+  </Association>
+</AssociationList>

@@ -1,0 +1,5 @@
+<GetInventorySnapShot GetFutureSupplies="" OrganizationCode="AEO_US" ShipNode="00001">
+	<InventorySupplyTypeList>
+		<InventorySupplyType SupplyType=""/>
+	</InventorySupplyTypeList>
+</GetInventorySnapShot>

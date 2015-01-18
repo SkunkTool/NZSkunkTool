@@ -1,0 +1,9 @@
+<AssociationList  OrganizationCode="XYZ-CORP" UnitOfMeasure="EACH" ItemID="79456_BDB52AB5N">
+<!--
+Valid values of Action are Create and Modify. Set Action = "Create" to create new association. Set Action = "Modify" to modify association.
+-->
+<Association Action="Create" AssociatedQuantity="1.00" AssociationType="CrossSell"
+    EffectiveFrom="2011-09-01" EffectiveTo="2020-09-30" Priority="">
+<Item  OrganizationCode="XYZ-CORP" UnitOfMeasure="EACH" ItemID="BUNDLE_TEST1" />
+</Association>
+</AssociationList>

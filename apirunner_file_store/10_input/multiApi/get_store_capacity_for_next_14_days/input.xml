@@ -1,0 +1,8 @@
+<MultiApi>
+<API Name="getResourcePoolCapacity"><Input><ResourcePool Node="00412" ItemGroupCode="PROD" ProviderOrganizationCode="AEO_US" CapacityOrganizationCode="AEO_US" NumberOfDaysFromStartDate="14" /></Input></API>
+<API Name="getResourcePoolCapacity"><Input><ResourcePool Node="00499" ItemGroupCode="PROD" ProviderOrganizationCode="AEO_US" CapacityOrganizationCode="AEO_US" NumberOfDaysFromStartDate="14" /></Input></API>
+<API Name="getResourcePoolCapacity"><Input><ResourcePool Node="02027" ItemGroupCode="PROD" ProviderOrganizationCode="AEO_US" CapacityOrganizationCode="AEO_US" NumberOfDaysFromStartDate="14" /></Input></API>
+<API Name="getResourcePoolCapacity"><Input><ResourcePool Node="02114" ItemGroupCode="PROD" ProviderOrganizationCode="AEO_US" CapacityOrganizationCode="AEO_US" NumberOfDaysFromStartDate="14" /></Input></API>
+<API Name="getResourcePoolCapacity"><Input><ResourcePool Node="02121" ItemGroupCode="PROD" ProviderOrganizationCode="AEO_US" CapacityOrganizationCode="AEO_US" NumberOfDaysFromStartDate="14" /></Input></API>
+<API Name="getResourcePoolCapacity"><Input><ResourcePool Node="02756" ItemGroupCode="PROD" ProviderOrganizationCode="AEO_US" CapacityOrganizationCode="AEO_US" NumberOfDaysFromStartDate="14" /></Input></API>
+</MultiApi>

@@ -1,0 +1,2 @@
+test for getUserList. The output is just the user node.
+Seond time

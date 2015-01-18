@@ -1,0 +1,11 @@
+<Calendar CalendarId="AEO_CAL" OrganizationCode="AEO00082">
+	<EffectivePeriods>
+		<EffectivePeriod EffectiveFromDate="2013-06-01" EffectiveToDate="3000-12-31" >
+			<Shifts>
+<Shift ShiftName="All Day Shift"  ShiftStartTime="09:00:00" ShiftEndTime="16:00:00" SundayValid="Y"  MondayValid="Y" TuesdayValid="Y" WednesdayValid="Y" ThursdayValid="Y" FridayValid="Y" SaturdayValid="Y"     />
+				
+			</Shifts>
+		</EffectivePeriod>
+	</EffectivePeriods>
+	
+</Calendar>

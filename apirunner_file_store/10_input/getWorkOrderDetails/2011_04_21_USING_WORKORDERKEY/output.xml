@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WorkOrder CaseId="" DocumentType="7001" EnterpriseCode="XYZ-RETAIL"
+  InvUpdateActivityCode="" IsMultiApptRequired="N" ItemID=""
+  NextAlertTs="1900-01-01T00:00:00-05:00" NodeKey="XYZ_S1"
+  OpenWorkOrderFlag="Y" OrderLineKey="" PalletId=""
+  PipeLineKey="VAS-WORK-ORDER-85" PreCallStatus="NOT_APPLICABLE"
+  PreCallStatusDescription="Not Applicable" PreferredResourcePoolId=""
+  Priority="3" ProductClass="" Purpose="" QuantityAllocated="0.00"
+  QuantityCompleted="0.00" QuantityReleased="0.00"
+  QuantityRemoved="0.00" QuantityRequested="0.00" ReasonCode=""
+  ReasonCodeDescription="" ReasonText="" ReleaseAllowed="Y" Segment=""
+  SegmentType="" SellerOrganizationCode="XYZ_S1" SerialNo=""
+  ServiceItemDescription="" ServiceItemGroupCode="PS" ServiceItemID=""
+  ServiceSupervisorId="" ServiceUom="UNIT" ShipmentKey="" ShipmentNo=""
+  Status="1100" StatusDate="2011-04-21T07:48:40-04:00"
+  StatusDescription="Work Order Created" Uom=""
+  WorkOrderKey="20110421074840116789" WorkOrderNo="65">
+  <Order DocumentType="0001" EnterpriseCode="XYZ-RETAIL"
+    OrderHeaderKey="2010111009344041213" OrderNo="Y100000047"/>
+  <WorkOrderComponents/>
+  <WorkOrderActivities/>
+  <WorkOrderStatusAudits>
+    <WorkOrderStatusAudit AuditTransactionId="" AuditUserId="xyzs1admin"
+      Comments="" NewStatus="1100"
+      NewStatusDate="2011-04-21T07:48:40-04:00" OldStatus="1100"
+      OldStatusDate="2011-04-21T07:48:40-04:00" ReasonCode=""
+      Tranname="Create Work Order" TransactionId="CREATE_WORK_ORDER"
+      WorkOrderKey="20110421074840116789" WorkOrderStatusAuditKey="20110421074840116796">
+      <OldStatus Description="Work Order Created"/>
+      <NewStatus Description="Work Order Created"/>
+    </WorkOrderStatusAudit>
+  </WorkOrderStatusAudits>
+  <PersonInfo AddressLine1="105 MAIN ST" AddressLine2="" AddressLine3=""
+    AddressLine4="" AddressLine5="" AddressLine6="" AlternateEmailID=""
+    Beeper="" City="MOORESVILLE" Company="" Country="US" DayFaxNo=""
+    DayPhone="7046665555" Department=""
+    EMailID="Dr.Khalif.Awesome@yourawesome.com" EveningFaxNo=""
+    EveningPhone="7045555555" FirstName="Khalif" JobTitle="Dr"
+    LastName="Awesome" MiddleName="" MobilePhone="7047775555"
+    OtherPhone="" PersonID="" PersonInfoKey="2010111008255039365"
+    State="NC" Suffix="" Title="Dr." ZipCode="28117"/>
+  <WorkOrderServiceLines>
+    <WorkOrderServiceLine ItemDescription="" ItemGroupCode="PS"
+      ItemShortDescription="LAB INST BLINDS DETAIL" LineNo="1"
+      QuantityRequired="1.00" WorkOrderServiceLineKey="20110421074840116790">
+      <OrderLine OrderLineKey="2010111009344041214" PrimeLineNo="1" SubLineNo="1"/>
+    </WorkOrderServiceLine>
+  </WorkOrderServiceLines>
+  <WorkOrderProdDeliveries/>
+  <WorkOrderAppointments/>
+  <Instructions/>
+  <WorkOrderServiceTools/>
+  <Status Description="Work Order Created" OwnerKey="DEFAULT"
+    ProcessTypeKey="VAS" RequiresCollaboration="" Status="1100"
+    StatusKey="WORK_ORDER_CREATED" StatusName="Work Order Created" StatusType="SYSTEM"/>
+</WorkOrder>

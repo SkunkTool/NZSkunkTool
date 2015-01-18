@@ -1,0 +1,1 @@
+Get detail of the user.

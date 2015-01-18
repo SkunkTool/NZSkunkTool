@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Order Currency="USD" CustomerID="100000002" EnterpriseCode="XYZ-RETAIL"
+  LinePriceTotal="111.60" OrderAdjustment="0.00"
+  OrderReference="2011022517440994363" OrderTotal="111.60"
+  OrganizationCode="XYZ_S1" PricingDate="2011-03-07T17:45:22-05:00"
+  Subtotal="111.60" SuppressRuleExecution="N" SuppressShipping="N">
+  <Adjustments/>
+  <Shipping AdjustedShippingTotal="0.00" CarrierServiceCode=""
+    MinimizeNumberOfShipments="N" ShippingAdjustment="0.00"
+    ShippingCharge="0.00" ShippingChargeAdjustment="0.00" ShippingSurcharge="0.00">
+    <Adjustments/>
+  </Shipping>
+  <OrderLines>
+    <OrderLine DeliveryMethod="SHP" EligibleForShippingDiscount="Y"
+      ExtendedPrice="111.60" IsLinePriceForInformationOnly="N"
+      IsPriceLocked="N" ItemID="185900" LineAdjustment="0.00"
+      LineID="2011022517440994364" LinePrice="111.60" LineTotal="111.60"
+      ListPrice="111.60" OrderAdjustment="0.00" Quantity="1.00"
+      ShippingAdjustment="0.00" ShippingChargeAdjustment="0.00"
+      ShippingSurcharge="0.00" UnitOfMeasure="EACH" UnitPrice="111.60">
+      <LineAdjustments/>
+      <OrderAdjustments/>
+      <ShippingAdjustments/>
+      <SelectedPricelistLine ChildPricelistHeaderKey="" ItemID="185900"
+        ListPrice="111.60" PricelistHeaderKey="2010102014441923583"
+        PricelistLineKey="2010102510204328321" PricingStatus="ACTIVE"
+        UnitOfMeasure="EACH" UnitPrice="111.60"/>
+    </OrderLine>
+  </OrderLines>
+  <Coupons/>
+  <AdjustmentSummary/>
+</Order>

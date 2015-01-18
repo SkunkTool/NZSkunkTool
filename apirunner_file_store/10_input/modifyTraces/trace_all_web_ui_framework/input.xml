@@ -1,0 +1,9 @@
+<Traces>
+	<!--<Trace Level="VERBOSE" Name="findInventory" ServerId="" ServerName="" Type="API"/>-->
+	<!--<Trace Level="DEBUG" Name="findInventory" ServerId="" ServerName="" Type="API"/>-->
+	<!--<Trace Level="SQLDEBUG" Name="findInventory" ServerId="" ServerName="" Type="API"/>-->
+	<Trace Level="VERBOSE" Name="getCompleteItemList" ServerId="" ServerName="" Type="API"/>
+
+
+<Trace Level="VERBOSE" Name="WUFAll" ServerId="BDAAgent_0" TraceKey="201501030300171043988" Type="WUFConsole"/>
+</Traces>

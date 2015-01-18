@@ -1,0 +1,4 @@
+<GetSurroundingNodeList DistanceToConsider="50" DistanceToConsiderUOM="MILE" FulfillmentType="AEO_FFMT_STORE" NodeType="" OrganizationCode="AEO_US">
+
+<ShipToAddress Country="US" ZipCode="15203" />
+</GetSurroundingNodeList>

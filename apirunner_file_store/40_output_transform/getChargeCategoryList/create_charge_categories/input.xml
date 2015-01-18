@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xalan="http://xml.apache.org/xslt">
+	<xsl:output method="xml" indent="yes" xalan:indent-amount="2" />
+	<xsl:template match="/ChargeCategoryList">
+		<MultiApi>
+			<xsl:for-each select="ChargeCategory">
+				<API FlowName="" IsExtendedDbApi="" Name="manageChargeCategory" Version="">
+					<Input>
+						<ChargeCategory Action="CREATE" OrganizationCode="COSTCO_BD">
+							<xsl:attribute name="ChargeCategory">
+								<xsl:value-of select="@ChargeCategory" />
+							</xsl:attribute>
+							<xsl:attribute name="Description">
+								<xsl:value-of select="@Description" />
+							</xsl:attribute>
+							<xsl:attribute name="DocumentType">
+								<xsl:value-of select="@DocumentType" />
+							</xsl:attribute>
+							<xsl:attribute name="IsBillable">
+								<xsl:value-of select="@IsBillable" />
+							</xsl:attribute>
+							<xsl:attribute name="IsDiscount">
+								<xsl:value-of select="@IsDiscount" />
+							</xsl:attribute>
+							<xsl:attribute name="IsRefundable">
+								<xsl:value-of select="@IsRefundable" />
+							</xsl:attribute>
+							<xsl:attribute name="ConsiderForProfitMargin">
+								<xsl:value-of select="@ConsiderForProfitMargin" />
+							</xsl:attribute>
+						</ChargeCategory>
+					</Input>
+				</API>
+			</xsl:for-each>
+		</MultiApi>
+	</xsl:template>
+</xsl:stylesheet>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Ned Zhang Skunktool2" default="dist" basedir=".">
+	<description>
+        This ant tool creates the distribution version of skunktool. It compiles,
+		jar, and package required jars and resource files.
+    </description>
+
+	<property name="source.dir" value="../src" />
+	<property name="source.util.dir" value="../src_util" />
+	<property name="source.sterlingutil.dir" value="../src_sterlingUtil" />
+
+	<property name="lib.dir" value="../lib" />
+	<property name="lib.ear.dir" value="../lib_ear" />
+
+	<property name="resource.dir" value="../resource" />
+
+	<property name="properties.dir" value="../properties" />
+	
+	<property name="image.dir" value="../image" />
+
+	<property name="main-class" value="com.nedzhang.skunktool2.jfx.MainApplication" />
+
+	<property name="class.dir" value="../bin" />
+	
+	<property name="build.dir" value="../build" />
+
+	<property name="dist.dir" value="../dist" description="Folder of distributables" />
+
+	<property name="filestore.dir" value="../apirunner_file_store" />
+
+	<property name="jar.file" value="${dist.dir}/nzskunktool2.jar" />
+
+	<property name="dist.zip.file" value="${dist.dir}/nzskunktool2_application.zip" />
+
+	<!--
+	<property name="earDownloadFolder" location="ear_download" />
+	<property name="earExtractFolder" location="../lib_ear" />
+	-->
+
+	<path id="libraries.path">
+		<!-- include the property fold and resource folder -->
+		<filelist>
+			<file name="${properties.dir}" />
+			<file name="${resource.dir}" />
+			<file name="${image.dir}" />
+		</filelist>
+
+		<fileset dir="${lib.dir}">
+			<include name="*.jar" />
+		</fileset>
+		<fileset dir="${lib.ear.dir}">
+			<include name="*.jar" />
+		</fileset>
+		<filelist>
+			<file name="/home/nzhang/storage/app/jdk1.7.0_25/jre/lib/jfxrt.jar"/>
+		</filelist>
+	</path>
+
+	<target name="init" description="Creates folders for build and creating jar and distribution zip">
+		<!-- Create the time stamp -->
+		<tstamp />
+		<!-- Create the build directory structure used by compile -->
+		<mkdir dir="${earDownloadFolder}" />
+		<mkdir dir="${earExtractFolder}" />
+		<mkdir dir="${class.dir}" />
+		<mkdir dir="${dist.dir}" />
+	</target>
+
+	<target name="clean" description="delete old files">
+		<delete dir="${class.dir}" />
+		<delete dir="${jar.dir}" />
+	</target>
+
+	<target name="compile" description="build class files" depends="clean, init">
+		<javac destdir="${class.dir}" includeantruntime="false" debug="on" debuglevel="lines,vars,source" source="1.7" target="1.7">
+			<src path="${source.dir}" />
+			<src path="${source.util.dir}" />
+			<src path="${source.sterlingutil.dir}" />
+			<classpath refid="libraries.path" />
+		</javac>
+		<copy todir="${class.dir}">
+			<fileset dir="${source.dir}">
+				<include name="**/*.png" />
+				<include name="**/*.fxml" />
+				<include name="**/*.css" />
+			</fileset>
+		</copy>
+	</target>
+
+	<target name="jar" depends="compile">
+
+		<manifestclasspath property="manifest.classpath" jarfile="${jar.file}" description="Add ClassPath to the runnable jar">
+			<classpath refid="libraries.path" />
+		</manifestclasspath>
+
+		<jar destfile="${jar.file}" basedir="${class.dir}">
+			<manifest>
+				<attribute name="Main-Class" value="${main-class}" />
+				<attribute name="Class-Path" value="${manifest.classpath}" />
+			</manifest>
+		</jar>
+
+	</target>
+
+	<target name="dist" depends="jar" description="Create the zip file for distribution">
+		<property name="zipFileRoot" value="skunktool" />
+
+		<zip destfile="${dist.zip.file}">
+			<zipfileset dir="${build.dir}" includes="skunk*.sh,skunk*.bat" prefix="${zipFileRoot}" />
+			<zipfileset file="${jar.file}" prefix="${zipFileRoot}/jar" />
+			<zipfileset dir="${resource.dir}" prefix="${zipFileRoot}/resource" />
+			<zipfileset dir="${lib.dir}" prefix="${zipFileRoot}/lib" />
+			<zipfileset dir="${lib.ear.dir}" prefix="${zipFileRoot}/lib_ear" />
+			<zipfileset dir="${filestore.dir}" prefix="${zipFileRoot}/apirunner_file_store" />
+			<zipfileset dir="${properties.dir}" prefix="${zipFileRoot}/properties" includes="servers.properties,jdbc.*properties" />
+			<zipfileset dir="${image.dir}" prefix="${zipFileRoot}/image"/>
+		</zip>
+
+	</target>
+
+</project>

@@ -1,0 +1,16 @@
+<Promise AllocationRuleID="AEO_ORD_SR" CheckInventory="Y" EnterpriseCode="AEO_US" CarrierServiceCode="BW"
+    OrganizationCode="AEO_US" ReqEndDate="2013-10-25" ReqStartDate="2013-10-15" >
+	<ShipToAddress AddressLine1="9701 EAST ROOSEVELT" City="PHILADELPHIA" Country="US" State="PA" ZipCode="19114"/>
+    <EvaluateOptions>
+        <EvaluateOption DeliveryMethod="SHP" FulfillmentType="PARCEL" OptionNo="1">
+    </EvaluateOption>
+    </EvaluateOptions>
+    <PromiseLines>
+        <PromiseLine ItemID="AEO_0001" LineId="1" ProductClass="GOOD" UnitOfMeasure="EACH"  RequiredQty="1">
+			<Overrides IsDeliveryAllowed="N" IsPickupAllowed="N" IsShippingAllowed="Y"/>
+		</PromiseLine>
+        <PromiseLine ItemID="AEO_0002" LineId="2" ProductClass="GOOD" UnitOfMeasure="EACH"  RequiredQty="1">
+			<Overrides IsDeliveryAllowed="N" IsPickupAllowed="N" IsShippingAllowed="Y"/>
+		</PromiseLine>
+    </PromiseLines>
+</Promise>

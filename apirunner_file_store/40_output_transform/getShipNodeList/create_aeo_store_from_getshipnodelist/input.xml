@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xalan="http://xml.apache.org/xslt">
+  <xsl:output method="xml" indent="yes" xalan:indent-amount="2" />
+  <xsl:template match="/ShipNodeList">
+    <MultiApi>
+      <xsl:for-each select="ShipNode">
+        <API FlowName="AEOStoreLoadCompositeSyncService" IsExtendedDbApi="" Name=""
+          Version="">
+          <Input>
+            <Organization Operation="Manage">
+              <xsl:attribute name="OrganizationCode">
+  <xsl:value-of select="@ShipnodeKey" />
+</xsl:attribute>
+              <xsl:attribute name="OrganizationName">
+  <xsl:value-of select="Organization/@OrganizationName" />
+</xsl:attribute>
+              <xsl:attribute name="PrimaryEnterpriseKey">
+  <xsl:value-of select="OwnerOrganization/@PrimaryEnterpriseKey" />
+</xsl:attribute>
+              <xsl:attribute name="ParentOrganizationCode">
+  <xsl:value-of select="OwnerOrganization/@ParentOrganizationCode" />
+</xsl:attribute>
+              <xsl:attribute name="PrimarySicCode">
+  <xsl:value-of select="Organization/@PrimarySicCode" />
+</xsl:attribute>
+
+              <CorporatePersonInfo>
+                <xsl:copy-of select="ShipNodePersonInfo/@*" />
+              </CorporatePersonInfo>
+
+              <Node NodeType="AEOStore">
+                <NodeCarrierServicePickupScheduleList>
+                  <NodeCarrierServicePickupSchedule
+                    CarrierServiceCode="BW" EffectiveFromDate="2013-06-01T12:34:00"
+                    EffectiveToDate="2016-06-01T12:34:00"
+                    FridayPickupTime="16:00:00" MondayPickupTime="16:00:00"
+                    SaturdayPickupTime="16:00:00" SundayPickupTime="16:00:00"
+                    ThursdayPickupTime="16:00:00" TuesdayPickupTime="16:00:00"
+                    WednesdayPickupTime="16:00:00" />
+                </NodeCarrierServicePickupScheduleList>
+              </Node>
+              <OrgRoleList>
+                <OrgRole RoleKey="NODE" />
+              </OrgRoleList>
+              <CarrierPreferences>
+                <CarrierPreference EnterpriseKey="AEO_US"
+                   RecordType="SUPPLIER" ScacKey="UPSN" /> <!-- RecordKey="18712"-->
+                  
+              </CarrierPreferences>
+              <Calendar CalendarDescription="AEO Calender"
+                CalendarId="AEO_CAL" >
+                <xsl:attribute name="OrganizationCode">
+                <xsl:value-of select="@ShipnodeKey" />
+                </xsl:attribute>
+                <EffectivePeriods>
+                  <EffectivePeriod EffectiveFromDate="2013-01-01"
+                    EffectiveToDate="2015-01-01">
+                    <Shifts>
+                      <Shift FridayValid="Y" MondayValid="Y"
+                        SaturdayValid="Y" ShiftEndTime="22:00:00"
+                        ShiftName="WeekDay" ShiftStartTime="08:00:00"
+                        ShiftType="" SundayValid="Y" ThursdayValid="Y"
+                        TuesdayValid="Y" WednesdayValid="Y" />
+                    </Shifts>
+                  </EffectivePeriod>
+                </EffectivePeriods>
+                <CalendarDayExceptions>
+                  <CalendarDayException Date="2013-12-25"
+                    ExceptionType="0" />
+                </CalendarDayExceptions>
+              </Calendar>
+
+            </Organization>
+          </Input>
+        </API>
+      </xsl:for-each>
+    </MultiApi>
+  </xsl:template>
+</xsl:stylesheet>

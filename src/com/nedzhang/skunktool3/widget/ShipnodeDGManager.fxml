@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.VBox?>
+
+<fx:root type="javafx.scene.layout.VBox" spacing="4.0"
+  xmlns:fx="http://javafx.com/fxml" xmlns="http://javafx.com/javafx/2.2">
+  <children>
+    <HBox prefHeight="-1.0" prefWidth="-1.0" spacing="16.0">
+      <children>
+        <ChoiceBox>
+          <items>
+            <FXCollections fx:factory="observableArrayList">
+              <String fx:value="Item 1" />
+              <String fx:value="Item 2" />
+              <String fx:value="Item 3" />
+            </FXCollections>
+          </items>
+        </ChoiceBox>
+        <TextField prefWidth="200.0" />
+        <Button mnemonicParsing="false" text="List" />
+      </children>
+      <padding>
+        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+      </padding>
+    </HBox>
+    <TableView prefHeight="200.0" prefWidth="200.0">
+      <columns>
+        <TableColumn prefWidth="75.0" text="Column X" />
+        <TableColumn prefWidth="75.0" text="Column X" />
+      </columns>
+    </TableView>
+    <HBox alignment="CENTER_RIGHT" prefHeight="-1.0" prefWidth="-1.0"
+      spacing="16.0">
+      <children>
+        <Button mnemonicParsing="false" text="Save" />
+      </children>
+      <padding>
+        <Insets bottom="6.0" left="6.0" right="6.0" top="6.0" />
+      </padding>
+    </HBox>
+  </children>
+  <padding>
+    <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+  </padding>
+</fx:root>

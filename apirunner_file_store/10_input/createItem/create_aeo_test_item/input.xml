@@ -1,0 +1,32 @@
+<ItemList>
+  <Item CanUseAsServiceTool="N" GlobalItemID="" ItemGroupCode="PROD"
+    ItemID="I-NZ-002" OrganizationCode="AEO_US" UnitOfMeasure="EACH">
+    <PrimaryInformation AssumeInfiniteInventory="N"
+      CapacityQuantityStrategy="" ComputedUnitCost="0.00" CostCurrency="USD"
+      CountryOfOrigin="" CreditWOReceipt="N" DefaultProductClass=""
+      Description="NZ Test Item 002 (description)" ExtendedDescription=""
+      FixedCapacityQtyPerLine="0.00" FixedPricingQtyPerLine="0.00"
+      InvoiceBasedOnActuals="N" IsDeliveryAllowed="N" IsHazmat="N"
+      IsParcelShippingAllowed="Y" IsPickupAllowed="N" IsReturnService="N"
+      IsReturnable="N" IsShippingAllowed="Y" ItemType="" KitCode=""
+      ManufacturerItem="" ManufacturerItemDesc="" ManufacturerName=""
+      MasterCatalogID="AEO_US_CAT" MaxOrderQuantity="0.00"
+      MinOrderQuantity="0.00" MinimumCapacityQuantity="0.00"
+      PricingQuantityConvFactor="0.00" PricingQuantityStrategy="IQTY"
+      PricingUOM="EACH" PricingUOMStrategy="INV" PrimaryEnterpriseCode=""
+      PrimarySupplier="" ProductLine="" RequiresProdAssociation="N"
+      SerializedFlag="N" ServiceTypeID="" ShortDescription="NZ Test Item 002 (short)"
+      Status="3000" />
+    <InventoryParameters ATPRule="AEO_DEFAULT_ATP_RULE"
+      AdvanceNotificationTime="0" DefaultExpirationDays="0"
+      InventoryMonitorRule="AEO_MON_THRESHHOLD_4" IsFifoTracked="N"
+      IsSerialTracked="N" LeadTime="0" MinNotificationTime="0"
+      NodeLevelInventoryMonitorRule="" ProcessingTime="0"
+      TagControlFlag="S" TagReqAtReceipt="" TagReqAtShipment=""
+      TimeSensitive="N" />
+    <InventoryTagAttributes BatchNo="03"
+      LotAttribute1="03" LotAttribute2="03" LotAttribute3="03"
+      LotKeyReference="03" LotNumber="02" ManufacturingDate="03"
+      RevisionNo="03" />
+  </Item>
+</ItemList>

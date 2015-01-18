@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Errors>
+  <Error ErrorCode="YCM79_008"
+    ErrorDescription="Bundle item cannot be associated to any other item."
+    ErrorRelatedMoreInfo="" ErrorUniqueExceptionId="127.0.1.113177352537430000000000015">
+    <Attribute Name="ErrorCode" Value="YCM79_008"/>
+    <Attribute Name="ErrorDescription" Value="Bundle item cannot be associated to any other item."/>
+    <Attribute Name="KitCode" Value="BUNDLE"/>
+    <Attribute Name="ItemID" Value="BUNDLE_TEST1"/>
+    <Attribute Name="ErrorUniqueExceptionId" Value="127.0.1.113177352537430000000000015"/>
+    <Stack>com.yantra.yfc.util.YFCException
+	at com.yantra.ycm.business.YCMAssociationManager.setChildAssocnParameters(YCMAssociationManager.java:824)
+	at com.yantra.ycm.business.YCMAssociationManager.processInsertOrUpdateAssociations(YCMAssociationManager.java:775)
+	at com.yantra.ycm.business.YCMAssociationManager.processModifyAssociations(YCMAssociationManager.java:693)
+	at com.yantra.ycm.business.YCMAssociationManager.modifyItemAssociations(YCMAssociationManager.java:645)
+	at com.yantra.ycm.api.YCMApiImpl.modifyItemAssociations(YCMApiImpl.java:289)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:45)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:37)
+	at java.lang.reflect.Method.invoke(Method.java:599)
+	at com.yantra.interop.services.api.ApiHelper.invoke(ApiHelper.java:540)
+	at com.yantra.integration.adapter.DefaultIntegrationFlow.invoke(DefaultIntegrationFlow.java:185)
+	at com.yantra.integration.adapter.DefaultIntegrationFlow.invoke(DefaultIntegrationFlow.java:91)
+	at com.yantra.interop.services.api.ApiRequestDispatcher.invoke(ApiRequestDispatcher.java:79)
+	at com.yantra.interop.client.InteropHttpServlet.handleApiRequest(InteropHttpServlet.java:486)
+	at com.yantra.interop.client.InteropHttpServlet.processRequest(InteropHttpServlet.java:187)
+	at com.yantra.interop.client.InteropHttpServlet.doPost(InteropHttpServlet.java:146)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:738)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:831)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.service(ServletWrapper.java:1443)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.service(ServletWrapper.java:1384)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:131)
+	at com.sterlingcommerce.security.dv.web.SCUIRequestValidatorFilter.doFilter(SCUIRequestValidatorFilter.java:46)
+	at com.ibm.ws.webcontainer.filter.FilterInstanceWrapper.doFilter(FilterInstanceWrapper.java:188)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:116)
+	at com.sterlingcommerce.security.dv.web.SCUISafeRequestFilter.doFilter(SCUISafeRequestFilter.java:41)
+	at com.ibm.ws.webcontainer.filter.FilterInstanceWrapper.doFilter(FilterInstanceWrapper.java:188)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:116)
+	at com.sterlingcommerce.woodstock.security.UserAuthenticationFilter.doFilter(UserAuthenticationFilter.java:95)
+	at com.ibm.ws.webcontainer.filter.FilterInstanceWrapper.doFilter(FilterInstanceWrapper.java:188)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain.doFilter(WebAppFilterChain.java:116)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterChain._doFilter(WebAppFilterChain.java:77)
+	at com.ibm.ws.webcontainer.filter.WebAppFilterManager.doFilter(WebAppFilterManager.java:852)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:785)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapper.handleRequest(ServletWrapper.java:443)
+	at com.ibm.ws.webcontainer.servlet.ServletWrapperImpl.handleRequest(ServletWrapperImpl.java:175)
+	at com.ibm.ws.webcontainer.servlet.CacheServletWrapper.handleRequest(CacheServletWrapper.java:91)
+	at com.ibm.ws.webcontainer.WebContainer.handleRequest(WebContainer.java:859)
+	at com.ibm.ws.webcontainer.WSWebContainer.handleRequest(WSWebContainer.java:1557)
+	at com.ibm.ws.webcontainer.channel.WCChannelLink.ready(WCChannelLink.java:173)
+	at com.ibm.ws.http.channel.inbound.impl.HttpInboundLink.handleDiscrimination(HttpInboundLink.java:455)
+	at com.ibm.ws.http.channel.inbound.impl.HttpInboundLink.handleNewInformation(HttpInboundLink.java:384)
+	at com.ibm.ws.http.channel.inbound.impl.HttpInboundLink.ready(HttpInboundLink.java:272)
+	at com.ibm.ws.tcp.channel.impl.NewConnectionInitialReadCallback.sendToDiscriminators(NewConnectionInitialReadCallback.java:214)
+	at com.ibm.ws.tcp.channel.impl.NewConnectionInitialReadCallback.complete(NewConnectionInitialReadCallback.java:113)
+	at com.ibm.ws.tcp.channel.impl.AioReadCompletionListener.futureCompleted(AioReadCompletionListener.java:165)
+	at com.ibm.io.async.AbstractAsyncFuture.invokeCallback(AbstractAsyncFuture.java:217)
+	at com.ibm.io.async.AsyncChannelFuture.fireCompletionActions(AsyncChannelFuture.java:161)
+	at com.ibm.io.async.AsyncFuture.completed(AsyncFuture.java:138)
+	at com.ibm.io.async.ResultHandler.complete(ResultHandler.java:202)
+	at com.ibm.io.async.ResultHandler.runEventProcessingLoop(ResultHandler.java:766)
+	at com.ibm.io.async.ResultHandler$2.run(ResultHandler.java:896)
+	at com.ibm.ws.util.ThreadPool$Worker.run(ThreadPool.java:1527)
+</Stack>
+  </Error>
+</Errors>

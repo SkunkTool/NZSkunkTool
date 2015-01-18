@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet  version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+	xmlns:xalan="http://xml.apache.org/xslt">
+	<xsl:output method="xml" indent="yes" xalan:indent-amount="2" />
+	<xsl:template match="/OrderList">
+		<MultiApi>
+			<xsl:for-each select="Order">
+				<API FlowName="" IsExtendedDbApi="" Name="getFulfillmentOptionsForLines" Version="">
+					<Input>
+<Promise AllocationRuleID="AEO_PRO_SR" CarrierServiceCode="AEO_BW" CheckInventory="Y" EnterpriseCode="AEO_US" OrganizationCode="AEO_US"  ReqEndDate="2014-01-21T00:00:00.000-05:00" ReqStartDate="2014-01-19T00:00:00.000-05:00">
+	<ShipToAddress AddressLine1="1750 SE Crystal Lake Dr Apt E" City="Corvallis" Country="US" State="OR" ZipCode="97333">
+		<Extn ExtnAddressType="REGULAR"/>
+	</ShipToAddress>
+	<EvaluateOptions>
+		<EvaluateOption DeliveryMethod="SHP" OptionNo="1"/>
+	</EvaluateOptions>
+	<PromiseLines>		
+		<xsl:for-each select="OrderLines/OrderLine">
+		<PromiseLine FulfillmentType="FIRST_IDC_THEN_STORE" ItemID="0020134557" ProductClass="GOOD" RequiredQty="1" >
+		<xsl:attribute name="LineId"><xsl:value-of select="@PrimeLineNo" /></xsl:attribute>
+		<xsl:attribute name="ItemID"><xsl:value-of select="ItemDetails/@ItemID" /></xsl:attribute>
+		<xsl:attribute name="UnitOfMeasure"><xsl:value-of select="ItemDetails/@UnitOfMeasure" /></xsl:attribute>
+		<xsl:attribute name=" RequiredQty"><xsl:value-of select="@OrderedQuantity" /></xsl:attribute>
+			<Overrides IsDeliveryAllowed="N" IsPickupAllowed="N" IsShippingAllowed="Y"/>
+		</PromiseLine>
+
+		</xsl:for-each>
+	</PromiseLines>
+</Promise>
+					</Input>
+					<Template>
+					</Template>
+				</API>
+			</xsl:for-each>
+		</MultiApi>
+	</xsl:template>
+</xsl:stylesheet>

@@ -1,0 +1,15 @@
+<Promise IgnoreUnpromised="Y" IsPartialSubstitutionAllowed="N" IsSubstitutionAllowed="Y" OrganizationCode="COSTCO_BD">
+	<!--    <EvaluateOrder EnterpriseCode="COSTCO_BD" OrderHeaderKey="201501020030361022530"/> -->
+	<!--<EvaluateOptions>
+		<EvaluateOption DeliveryMethod="PICK" Node="115" OptionNo="0"/>
+	</EvaluateOptions>-->
+	<ShipToAddress AddressLine1="1750 SE Crystal Lake Dr Apt E" City="Corvallis" Country="US" State="WA" ZipCode="98037">
+		<Extn ExtnAddressType="REGULAR"/>
+	</ShipToAddress>
+	<EvaluateOptions>
+		<EvaluateOption DeliveryMethod="SHP" OptionNo="1"/>
+	</EvaluateOptions>
+	<PromiseLines>
+		<PromiseLine GiftWrap="N" ItemID="22992" LineId="1" LevelOfService="" RequiredQty="1" UnitOfMeasure="Lbs"/>
+	</PromiseLines>
+</Promise>

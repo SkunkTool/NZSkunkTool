@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Order ConsiderChangingShippingToDelivery="N"
+  ConsolidateToExistingWorkOrder="N" OrderHeaderKey="2011091917135387001">
+  <WorkOrders TotalNumberOfRecords="1">
+    <WorkOrder ComputedRequestedQuantity="0.00"
+      CreatedOrModified="Created" EnterpriseCode="XYZ-RETAIL"
+      NodeKey="XYZ_S1" ProviderOrganizationCode="XYZ-RETAIL" Purpose=" "
+      QuantityRequested="0.00" Status="1100"
+      StatusDate="2011-09-19T17:16:27-04:00"
+      StatusDescription="Work Order Created" Timezone="America/New_York"
+      WorkOrderKey="2011091917162787036" WorkOrderNo="96">
+      <WorkOrderServiceLines>
+        <WorkOrderServiceLine IsComplete="N" ItemGroupCode="PS"
+          ItemID="GAS APP INSTALL" LineNo="1" QuantityRequired="1.00"
+          Uom="HR" WorkOrderServiceLineKey="2011091917162787037">
+          <OrderLine OrderLineKey="2011091917135387003" PrimeLineNo="2" SubLineNo="1"/>
+        </WorkOrderServiceLine>
+      </WorkOrderServiceLines>
+      <WorkOrderProdDeliveries/>
+      <SuggestedAppointment ApptDate="2011-09-21"
+        ApptEndTimestamp="2011-09-21T12:00:00-04:00"
+        ApptStartTimestamp="2011-09-21T08:00:00-04:00"
+        EndTime="12:00:00" ExternalNode="Y" NodePriority="99999.00"
+        ShipNode="XYZ_S1" StartTime="08:00:00" TimeZone="America/New_York"/>
+    </WorkOrder>
+  </WorkOrders>
+</Order>

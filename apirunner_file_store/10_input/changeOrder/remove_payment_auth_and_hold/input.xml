@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Order
+    DocumentType="0001"
+    EnterpriseCode="Matrix-R"
+    OrderNo="Y100000435"
+    PaymentStatus="AUTHORIZED" >
+
+
+        <OrderHoldTypes>
+
+            <OrderHoldType
+                HoldType="YCD_DUPLICATE_ORDER"
+                ReasonText="Removed for demo by Ned's API Tester"
+                Status="1300"
+                />
+
+            <OrderHoldType
+                HoldType="YCD_FRAUD_CHECK"
+                ReasonText="Removed for demo by Ned's API Tester"
+                Status="1300"
+                />
+
+            <OrderHoldType
+                HoldType="YCD_VERIFY_ADDRESS"
+                ReasonText="Removed for demo by Ned's API Tester"
+                Status="1300"
+                 />
+        </OrderHoldTypes>
+
+</Order>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Order ConsiderChangingShippingToDelivery="N"
+  ConsolidateToExistingWorkOrder="N" EnterpriseCode="XYZ-RETAIL" OrderNo="Y100000187">
+  <WorkOrders TotalNumberOfRecords="3">
+    <WorkOrder ComputedRequestedQuantity="0.00"
+      CreatedOrModified="Created" EnterpriseCode="XYZ-RETAIL"
+      NodeKey="XYZ_S1" ProviderOrganizationCode="XYZ-RETAIL" Purpose=" "
+      QuantityRequested="0.00" Status="1100"
+      StatusDate="2011-09-26T15:19:12-04:00"
+      StatusDescription="Work Order Created" Timezone="America/New_York"
+      WorkOrderKey="20110926151912103309" WorkOrderNo="154">
+      <WorkOrderServiceLines>
+        <WorkOrderServiceLine IsComplete="N" ItemGroupCode="PS"
+          ItemID="CAB INSTALL" LineNo="1" QuantityRequired="1.00"
+          Uom="HR" WorkOrderServiceLineKey="20110926151912103310">
+          <OrderLine OrderLineKey="20110926151837103248" PrimeLineNo="2" SubLineNo="1"/>
+        </WorkOrderServiceLine>
+      </WorkOrderServiceLines>
+      <WorkOrderProdDeliveries/>
+      <SuggestedAppointment ApptDate="2011-09-29"
+        ApptEndTimestamp="2011-09-29T12:00:00-04:00"
+        ApptStartTimestamp="2011-09-29T08:00:00-04:00"
+        EndTime="12:00:00" ExternalNode="Y" NodePriority="99999.00"
+        ShipNode="XYZ_S1" StartTime="08:00:00" TimeZone="America/New_York"/>
+    </WorkOrder>
+    <WorkOrder ComputedRequestedQuantity="0.00"
+      CreatedOrModified="Created" EnterpriseCode="XYZ-RETAIL"
+      NodeKey="XYZ_S1" ProviderOrganizationCode="XYZ-RETAIL" Purpose=" "
+      QuantityRequested="0.00" Status="1100"
+      StatusDate="2011-09-26T15:19:12-04:00"
+      StatusDescription="Work Order Created" Timezone="America/New_York"
+      WorkOrderKey="20110926151913103314" WorkOrderNo="155">
+      <WorkOrderServiceLines>
+        <WorkOrderServiceLine IsComplete="N" ItemGroupCode="PS"
+          ItemID="CAB PRE-INSTALL" LineNo="1" QuantityRequired="1.00"
+          Uom="HR" WorkOrderServiceLineKey="20110926151913103315">
+          <OrderLine OrderLineKey="20110926151837103249" PrimeLineNo="3" SubLineNo="1"/>
+        </WorkOrderServiceLine>
+      </WorkOrderServiceLines>
+      <WorkOrderProdDeliveries/>
+      <SuggestedAppointment ApptDate="2011-09-27"
+        ApptEndTimestamp="2011-09-27T12:00:00-04:00"
+        ApptStartTimestamp="2011-09-27T08:00:00-04:00"
+        EndTime="12:00:00" ExternalNode="Y" NodePriority="99999.00"
+        ShipNode="XYZ_S1" StartTime="08:00:00" TimeZone="America/New_York"/>
+    </WorkOrder>
+    <WorkOrder ComputedRequestedQuantity="1.00"
+      CreatedOrModified="Created" EnterpriseCode="XYZ-RETAIL"
+      NodeKey="XYZ_S1" ProviderOrganizationCode=" " Purpose=" "
+      QuantityRequested="1.00" Status="1100"
+      StatusDate="2011-09-26T15:19:12-04:00"
+      StatusDescription="Work Order Created" Timezone="America/New_York"
+      WorkOrderKey="20110926151911103301" WorkOrderNo="153">
+      <WorkOrderServiceLines>
+        <WorkOrderServiceLine IsComplete="N" ItemGroupCode="DS"
+          ItemID="Home_Delivery" LineNo="1" QuantityRequired="1.00"
+          Uom="UNIT" WorkOrderServiceLineKey="20110926151912103302">
+          <OrderLine OrderLineKey="20110926151911103294" PrimeLineNo="4" SubLineNo="1"/>
+        </WorkOrderServiceLine>
+      </WorkOrderServiceLines>
+      <WorkOrderProdDeliveries>
+        <WorkOrderProdDelivery CauseAppointmentChange="Y"
+          ItemID="65334_9234XKIWK" LineNo="1" ProductClass="Good"
+          QuantityDelivered="0.00" QuantityRequired="1.00" Uom="EACH" WorkOrderProdDeliveryKey="20110926151912103303">
+          <OrderLine OrderLineKey="20110926151837103247" PrimeLineNo="1" SubLineNo="1"/>
+        </WorkOrderProdDelivery>
+      </WorkOrderProdDeliveries>
+      <SuggestedAppointment ApptDate="2011-09-28"
+        ApptEndTimestamp="2011-09-28T12:00:00-04:00"
+        ApptStartTimestamp="2011-09-28T08:00:00-04:00"
+        EndTime="12:00:00" ExternalNode="Y" NodePriority="99999.00"
+        ShipNode="XYZ_S1" StartTime="08:00:00" TimeZone="America/New_York"/>
+    </WorkOrder>
+  </WorkOrders>
+</Order>

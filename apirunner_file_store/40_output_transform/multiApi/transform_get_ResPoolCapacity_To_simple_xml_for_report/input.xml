@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0"
+	xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+	<xsl:template match="/MultiApi">
+		<ResPoolCapacityList>
+			<xsl:for-each
+				select="API[@Name='getResourcePoolCapacity']/Output/Node/ResourcePools/ResourcePool/ServiceSlots/ServiceSlot/Dates/Date">
+					<ResPoolCapacity>
+						<xsl:attribute name="ShipNode"><xsl:value-of select="../../../../@Node" /></xsl:attribute>
+						<xsl:attribute name="ResPoolDescription"><xsl:value-of select="../../../../@ResourcePoolDescription" /></xsl:attribute>						
+						<xsl:attribute name="Date"><xsl:value-of select="@Date" /></xsl:attribute>
+						<xsl:attribute name="Capacity"><xsl:value-of select="@Capacity" /></xsl:attribute>
+						<xsl:attribute name="AllocatedConsumption"><xsl:value-of select="@AllocatedConsumption" /></xsl:attribute>
+						<xsl:attribute name="Availability"><xsl:value-of select="@Availability" /></xsl:attribute>
+					</ResPoolCapacity>
+			</xsl:for-each>
+		</ResPoolCapacityList>
+	</xsl:template>
+</xsl:stylesheet>

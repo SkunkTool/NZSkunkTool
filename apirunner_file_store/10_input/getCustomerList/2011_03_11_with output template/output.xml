@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomerList>
+  <Customer BuyerOrganizationCode="" CanConsumeSupplementalCapacity="N"
+    CustomerID="100000014" CustomerKey="2010111509360146914"
+    CustomerType="02" OrganizationCode="XYZ-CORP"/>
+  <Customer BuyerOrganizationCode="" CanConsumeSupplementalCapacity="N"
+    CustomerID="100000000" CustomerKey="2010101820370119830"
+    CustomerType="02" OrganizationCode="XYZ-CORP"/>
+  <Customer BuyerOrganizationCode="" CanConsumeSupplementalCapacity="N"
+    CustomerID="100000016" CustomerKey="2010111608221550088"
+    CustomerType="02" OrganizationCode="XYZ-CORP"/>
+  <Customer BuyerOrganizationCode="" CanConsumeSupplementalCapacity="N"
+    CustomerID="100000015" CustomerKey="2010111513334048134"
+    CustomerType="02" OrganizationCode="XYZ-CORP"/>
+  <Customer BuyerOrganizationCode="" CanConsumeSupplementalCapacity="N"
+    CustomerID="100000021" CustomerKey="2010111708093251542"
+    CustomerType="02" OrganizationCode="XYZ-CORP"/>
+  <Customer BuyerOrganizationCode="" CanConsumeSupplementalCapacity="N"
+    CustomerID="jdoe" CustomerKey="2009032314123725889"
+    CustomerType="02" OrganizationCode="XYZ-CORP"/>
+  <Customer BuyerOrganizationCode="" CanConsumeSupplementalCapacity="N"
+    CustomerID="susieq" CustomerKey="2009032314073725768"
+    CustomerType="02" OrganizationCode="XYZ-CORP"/>
+  <Customer BuyerOrganizationCode="" CanConsumeSupplementalCapacity="N"
+    CustomerID="100000022" CustomerKey="2011020110292374586"
+    CustomerType="02" OrganizationCode="XYZ-CORP"/>
+  <Customer BuyerOrganizationCode="" CanConsumeSupplementalCapacity="N"
+    CustomerID="100000017" CustomerKey="2010111613003050694"
+    CustomerType="02" OrganizationCode="XYZ-CORP"/>
+  <Customer BuyerOrganizationCode="" CanConsumeSupplementalCapacity="N"
+    CustomerID="100000018" CustomerKey="2010111613092850820"
+    CustomerType="02" OrganizationCode="XYZ-CORP"/>
+  <Customer BuyerOrganizationCode="" CanConsumeSupplementalCapacity="N"
+    CustomerID="100000019" CustomerKey="2010111613125150872"
+    CustomerType="02" OrganizationCode="XYZ-CORP"/>
+  <Customer BuyerOrganizationCode="" CanConsumeSupplementalCapacity="N"
+    CustomerID="100000001" CustomerKey="2010102612301535265"
+    CustomerType="02" OrganizationCode="XYZ-CORP"/>
+  <Customer BuyerOrganizationCode="" CanConsumeSupplementalCapacity="N"
+    CustomerID="100000020" CustomerKey="2010111613283051015"
+    CustomerType="02" OrganizationCode="XYZ-CORP"/>
+  <Customer BuyerOrganizationCode="" CanConsumeSupplementalCapacity="N"
+    CustomerID="100000023" CustomerKey="2011022209581091117"
+    CustomerType="02" OrganizationCode="XYZ-CORP"/>
+  <Customer BuyerOrganizationCode="" CanConsumeSupplementalCapacity="N"
+    CustomerID="100000002" CustomerKey="2010111008255039363"
+    CustomerType="02" OrganizationCode="XYZ-CORP"/>
+  <Customer BuyerOrganizationCode="Acme_XYZC"
+    CanConsumeSupplementalCapacity="N" CustomerID="Acme"
+    CustomerKey="2009032311194024884" CustomerType="01" OrganizationCode="XYZ-CORP"/>
+  <Customer BuyerOrganizationCode="Bob_plum_XYZC"
+    CanConsumeSupplementalCapacity="N" CustomerID="Bob_plum"
+    CustomerKey="2010111609184350318" CustomerType="01" OrganizationCode="XYZ-CORP"/>
+  <Customer BuyerOrganizationCode="Joe_XYZC"
+    CanConsumeSupplementalCapacity="N" CustomerID="Joe"
+    CustomerKey="2010111613434951139" CustomerType="01" OrganizationCode="XYZ-CORP"/>
+  <Customer BuyerOrganizationCode="Paperclips_XYZC"
+    CanConsumeSupplementalCapacity="N" CustomerID="Paperclips"
+    CustomerKey="2009032314001725746" CustomerType="01" OrganizationCode="XYZ-CORP"/>
+  <Customer BuyerOrganizationCode="na_test_001_XYZC"
+    CanConsumeSupplementalCapacity="N" CustomerID="na_test_001"
+    CustomerKey="20110304014821103979" CustomerType="01" OrganizationCode="XYZ-CORP"/>
+</CustomerList>

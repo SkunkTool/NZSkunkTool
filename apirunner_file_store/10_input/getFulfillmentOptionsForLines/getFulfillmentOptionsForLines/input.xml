@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Promise AllocationRuleID="AEO_PRO_SR" CarrierServiceCode="AEO_BW" CheckInventory="Y" EnterpriseCode="AEO_US" OrganizationCode="AEO_US" ReqEndDate="2014-01-22T00:00:00.000-05:00" ReqStartDate="2014-01-21T00:00:00.000-05:00">
+<ShipToAddress AddressLine1="1750 SE Crystal Lake Dr Apt E" City="Corvallis" Country="US" State="OR" ZipCode="97333">
+<Extn ExtnAddressType="REGULAR"/>
+</ShipToAddress>
+<EvaluateOptions>
+<EvaluateOption DeliveryMethod="SHP" OptionNo="1"/>
+</EvaluateOptions>
+<PromiseLines> 
+<PromiseLine FulfillmentType="FIRST_IDC_THEN_STORE" ItemID="0020134557" LineId="2" ProductClass="GOOD" RequiredQty="1" UnitOfMeasure="EACH">
+<Overrides IsDeliveryAllowed="N" IsPickupAllowed="N" IsShippingAllowed="Y"/>
+</PromiseLine> 
+</PromiseLines>
+</Promise>
