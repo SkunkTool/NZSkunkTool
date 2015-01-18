@@ -9,6 +9,7 @@ import java.lang.reflect.Array;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.ResourceBundle;
 
@@ -24,9 +25,7 @@ import com.nedzhang.skunktool3.widget.ApiRunner.CbxApiNameLostFocusEvent;
 import com.nedzhang.skunktool3.widget.ConnectionSetter;
 import com.nedzhang.util.ResourceUtil;
 import com.nedzhang.util.XmlUtil;
-import com.sun.tools.javac.util.Paths;
-
-import edu.emory.mathcs.backport.java.util.Arrays;
+//import com.sun.tools.javac.util.Paths;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;

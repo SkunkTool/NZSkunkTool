@@ -20,8 +20,6 @@ import com.nedzhang.util.Pair;
 import com.nedzhang.util.TextFileUtil;
 import com.nedzhang.util.XPathUtil;
 import com.nedzhang.util.XmlUtil;
-import com.sterlingcommerce.woodstock.util.frame.cache.Entry;
-import com.yantra.interop.services.security.SimpleLoginModuleAdapter.UserInfo;
 
 import java.awt.TextArea;
 import java.awt.im.InputContext;

@@ -1,8 +1,8 @@
+/bin
 /dist
 /sterlingenv_to_del
 /util_to_del
 /.settings
-/lib_ear/*
 /properties/*
 /build/ear_download
 /fxbuild/build
