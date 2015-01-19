@@ -2,7 +2,7 @@
 
 <?import com.nedzhang.skunktool3.control.*?>
 <?import com.nedzhang.skunktool3.widget.*?>
-<?import com.nedzhang.skunktool3.widget.ApiRunner?>
+<?import com.nedzhang.skunktool3.widget.ApiTextRunner?>
 <?import com.nedzhang.skunktool3.widget.ConnectionSetter?>
 <?import com.nedzhang.skunktool3.widget.MaterialPanel?>
 <?import com.nedzhang.skunktool3.widget.ShipnodeDGManager?>
@@ -22,6 +22,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.web.*?>
 <?scenebuilder-classpath-element ../../../../../bin?>
+<?scenebuilder-classpath-element ../../../../../../com.nedzhang.sterlingUtil/bin?>
 
 <VBox id="AnchorPane" prefHeight="542.0" prefWidth="636.0" style="-fx-background-color:#D9D9D9" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="com.nedzhang.skunktool3.apiRunner.ApiRunnerWindow">
   <!-- <MenuBar>
@@ -85,13 +86,25 @@
                   <DraggableTab fx:id="tabFirstTab" labelText="APi">
                     <content>
                       <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="-1.0" prefWidth="-1.0">
-                        <ApiRunner prefHeight="-1.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        <ApiTextRunner AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                       </AnchorPane>
                     </content>
                   </DraggableTab>
                   <DraggableTab fx:id="tabAddNew" closable="false" labelText="+" onSelectionChanged="#onTabAddNewSelectChanged">
                     <content>
-                      <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="-1.0" prefWidth="-1.0" />
+                      <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="-1.0" prefWidth="-1.0">
+                        <children>
+                          <VBox alignment="CENTER" prefHeight="-1.0" prefWidth="-1.0" spacing="12.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <children>
+                              <Button fx:id="btnLoadApiForm" mnemonicParsing="false" onMouseClicked="#onBtnLoadFormClicked" text="Load Form" visible="true" />
+                              <Button id="btnLoadTester" fx:id="btnLoadApiTester" disable="true" mnemonicParsing="false" onMouseClicked="#onBtnLoadTesterClicked" text="Load Tester" visible="true" />
+                            </children>
+                            <padding>
+                              <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                            </padding>
+                          </VBox>
+                        </children>
+                      </AnchorPane>
                     </content>
                   </DraggableTab>
                 </tabs>

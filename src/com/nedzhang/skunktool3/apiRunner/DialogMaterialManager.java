@@ -23,12 +23,11 @@ public class DialogMaterialManager {
 
 	private DialogMaterialManager() {
 
-		FXMLLoader fxmlLoader = new FXMLLoader(
-				DialogMaterialController.class
-						.getClass()
-						.getResource(
-								"/com/nedzhang/skunktool3/apiRunner/DialogMaterial.fxml"));
+		FXMLLoader fxmlLoader = new FXMLLoader(this.getClass().getResource(
+				"/com/nedzhang/skunktool3/apiRunner/DialogMaterial.fxml"));
+		
 		Scene scene = null;
+		
 		try {
 			scene = new Scene((Parent) fxmlLoader.load());
 		} catch (IOException e) {

@@ -54,6 +54,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
 import javafx.geometry.VPos;
+import javafx.scene.Parent;
 import javafx.scene.control.Accordion;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
@@ -98,23 +99,8 @@ import org.xml.sax.SAXException;
  * 
  * @author nzhang
  */
-public class HarnessRunner extends VBox {
+public class ApiUIRunner extends ApiRunner {
 
-	private static String programID;
-
-	private static boolean verboseMode;
-
-	static {
-		try {
-			programID = ApplicationProperty.get("STERLING_INTEROP_PROG_ID");
-			String verboseModeString = ApplicationProperty.get("VERBOSE_MODE");
-			verboseMode = Boolean.valueOf(verboseModeString);
-		} catch (Throwable e) {
-			e.printStackTrace();
-			programID = "SKUNKTOOL3";
-			verboseMode = true;
-		}
-	}
 
 //	private static enum RunnerMode {
 //		ApiTester,UserForm
@@ -151,17 +137,18 @@ public class HarnessRunner extends VBox {
 	// private MaterialPanel materialPanelInput;
 	@FXML
 	private TableView<MultiApiElement> tblMultiApiRun;
-	// @FXML
-	// private TextArea txtMultiApi;
+	 
+	@FXML
+	private TextArea txtMultiApi;
 
-	@FXML
-	private MaterialPanel mpnlInput;
-	
-	@FXML
-	private Region tpnlInput;
-
-	@FXML
-	private MaterialPanel mpnlTemplate;
+//	@FXML
+//	private MaterialPanel mpnlInput;
+//	
+//	@FXML
+//	private Region tpnlInput;
+//
+//	@FXML
+//	private MaterialPanel mpnlTemplate;
 
 	@FXML
 	private MaterialPanel mpnlResult;
@@ -218,8 +205,8 @@ public class HarnessRunner extends VBox {
 	
 	private final ArrayList<Control> userInputControls;
 
-	@SuppressWarnings("unused")
-	private AutoCompleteComboBoxListener<String> cbxApiNameAutoCompleteListener;
+//	@SuppressWarnings("unused")
+//	private AutoCompleteComboBoxListener<String> cbxApiNameAutoCompleteListener;
 
 	private StringProperty userIDProperty;
 	private StringProperty passwordProperty;
@@ -229,38 +216,38 @@ public class HarnessRunner extends VBox {
 	private String harnessName;
 
 	
-	public class CbxApiNameLostFocusEvent extends Event {
+//	public class CbxApiNameLostFocusEvent extends Event {
+//
+//		private static final long serialVersionUID = 5517979107723107384L;
+//
+//		private String text;
+//
+//		public String getText() {
+//			return text;
+//		}
+//
+//		public void setText(String text) {
+//			this.text = text;
+//		}
+//
+//		public CbxApiNameLostFocusEvent(
+//				EventType<? extends Event> paramEventType) {
+//			this(paramEventType, null);
+//		}
+//
+//		public CbxApiNameLostFocusEvent(EventType<? extends Event> eventType,
+//				String text) {
+//			super(eventType);
+//			this.text = text;
+//		}
+//
+//	}
 
-		private static final long serialVersionUID = 5517979107723107384L;
-
-		private String text;
-
-		public String getText() {
-			return text;
-		}
-
-		public void setText(String text) {
-			this.text = text;
-		}
-
-		public CbxApiNameLostFocusEvent(
-				EventType<? extends Event> paramEventType) {
-			this(paramEventType, null);
-		}
-
-		public CbxApiNameLostFocusEvent(EventType<? extends Event> eventType,
-				String text) {
-			super(eventType);
-			this.text = text;
-		}
-
-	}
-
-	public HarnessRunner() {
+	public ApiUIRunner() {
 		this(null, null);
 	}
 	
-	public HarnessRunner(String harnessName, Document testHarnessDoc) {
+	public ApiUIRunner(String harnessName, Document testHarnessDoc) {
 		
 		this.harnessName = harnessName;
 		
@@ -272,7 +259,7 @@ public class HarnessRunner extends VBox {
 		userInputControls = new ArrayList<Control>();
 		
 		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(
-				"HarnessRunner.fxml"));
+				"ApiUIRunner.fxml"));
 		
 		fxmlLoader.setRoot(this);
 		fxmlLoader.setController(this);
@@ -288,7 +275,7 @@ public class HarnessRunner extends VBox {
 			initializeFormData(testHarnessDoc);
 
 		} catch (Exception ex) {
-			Logger.getLogger(HarnessRunner.class.getName()).log(Level.SEVERE,
+			Logger.getLogger(ApiUIRunner.class.getName()).log(Level.SEVERE,
 					null, ex);
 		}
 	}
@@ -409,6 +396,7 @@ public class HarnessRunner extends VBox {
 		final Insets cellMargin = new Insets(4);
 		
 		if (inputFieldNodes != null && inputFieldNodes.getLength() > 0) {
+			
 			for (int i=0; i<inputFieldNodes.getLength(); i++) {
 				System.out.println(XmlUtil.getXmlString(inputFieldNodes.item(i)));
 				Element fieldElement = (Element) inputFieldNodes.item(i);
@@ -416,9 +404,12 @@ public class HarnessRunner extends VBox {
 				// Create label
 				Label label = new Label(fieldElement.getAttribute("Label"));
 				
+				Label hint = new Label(fieldElement.getAttribute("Hint"));
+				
 				String fieldType = fieldElement.getAttribute("Type");
 				
 				String defaultValue = fieldElement.getAttribute("Default");
+				
 				
 				Control inputControl;
 				
@@ -475,8 +466,9 @@ public class HarnessRunner extends VBox {
 				
 				GridPane.setConstraints(label, 1, i+1, 1, 1, HPos.RIGHT, VPos.CENTER, Priority.NEVER, Priority.NEVER, cellMargin);
 				GridPane.setConstraints(inputControl, 2, i+1, 1, 1, HPos.LEFT, VPos.CENTER, Priority.ALWAYS, Priority.NEVER, cellMargin);
+				GridPane.setConstraints(hint,3, i+1, 1, 1, HPos.LEFT, VPos.CENTER, Priority.NEVER, Priority.NEVER, cellMargin);
 				
-				panel.getChildren().addAll(label, inputControl);
+				panel.getChildren().addAll(label, inputControl, hint);
 				
 				inputControlList.add(inputControl);
 			}
@@ -652,7 +644,7 @@ public class HarnessRunner extends VBox {
 //				cbxApiName.getValue(), ApiMaterialType.ApiOutputTemplate,
 //				mpnlTemplate.getContent());
 //	}
-
+//
 	@FXML
 	private void onResultLoadContent(MouseEvent event) {
 

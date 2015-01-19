@@ -57,8 +57,8 @@ public class MaterialStore {
 		materialFolderMap.put(ApiMaterialType.ApiInput,
 				getStoreFolder(fileStoreFolder, "10_input"));
 		
-		materialFolderMap.put(ApiMaterialType.TestHarnessInput,
-				getStoreFolder(fileStoreFolder, "11_testHarnessInput"));
+		materialFolderMap.put(ApiMaterialType.TestHarness,
+				getStoreFolder(fileStoreFolder, "11_test_harness"));
 
 
 		materialFolderMap.put(ApiMaterialType.ApiOutputTemplate,

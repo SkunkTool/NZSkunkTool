@@ -22,6 +22,8 @@
 <?import javafx.scene.web.*?>
 <?import np.com.ngopal.control.*?>
 <?scenebuilder-classpath-element ../../../../../bin?>
+<?import javafx.scene.control.Label?>
+<?import com.nedzhang.skunktool3.widget.XmlViewer?>
 
 <fx:root type="javafx.scene.layout.VBox" minHeight="-1.0" minWidth="-1.0" prefHeight="460.0" prefWidth="-1.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
   <children>
@@ -68,6 +70,9 @@
     </TitledPane>-->
     <HBox alignment="CENTER" prefHeight="-1.0" prefWidth="-1.0" spacing="4.0">
       <children>
+        <ComboBox fx:id="cbxApiName" disable="false" editable="true" focusTraversable="true" minWidth="100.0" prefWidth="200.0" />
+        <CheckBox fx:id="chkIsService" mnemonicParsing="false" prefHeight="22.0" prefWidth="110.0" text="Service" />
+        <Hyperlink fx:id="lnkApiDoc" minWidth="-1.0" onMouseClicked="#onLnkApiDocClicked" prefWidth="123.0" text="Api JavaDoc" textAlignment="LEFT" />
         <HBox alignment="TOP_RIGHT" prefHeight="-1.0" prefWidth="-1.0" HBox.hgrow="ALWAYS">
           <children>
             <Button id="btnRunApi" minWidth="50.0" mnemonicParsing="false" onMouseClicked="#onBtnRunApiClicked" prefWidth="77.0" text="Run" />
@@ -80,7 +85,7 @@
     </HBox>
     <Accordion fx:id="accordionMain" VBox.vgrow="ALWAYS">
       <panes>
-        <TitledPane fx:id="accordInputForm" animated="false" expanded="true" styleClass="first-titled-pane" text="Input Form">
+        <!-- <TitledPane fx:id="accordInputForm" animated="false" expanded="true" styleClass="first-titled-pane" text="Input Form">
           <content>
             <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
               <children>
@@ -92,13 +97,45 @@
               </children>
             </AnchorPane>
           </content>
-        </TitledPane>
-        <TitledPane fx:id="accordResult" animated="false" expanded="false" text="Result">
+        </TitledPane>-->
+        <TitledPane fx:id="accordInput" animated="false" expanded="false" text="Input" textAlignment="LEFT">
           <content>
             <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
               <children>
-                <MaterialPanel fx:id="mpnlResult" onLoadContent="#onResultLoadContent" onSaveContent="#onResultSaveContent" prefHeight="398.0" prefWidth="632.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                <MaterialPanel fx:id="mpnlInput" onLoadContent="#onInputLoadContent" onSaveContent="#onInputSaveContent" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
               </children>
+            </AnchorPane>
+          </content>
+        </TitledPane>
+        <TitledPane fx:id="accordTemplate" animated="false" text="Template">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <children>
+                <MaterialPanel fx:id="mpnlTemplate" onLoadContent="#onTemplateLoadContent" onSaveContent="#onTemplateSaveContent" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+              </children>
+            </AnchorPane>
+          </content>
+        </TitledPane>
+        <TitledPane fx:id="accordResult" animated="false" expanded="false" text="Result">
+          <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <TabPane prefHeight="-1.0" prefWidth="-1.0" side="BOTTOM" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <tabs>
+              	<Tab text="Result Raw">
+              		<content>
+	              		<MaterialPanel fx:id="mpnlResult" onLoadContent="#onResultLoadContent" onSaveContent="#onResultSaveContent" prefHeight="398.0" prefWidth="632.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+	              	</content>          	
+              	</Tab>
+				<Tab text="Xml Viewer">
+					<content>
+						<VBox>
+							<Label text="Xml Viewer goes here" />
+							<XmlViewer />
+						</VBox>
+					</content>
+				</Tab>
+              </tabs>
+              </TabPane>
             </AnchorPane>
           </content>
         </TitledPane>
