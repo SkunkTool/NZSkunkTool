@@ -1,6 +1,0 @@
-<MultiApi>
-<API Name="getOrderList"><Input><Order EnterpriseCode="AEO_US"  DocumentType="0001" OrderNo="J3935776"/></Input>
-<Template><OrderList TotalOrderList=""><Order OrderHeaderKey=""><OrderLines><OrderLine PrimeLineNo="" OrderedQty="" OrderingUOM="" ><ItemDetails ItemID="" /></OrderLine></OrderLines></Order></OrderList></Template>
-</API>
-
-</MultiApi>

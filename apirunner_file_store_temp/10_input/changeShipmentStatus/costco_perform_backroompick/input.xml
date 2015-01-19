@@ -1,9 +1,0 @@
-<!--
-<Shipment SellerOrganizationCode="" ShipNode="" ShipmentNo="" ShipmentKey="201501141220361354678" TransactionId="YCD_BACKROOM_PICK" AcceptOutOfSequenceUpdates="N" />
--->
-
-<!--
-<Shipment SellerOrganizationCode="" ShipNode="" ShipmentNo="" ShipmentKey="201501141220361354678" TransactionId="OUT_FOR_DELIVERY.ex.0003" AcceptOutOfSequenceUpdates="N" />
--->
-
-<Shipment SellerOrganizationCode="" ShipNode="" ShipmentNo="" ShipmentKey="201501141220361354678" TransactionId="OUT_FOR_DELIVERY.ex.0003" AcceptOutOfSequenceUpdates="N" />

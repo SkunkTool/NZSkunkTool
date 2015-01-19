@@ -1,1 +1,0 @@
-Get shipment with shpiment header key greater than a value and status between two values.

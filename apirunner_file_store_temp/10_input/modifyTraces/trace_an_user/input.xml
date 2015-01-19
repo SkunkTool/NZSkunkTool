@@ -1,8 +1,0 @@
-<Traces>
-	<!--<Trace Level="VERBOSE" Name="findInventory" ServerId="" ServerName="" Type="API"/>-->
-	<!--<Trace Level="DEBUG" Name="findInventory" ServerId="" ServerName="" Type="API"/>-->
-	<!--<Trace Level="SQLDEBUG" Name="findInventory" ServerId="" ServerName="" Type="API"/>-->
-	<!--<Trace Level="VERBOSE" Name="getOrderList" ServerId="" ServerName="" Type="API"/>-->
-	<!--<Trace Level="VERBOSE" Name="admin" Type="UserTracing"/>-->
-	<Trace Level="VERBOSE" Name="YantraConsole" Type="YantraConsole" />
-</Traces>

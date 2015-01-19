@@ -1,1 +1,0 @@
-get customer list for XYZ-CORP with output template

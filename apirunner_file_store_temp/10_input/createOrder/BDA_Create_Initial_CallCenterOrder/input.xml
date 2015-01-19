@@ -1,5 +1,0 @@
-<Order DisplayLocalizedFieldInLocale="en_US_EST" DocumentType="0001"
-    DraftOrderFlag="Y" EnterpriseCode="AuroraB2B"
-    EntryType="Call Center" IgnoreOrdering="Y" ValidateItem="N">
-    <PriceInfo Currency="USD"/>
-</Order>

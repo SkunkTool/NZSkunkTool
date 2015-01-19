@@ -1,1 +1,0 @@
-output template that includes the last item's inventoryitemkey so pagination can set start point for next run.

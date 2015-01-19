@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Customer CanConsumeSupplementalCapacity="N" CustomerID="100000014"
-  CustomerKey="2010111509360146914" CustomerType="02"
-  MaxAssignRepsOrTeams="0" OrganizationCode="XYZ-CORP" SlotPreferenceType="NONE">
-  <CustomerSlotPreferenceList/>
-</Customer>

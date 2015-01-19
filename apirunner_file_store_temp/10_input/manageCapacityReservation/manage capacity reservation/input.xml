@@ -1,8 +1,0 @@
-<CapacityReservationList>
-	<CapacityReservation Capacity="15"  ManuallyCreatedReservation="Y" Operation="" OverrideCapacityCheck="" ReservationExpirationDate="2014-01-20" ReservationId="RC9-01-17-Test" ReservationReason="">
-		<CapacityConsumption ConsumptionDate="2014-01-17" EndTime="00:00" StartTime="23:59">
-			<ResourcePool Node="RC9" ResourcePoolId="RC9" />
-			
-		</CapacityConsumption>
-	</CapacityReservation>
-</CapacityReservationList>

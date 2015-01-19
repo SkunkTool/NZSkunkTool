@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<AtpRulesList>
-  <AtpRules AccumulationDays="730" AdvanceNotificationTime="0"
-    AtpRule="DEFAULT" AtpRuleName="XYZ-CORP-DEFAULT"
-    BackwardConsumptionDays="730" ConsiderPoForAlloc="N"
-    ForwardConsumptionDays="730" MaxInventoryHoldDays="0"
-    OrganizationCode="XYZ-CORP" PastDueDemandDays="730"
-    PastDueSupplyDays="730" ProcessingTime="0"/>
-</AtpRulesList>

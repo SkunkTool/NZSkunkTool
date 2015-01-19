@@ -1,1 +1,0 @@
-List order between (inclusive) scheduled and released.

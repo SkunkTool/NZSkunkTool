@@ -1,8 +1,0 @@
-<Promise AllocationRuleID="AEO_ORD_SR" CarrierServiceCode="" CheckCapacity="Y" CheckInventory="Y" DeliveryDateBased="Y" EnterpriseCode="AEO_US" IgnoreMinNotificationTime="N" IgnorePromised="N" MaximumRecords="5" OrganizationCode="AEO_US" >
-	<ShipToAddress AddressLine1="77 Hot Metal Street" City="Pittsburg" Country="US" State="PA" ZipCode="15203"/>
-	<PromiseLines>
-		<PromiseLine FulfillmentType="TEMP_TUNING_NZ_TEST" ItemID="I-NZ-001" LineId="1" ProductClass="GOOD" UnitOfMeasure="EACH" RequiredQty="1" />
-		<PromiseLine FulfillmentType="TEMP_TUNING_NZ_TEST" ItemID="I-NZ-004" LineId="1" ProductClass="GOOD" UnitOfMeasure="EACH" RequiredQty="1" />
-		<PromiseLine FulfillmentType="TEMP_TUNING_NZ_TEST" ItemID="I-NZ-005" LineId="3" ProductClass="GOOD" UnitOfMeasure="EACH" RequiredQty="3" />
-	</PromiseLines>
-</Promise>

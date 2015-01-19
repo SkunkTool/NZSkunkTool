@@ -1,7 +1,0 @@
-<OrderList>
-	<Order BuyerOrganizationCode="" DocumentType="" EnterpriseCode="" EntryType="" MaxOrderStatus="" MaxOrderStatusDesc="" MinOrderStatus="" MinOrderStatusDesc="" MultipleStatusesExist="" OrderDate="" OrderHeaderKey="" OrderName="" OrderNo="" SellerOrganizationCode="" Status="" >
-		<OrderLines>
-			<OrderLine DeliveryMethod="" />
-		</OrderLines>
-	</Order>
-</OrderList>

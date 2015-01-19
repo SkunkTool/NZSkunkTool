@@ -1,1 +1,0 @@
-Delete order in order list

@@ -1,7 +1,0 @@
-<Order EnterpriseCode="COSTCO_BD"  TaskQKey="" OrderNo="OM1000057" DocumentType="0001" TransactionId="CREATE_ORDER_INVOICE.0001" >
-	<OrderLines>
-	 <OrderLine PrimeLineNo="1"  SubLineNo="1" />
-	 <OrderLine PrimeLineNo="2"  SubLineNo="1" />
-	 <OrderLine PrimeLineNo="3"  SubLineNo="1" />
-	</OrderLines>
-</Order>

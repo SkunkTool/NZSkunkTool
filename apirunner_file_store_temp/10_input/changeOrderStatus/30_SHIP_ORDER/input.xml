@@ -1,8 +1,0 @@
-<OrderStatusChange 
-OrderHeaderKey="2013032916195636510" 
-TransactionId="SHIP_ORDER"
->
-<OrderLines>
-<OrderLine OrderLineKey="2013032916195736511" BaseDropStatus="3700"  ChangeForAllAvailableQty="Y" />
-</OrderLines>
-</OrderStatusChange>

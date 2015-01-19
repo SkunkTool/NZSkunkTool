@@ -1,1 +1,0 @@
-Get inventory snapshot with pagination of 100 item each time.

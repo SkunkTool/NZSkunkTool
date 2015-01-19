@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Customer CanConsumeSupplementalCapacity="N" CustomerID="100000000"
-  CustomerKey="2013040205382854215" CustomerType="02"
-  OrganizationCode="Matrix-R" SlotPreferenceType="NONE">
-  <CustomerSlotPreferenceList/>
-</Customer>

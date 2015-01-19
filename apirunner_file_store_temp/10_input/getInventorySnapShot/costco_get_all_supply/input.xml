@@ -1,5 +1,0 @@
-<GetInventorySnapShot GetFutureSupplies="" OrganizationCode="COSTCO_BD" ShipNode="">
-	<InventorySupplyTypeList>
-		<InventorySupplyType SupplyType=""/>
-	</InventorySupplyTypeList>
-</GetInventorySnapShot>

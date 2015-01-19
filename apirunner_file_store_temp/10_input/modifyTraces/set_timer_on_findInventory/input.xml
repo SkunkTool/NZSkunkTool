@@ -1,6 +1,0 @@
-<Traces>
-	<!--<Trace Level="VERBOSE" Name="findInventory" ServerId="" ServerName="" Type="API"/>-->
-	<!--<Trace Level="DEBUG" Name="findInventory" ServerId="" ServerName="" Type="API"/>-->
-	<!--<Trace Level="SQLDEBUG" Name="findInventory" ServerId="" ServerName="" Type="API"/>-->
-	<Trace Level="TIMER" Name="findInventory" ServerId="" ServerName="" Type="API"/>
-</Traces>

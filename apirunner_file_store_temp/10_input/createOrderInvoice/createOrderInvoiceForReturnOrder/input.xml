@@ -1,5 +1,0 @@
-<Order EnterpriseCode="Matrix"  TaskQKey="" OrderNo="Y100000224" DocumentType="0003" TransactionId="CREATE_ORDER_INVOICE.0003" >
-	<OrderLines>
-	 <OrderLine PrimeLineNo="1"  SubLineNo="1" />
-	</OrderLines>
-</Order>
