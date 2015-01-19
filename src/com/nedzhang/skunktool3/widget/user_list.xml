@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<UserList>
+  <User Activateflag="Y" BillingaddressKey="" BusinessKey=""
+    ContactaddressKey="2013040201293253003" CreatorOrganizationKey=""
+    DepartmentCode="" Imagefile="" Localecode="en_US_EST"
+    LoginStatus="N" Loginid="aashby" Longdesc="" MenuId="DEFAULT_MENU"
+    NoteKey="" OrganizationKey="Candlestick" ParentUserKey=""
+    PreferenceKey="" Pwdlastchangedon="2013-04-02" UserKey="aashby"
+    UsergroupKey="" Username="Abigail Ashby" Usertype="">
+    <ContactPersonInfo AddressLine1="" AddressLine2="" AddressLine3=""
+      AddressLine4="" AddressLine5="" AddressLine6=""
+      AlternateEmailID="" Beeper="" City=""
+      Company="Candlestick Materials Handling" Country=""
+      DayFaxNo="9875554322" DayPhone="9875554323" Department=""
+      EMailID="aashby@candlestick.com" ErrorTxt=""
+      EveningFaxNo="9875554828" EveningPhone="9875551385"
+      FirstName="Abigail" HttpUrl="" JobTitle="" LastName="Ashby"
+      MiddleName="" MobilePhone="9875554858" OtherPhone="" PersonID=""
+      PersonInfoKey="2013040201293253003" PreferredShipAddress=""
+      State="" Suffix="" Title="" UseCount="0" VerificationStatus="" ZipCode=""/>
+    <QueueSubscriptionList/>
+    <UserGroupLists/>
+  </User>
+  <User Activateflag="Y" BillingaddressKey="" BusinessKey=""
+    ContactaddressKey="" CreatorOrganizationKey="DEFAULT"
+    DepartmentCode="" Imagefile="" Localecode="en_US_EST"
+    LoginStatus="N" Loginid="abrooks" Longdesc="Store Administrator"
+    MenuId="SOP_MENU" NoteKey="" OrganizationKey="Mtrx_Store_1"
+    ParentUserKey="" PreferenceKey="" Pwdlastchangedon="2013-04-02"
+    UserKey="abrooks" UsergroupKey="SOP-MANAGER-KEY"
+    Username="Store Manager" Usertype="INTERNAL">
+    <QueueSubscriptionList>
+      <QueueSubscription QueueKey="Matrix-R_Q1"
+        QueueSubscriptionKey="2001961130658" UserKey="abrooks"/>
+      <QueueSubscription QueueKey="Matrix-R_Q3"
+        QueueSubscriptionKey="2001281072288" UserKey="abrooks"/>
+      <QueueSubscription QueueKey="Matrix-R_Q4"
+        QueueSubscriptionKey="201206440545" UserKey="abrooks"/>
+      <QueueSubscription QueueKey="Matrix-R_Q5"
+        QueueSubscriptionKey="200601013918" UserKey="abrooks"/>
+      <QueueSubscription QueueKey="Matrix-R_Q9"
+        QueueSubscriptionKey="20759102822" UserKey="abrooks"/>
+      <QueueSubscription QueueKey="Matrix-R_Q12"
+        QueueSubscriptionKey="2001589421202" UserKey="abrooks"/>
+    </QueueSubscriptionList>
+    <UserGroupLists>
+      <UserGroupList UserGroupListKey="201688436693" UserKey="abrooks" UsergroupKey="SOP-CSR-KEY"/>
+      <UserGroupList UserGroupListKey="2015359872" UserKey="abrooks" UsergroupKey="SOP-MANAGER-KEY"/>
+    </UserGroupLists>
+  </User>
+  <User Activateflag="Y" BillingaddressKey="" BusinessKey=""
+    ContactaddressKey="2013040201305653218" CreatorOrganizationKey=""
+    DepartmentCode="" Imagefile="" Localecode="en_US_EST"
+    LoginStatus="N" Loginid="acalder" Longdesc="" MenuId="DEFAULT_MENU"
+    NoteKey="" OrganizationKey="Wings_Inc_LHE" ParentUserKey=""
+    PreferenceKey="" Pwdlastchangedon="2013-04-02" UserKey="acalder"
+    UsergroupKey="" Username="Alex Calder" Usertype="">
+    <ContactPersonInfo AddressLine1="6579 Kelly Road" AddressLine2=""
+      AddressLine3="" AddressLine4="" AddressLine5="" AddressLine6=""
+      AlternateEmailID="" Beeper="" City="Buffalo"
+      Company="Wings Incorporated" Country="US" DayFaxNo="9875554322"
+      DayPhone="9875551029" Department=""
+      EMailID="acalder@{Dealer_1_Customer_1_Email}" ErrorTxt=""
+      EveningFaxNo="9875554828" EveningPhone="9875554798"
+      FirstName="Alex" HttpUrl="" JobTitle="" LastName="Calder"
+      MiddleName="" MobilePhone="9875554858" OtherPhone="" PersonID=""
+      PersonInfoKey="2013040201305653218" PreferredShipAddress=""
+      State="NY" Suffix="" Title="" UseCount="0" VerificationStatus="" ZipCode="14218"/>
+    <QueueSubscriptionList/>
+    <UserGroupLists/>
+  </User>
+  </UserList>
