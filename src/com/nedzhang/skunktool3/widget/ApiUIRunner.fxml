@@ -23,9 +23,9 @@
 <?import np.com.ngopal.control.*?>
 <?scenebuilder-classpath-element ../../../../../bin?>
 
-<fx:root minHeight="-1.0" minWidth="-1.0" prefHeight="460.0" prefWidth="-1.0" type="javafx.scene.layout.VBox" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
-    <children>
-      <!--<TitledPane animated="false" text="Username/password" visible="false">
+<fx:root type="javafx.scene.layout.VBox" minHeight="-1.0" minWidth="-1.0" prefHeight="460.0" prefWidth="-1.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
+  <children>
+    <!--<TitledPane animated="false" text="Username/password" visible="false">
       <content>
         <AnchorPane id="Content" minHeight="-1.0" minWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0">
            <VBox prefHeight="0.0" prefWidth="-1.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -66,126 +66,141 @@
         </AnchorPane>
       </content>
     </TitledPane>-->
-      <HBox alignment="CENTER" prefHeight="-1.0" prefWidth="-1.0" spacing="4.0">
-        <children>
-          <HBox alignment="TOP_RIGHT" prefHeight="-1.0" prefWidth="-1.0" HBox.hgrow="ALWAYS">
-            <children>
-              <Button id="btnRunApi" minWidth="50.0" mnemonicParsing="false" onMouseClicked="#onBtnRunApiClicked" prefWidth="77.0" text="Run" />
-            </children>
-          </HBox>
-        </children>
-        <padding>
-          <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
-        </padding>
-      </HBox>
-      <Accordion fx:id="accordionMain" VBox.vgrow="ALWAYS">
-        <panes>
-          <TitledPane fx:id="accordInputForm" animated="false" expanded="false" styleClass="first-titled-pane" text="Input Form">
-            <content>
-              <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                <children>
-                  <VBox fx:id="tpnlInput" prefHeight="239.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                    <ScrollPane prefHeight="261.0" prefWidth="577.0">
-                      <GridPane fx:id="gridHarnessInput" />
-                    </ScrollPane>
-                  </VBox>
-                </children>
-              </AnchorPane>
-            </content>
-          </TitledPane>
-          <TitledPane fx:id="accordResult" animated="false" expanded="false" text="Result">
-            <content>
-              <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                <children>
-                  <MaterialPanel fx:id="mpnlResult" onLoadContent="#onResultLoadContent" onSaveContent="#onResultSaveContent" prefHeight="398.0" prefWidth="632.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                </children>
-              </AnchorPane>
-            </content>
-          </TitledPane>
-          <TitledPane fx:id="accordMultiApiRun" animated="false" expanded="false" text="MultiApi Run">
-            <content>
-              <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                <TabPane fx:id="tabMultiApi" prefHeight="200.0" prefWidth="200.0" side="BOTTOM" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                  <tabs>
-                    <Tab text="MultiApi Maker">
-                      <content>
-                        <VBox>
-                          <HBox alignment="TOP_RIGHT" prefHeight="-1.0" prefWidth="-1.0" spacing="16.0" VBox.vgrow="NEVER">
-                            <children>
-                              <Button id="btnNewResultTransform" minWidth="50.0" mnemonicParsing="false" onMouseClicked="#onBtnNewResultTransformClicked" prefWidth="75.0" text="New" />
-                              <Button id="btnResultTransform" minWidth="50.0" mnemonicParsing="false" onMouseClicked="#onBtnResultTransformClicked" prefWidth="110.0" text="Transform" />
-                            </children>
-                            <padding>
-                              <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
-                            </padding>
-                          </HBox>
-                          <MaterialPanel fx:id="mpnlTransform" onLoadContent="#onTransformLoadContent" onSaveContent="#onTransformSaveContent" VBox.vgrow="ALWAYS" />
-                        </VBox>
+    <HBox alignment="CENTER" prefHeight="-1.0" prefWidth="-1.0" spacing="4.0">
+      <children>
+        <HBox alignment="TOP_RIGHT" prefHeight="-1.0" prefWidth="-1.0" HBox.hgrow="ALWAYS">
+          <children>
+            <Button id="btnRunApi" minWidth="50.0" mnemonicParsing="false" onMouseClicked="#onBtnRunApiClicked" prefWidth="77.0" text="Run" />
+          </children>
+        </HBox>
+      </children>
+      <padding>
+        <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+      </padding>
+    </HBox>
+    <Accordion fx:id="accordionMain" VBox.vgrow="ALWAYS">
+      <panes>
+        <TitledPane fx:id="accordInputForm" animated="false" expanded="false" styleClass="first-titled-pane" text="Input Form">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <children>
+                <VBox fx:id="tpnlInput" prefHeight="239.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <ScrollPane prefHeight="261.0" prefWidth="577.0">
+                    <GridPane fx:id="gridHarnessInput" />
+                  </ScrollPane>
+                </VBox>
+              </children>
+            </AnchorPane>
+          </content>
+        </TitledPane>
+        <TitledPane fx:id="accordResult" animated="false" expanded="true" text="Result">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <TabPane prefHeight="-1.0" prefWidth="-1.0" side="BOTTOM" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                <tabs>
+                  <Tab text="Result Raw">
+                    <content>
+                      <MaterialPanel fx:id="mpnlResult" onLoadContent="#onResultLoadContent" onSaveContent="#onResultSaveContent" prefHeight="398.0" prefWidth="632.0" />
+                    </content>
+                  </Tab>
+                  <Tab text="Xml Viewer">
+                  	<content>
+                      <AnchorPane prefHeight="-1.0" prefWidth="-1.0">
+                        <children>
+                          <XmlViewer fx:id="xmlViewerResult" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                        </children>
+                      </AnchorPane>
                       </content>
-                    </Tab>
-                    <Tab text="Temp">
-                      <content>
-                        <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                  </Tab>
+                </tabs>
+              </TabPane>
+            </AnchorPane>
+          </content>
+        </TitledPane>
+        <TitledPane fx:id="accordMultiApiRun" animated="false" expanded="false" text="MultiApi Run">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <TabPane fx:id="tabMultiApi" prefHeight="200.0" prefWidth="200.0" side="BOTTOM" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                <tabs>
+                  <Tab text="MultiApi Maker">
+                    <content>
+                      <VBox>
+                        <HBox alignment="TOP_RIGHT" prefHeight="-1.0" prefWidth="-1.0" spacing="16.0" VBox.vgrow="NEVER">
                           <children>
-                            <TableView fx:id="tblMultiApiRun" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                              <columns>
-                                <TableColumn prefWidth="75.0" text="ApiName">
-                                  <cellValueFactory>
-                                    <PropertyValueFactory property="apiName" />
-                                  </cellValueFactory>
-                                </TableColumn>
-                                <TableColumn prefWidth="75.0" text="Version">
-                                  <cellValueFactory>
-                                    <PropertyValueFactory property="version" />
-                                  </cellValueFactory>
-                                </TableColumn>
-                                <TableColumn prefWidth="75.0" text="Input">
-                                  <cellValueFactory>
-                                    <PropertyValueFactory property="apiInput" />
-                                  </cellValueFactory>
-                                </TableColumn>
-                              </columns>
-                            </TableView>
+                            <Button id="btnNewResultTransform" minWidth="50.0" mnemonicParsing="false" onMouseClicked="#onBtnNewResultTransformClicked" prefWidth="75.0" text="New" />
+                            <Button id="btnResultTransform" minWidth="50.0" mnemonicParsing="false" onMouseClicked="#onBtnResultTransformClicked" prefWidth="110.0" text="Transform" />
                           </children>
-                        </AnchorPane>
-                      </content>
-                    </Tab>
-                    <Tab text="MultiApi Call">
-                      <content>
-                        <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                          <children>
-                            <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                              <HBox alignment="TOP_RIGHT" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="NEVER">
-                                <children>
-                                  <Button id="btnRunMultiApi" minWidth="50.0" onMouseClicked="#onBtnRunMultiApiClicked" prefWidth="110.0" text="Run MultiApi" />
-                                </children>
-                                <padding>
-                                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
-                                </padding>
-                              </HBox>
-                              <MaterialPanel fx:id="mpnlMultipApiInput" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
-                            </VBox>
-                          </children>
-                        </AnchorPane>
-                      </content>
-                    </Tab>
-                    <Tab text="MultiApi Result">
-                      <content>
-                        <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                          <children>
-                            <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                              <MaterialPanel fx:id="mpnlMultipApiResult" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
-                            </VBox>
-                          </children>
-                        </AnchorPane>
-                      </content>
-                    </Tab>
-                  </tabs>
-                </TabPane>
-              </AnchorPane>
-            </content>
-          </TitledPane>
-        </panes>
-      </Accordion>
-    </children>
+                          <padding>
+                            <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                          </padding>
+                        </HBox>
+                        <MaterialPanel fx:id="mpnlTransform" onLoadContent="#onTransformLoadContent" onSaveContent="#onTransformSaveContent" VBox.vgrow="ALWAYS" />
+                      </VBox>
+                    </content>
+                  </Tab>
+                  <Tab text="Temp">
+                    <content>
+                      <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                        <children>
+                          <TableView fx:id="tblMultiApiRun" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <columns>
+                              <TableColumn prefWidth="75.0" text="ApiName">
+                                <cellValueFactory>
+                                  <PropertyValueFactory property="apiName" />
+                                </cellValueFactory>
+                              </TableColumn>
+                              <TableColumn prefWidth="75.0" text="Version">
+                                <cellValueFactory>
+                                  <PropertyValueFactory property="version" />
+                                </cellValueFactory>
+                              </TableColumn>
+                              <TableColumn prefWidth="75.0" text="Input">
+                                <cellValueFactory>
+                                  <PropertyValueFactory property="apiInput" />
+                                </cellValueFactory>
+                              </TableColumn>
+                            </columns>
+                          </TableView>
+                        </children>
+                      </AnchorPane>
+                    </content>
+                  </Tab>
+                  <Tab text="MultiApi Call">
+                    <content>
+                      <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                        <children>
+                          <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <HBox alignment="TOP_RIGHT" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="NEVER">
+                              <children>
+                                <Button id="btnRunMultiApi" minWidth="50.0" onMouseClicked="#onBtnRunMultiApiClicked" prefWidth="110.0" text="Run MultiApi" />
+                              </children>
+                              <padding>
+                                <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                              </padding>
+                            </HBox>
+                            <MaterialPanel fx:id="mpnlMultipApiInput" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+                          </VBox>
+                        </children>
+                      </AnchorPane>
+                    </content>
+                  </Tab>
+                  <Tab text="MultiApi Result">
+                    <content>
+                      <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                        <children>
+                          <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <MaterialPanel fx:id="mpnlMultipApiResult" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+                          </VBox>
+                        </children>
+                      </AnchorPane>
+                    </content>
+                  </Tab>
+                </tabs>
+              </TabPane>
+            </AnchorPane>
+          </content>
+        </TitledPane>
+      </panes>
+    </Accordion>
+  </children>
 </fx:root>

@@ -189,6 +189,9 @@ public class ApiUIRunner extends ApiRunner {
 	@FXML
 	private TabPane tabMultiApi;
 
+	@FXML
+	private XmlViewer xmlViewerResult;
+	
 //	@FXML
 //	private Map<String, SterApiDesc> apiList;
 
@@ -646,7 +649,7 @@ public class ApiUIRunner extends ApiRunner {
 //	}
 //
 	@FXML
-	private void onResultLoadContent(MouseEvent event) {
+	private void onResultLoadContent(MouseEvent event) throws ParserConfigurationException, SAXException, IOException {
 
 		String apiOutput = DialogMaterialManager.showLoadMaterialDialog(
 				"Load Result",
@@ -655,7 +658,7 @@ public class ApiUIRunner extends ApiRunner {
 						harnessName, ApiMaterialType.ApiOutput);
 
 		if (apiOutput != null) {
-			mpnlResult.setContent(apiOutput);
+			setResult(apiOutput);
 		}
 	}
 
@@ -730,7 +733,7 @@ public class ApiUIRunner extends ApiRunner {
 		
 		final String output = runApi(progID);
 
-		mpnlResult.setContent(output);
+		setResult(output);
 
 		accordionMain.setExpandedPane(accordResult);
 		// } finally {
@@ -738,6 +741,16 @@ public class ApiUIRunner extends ApiRunner {
 		// pnlWait.toBack();
 		// pnlWait.setVisible(false);
 		// }
+	}
+
+	private void setResult(final String output)
+			throws ParserConfigurationException, SAXException, IOException {
+		mpnlResult.setContent(output);
+		
+		if (output != null && output.length() > 0) {
+			Document outputDoc = XmlUtil.getDocument(output);
+			xmlViewerResult.loadXmlData(outputDoc);
+		}
 	}
 
 	private String runApi(String progID) throws Exception,

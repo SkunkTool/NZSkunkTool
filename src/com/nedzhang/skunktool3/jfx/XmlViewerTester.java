@@ -20,6 +20,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
@@ -36,13 +37,11 @@ public class XmlViewerTester extends Application {
     	
 //    	XmlViewer viewer = new XmlViewer();
     	
-		Document dataDoc = XmlUtil.getDocument(this.getClass().getResourceAsStream("/com/nedzhang/skunktool3/widget/user_list.xml"));
+		Document dataDoc = XmlUtil.getDocument(this.getClass().getResourceAsStream("/com/nedzhang/skunktool3/widget/user_list_2.xml"));
 		
 //		XmlViewerSource dataViewerSource = XmlViewerSource.createViewerSource(dataDoc);
 		
 //		XmlViewer viwer = new XmlViewer();
-
-    	
 
         Scene scene = new Scene(root);
         
@@ -54,9 +53,20 @@ public class XmlViewerTester extends Application {
         
         stage.show();
         
-        XmlViewer viewer = XmlViewer.createXmlViwer(dataDoc);
-    	
-    	root.setContent(viewer);
+        AnchorPane aPane = new AnchorPane();
+        
+        XmlViewer viewer = new XmlViewer();
+        
+        viewer.loadXmlData(dataDoc);
+        
+        AnchorPane.setLeftAnchor(viewer, 0.0);
+        AnchorPane.setRightAnchor(viewer, 0.0);
+        AnchorPane.setTopAnchor(viewer, 0.0);
+        AnchorPane.setBottomAnchor(viewer, 0.0);
+        
+        aPane.getChildren().add(viewer);
+        
+    	root.setContent(aPane);
         
         // There might be some thread leak from controls that prevents the application 
         // from closing. So I have to call a System.exit(0) at the end

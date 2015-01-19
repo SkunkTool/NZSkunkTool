@@ -116,29 +116,27 @@
             </AnchorPane>
           </content>
         </TitledPane>
-        <TitledPane fx:id="accordResult" animated="false" expanded="false" text="Result">
-          <content>
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-              <TabPane prefHeight="-1.0" prefWidth="-1.0" side="BOTTOM" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-              <tabs>
-              	<Tab text="Result Raw">
-              		<content>
-	              		<MaterialPanel fx:id="mpnlResult" onLoadContent="#onResultLoadContent" onSaveContent="#onResultSaveContent" prefHeight="398.0" prefWidth="632.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-	              	</content>          	
-              	</Tab>
-				<Tab text="Xml Viewer">
-					<content>
-						<VBox>
-							<Label text="Xml Viewer goes here" />
-							<XmlViewer />
-						</VBox>
-					</content>
-				</Tab>
-              </tabs>
-              </TabPane>
-            </AnchorPane>
-          </content>
-        </TitledPane>
+		<TitledPane fx:id="accordResult" animated="false" expanded="false"
+			text="Result">
+			<content>
+				<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+					<children>
+						<MaterialPanel fx:id="mpnlResult" onLoadContent="#onResultLoadContent"
+							onSaveContent="#onResultSaveContent" prefHeight="398.0" prefWidth="632.0"
+							AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+							AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+						<!-- <TabPane prefHeight="-1.0" prefWidth="-1.0" side="BOTTOM" tabClosingPolicy="UNAVAILABLE" 
+							AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" 
+							AnchorPane.topAnchor="0.0"> <tabs> <Tab text="Result Raw"> <content> <MaterialPanel 
+							fx:id="mpnlResult" onLoadContent="#onResultLoadContent" onSaveContent="#onResultSaveContent" 
+							prefHeight="398.0" prefWidth="632.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" 
+							AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" /> </content> </Tab> 
+							<Tab text="Xml Viewer"> <content> <VBox> <Label text="Xml Viewer goes here" 
+							/> <XmlViewer /> </VBox> </content> </Tab> </tabs> </TabPane> -->
+					</children>
+				</AnchorPane>
+			</content>
+		</TitledPane>
         <TitledPane fx:id="accordMultiApiRun" animated="false" expanded="false" text="MultiApi Run">
           <content>
             <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
