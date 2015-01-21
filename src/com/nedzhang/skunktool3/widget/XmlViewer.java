@@ -17,6 +17,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableColumn.CellDataFeatures;
@@ -184,8 +185,8 @@ public class XmlViewer extends VBox {
 	public XmlViewer() throws IllegalArgumentException,
 			ParserConfigurationException, SAXException, IOException {
 		
-		Document sampleDoc = XmlUtil.getDocument(this.getClass().getResourceAsStream("user_list.xml"));
-		loadXmlData(sampleDoc);
+//		Document sampleDoc = XmlUtil.getDocument(this.getClass().getResourceAsStream("user_list.xml"));
+//		loadXmlData(sampleDoc);
 		
 	}
 
@@ -331,6 +332,9 @@ public class XmlViewer extends VBox {
 			}
 
 			table.getColumns().addAll(columns);
+			
+			table.getSelectionModel().setCellSelectionEnabled(true);
+			table.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
 
 			return table;
 		} else {

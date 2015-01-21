@@ -16,29 +16,47 @@
 	<property name="properties.dst.dir" value="${dist.dir}/properties" />
 
 	<property name="jar.file" value="${dist.dir}/nzskunktool3.jar" />
-	
+
 	<property name="dist.zip.file" value="${dist.dir}/nzskunktool3.zip" />
+
+	<!--<property name="sterlingUtil.home" value="../../com.nedzhang.sterlingUtil" />-->
 
 	<target name="do-custom-init">
 		<delete dir="${dist.dir}" />
 	</target>
+
+	<!--
+	<target name="do-build-lib">
+		<subant target="jar">
+			<fileset dir="${sterlingUtil.home}" includes="build.xml"/>
+		</subant>
+	</target>
+	-->
 
 	<target name="do-custom-dist" depends="do-custom-init, do-deploy" description="customer distribution build">
 
 		<!--
 		<delete dir="${resource.dst.dir}" />
 		<delete dir="${properties.dst.dir}" />
+		<delete dir="${dist.dir}/lib_ear" />
 		-->
-
+		
 		<copy todir="${resource.dst.dir}">
 			<fileset dir="${resource.src.dir}">
 				<include name="*" />
+				<exclude name="skunkwerk_support_tool.properties" />
+			</fileset>
+			<fileset dir="../build">
+				<include name="skunkwerk_support_tool.properties" />
 			</fileset>
 		</copy>
 
 		<copy todir="${dist.dir}/lib_app">
 			<fileset dir="../lib">
-				<include name="*" />
+				<include name="httpclient-4.2.5.jar" />
+				<include name="httpcore-4.2.4.jar" />
+				<include name="commons-logging-1.1.1.jar" />
+				<include name="commons-codec-1.6.jar" />
 			</fileset>
 		</copy>
 
@@ -49,23 +67,41 @@
 		</copy>
 
 		<mkdir dir="${properties.dst.dir}" />
-		<!--
+		
 		<copy todir="${properties.dst.dir}">
-			<fileset dir="${properties.src.dir}">
-				<include name="*" />
+			<fileset dir="../lib">
+				<include name="PUT_PROPERTIES_FILE_HERE.txt" />
 			</fileset>
 		</copy>
-		-->
-
-		<mkdir dir="${dist.dir}/lib_ear" />
 
 		<copy todir="dist">
 			<fileset dir="../build">
 				<include name="skunktool3.sh" />
 				<include name="skunktool3.bat" />
+				<include name="README.txt" />
 			</fileset>
 		</copy>
 
+		<mkdir dir="${dist.dir}/lib_ear" />
+		
+		<copy todir="${dist.dir}/lib_ear">
+			<fileset dir="../build">
+				<include name="PUT_JAR_FROM_SMCFS_EAR_HERE.txt" />
+				<include name="dummy.jar" />
+			</fileset>
+		</copy>
+		
+		
+		
+		<mkdir dir="${properties.dst.dir}" />
+		
+		<copy todir="${properties.dst.dir}">
+			<fileset dir="../build">
+				<include name="PUT_PROPERTIES_FILE_HERE.txt" />
+			</fileset>
+		</copy>
+
+		<mkdir dir="${dist.dir}/properties" />
 		<zip destfile="${dist.zip.file}">
 			<zipfileset dir="${dist.dir}" prefix="nzskunktool3" >
 				<exclude name="${dist.zip.file}"/>

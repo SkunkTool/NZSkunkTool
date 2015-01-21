@@ -5,6 +5,7 @@ package com.nedzhang.skunktool3.widget;
 
 
 import com.nedzhang.skunktool3.ApplicationProperty;
+import com.nedzhang.skunktool3.SkunkSetting;
 import com.nedzhang.skunktool3.apiRunner.DialogMaterialManager;
 import com.nedzhang.skunktool3.apiRunner.entity.ApiMaterialType;
 import com.nedzhang.skunktool3.apiRunner.entity.MultiApiElement;
@@ -20,6 +21,7 @@ import com.nedzhang.util.Pair;
 import com.nedzhang.util.TextFileUtil;
 import com.nedzhang.util.XPathUtil;
 import com.nedzhang.util.XmlUtil;
+import com.sun.glass.ui.Application;
 
 import java.awt.TextArea;
 import java.awt.im.InputContext;
@@ -198,7 +200,7 @@ public class ApiTextRunner extends ApiRunner{
 	
 	// private final ApiRunnerData dataModel;
 
-	private final String apiJavaDocBasePath;
+//	private final String apiJavaDocBasePath;
 
 	private EventHandler<CbxApiNameLostFocusEvent> cbxApiLostEventHandler;
 	
@@ -250,8 +252,7 @@ public class ApiTextRunner extends ApiRunner{
 		
 //		testHarnessDefinition = testHarnessDoc;
 
-		apiJavaDocBasePath = ApplicationProperty
-				.get("STERLING_API_JAVADOC_URL");
+//		apiJavaDocBasePath = SkunkSetting.getInstance().STERLING_API_JAVADOC_URL;
 
 //		userInputControls = new ArrayList<Control>();
 		
@@ -435,7 +436,7 @@ public class ApiTextRunner extends ApiRunner{
 
 		if (apiList.containsKey(apiName)) {
 
-			String docPath = apiJavaDocBasePath
+			String docPath = SkunkSetting.getInstance().STERLING_API_JAVADOC_URL
 					+ apiList.get(apiName).getDocPage();
 
 			if (docPath.toLowerCase().startsWith("http://")) {
@@ -728,31 +729,5 @@ public class ApiTextRunner extends ApiRunner{
 		mpnlMultipApiResult.setContent(multiApiOutput);
 
 		tabMultiApi.getSelectionModel().select(3);
-	}
-
-
-	private String transformImp(final String xmlString, final String xsltString)
-			throws TransformerException {
-
-		final TransformerFactory factory = TransformerFactory.newInstance();
-
-		final Reader xsltReader = new StringReader(xsltString);
-
-		final Source xslt = new StreamSource(xsltReader);
-		final Transformer transformer = factory.newTransformer(xslt);
-
-		final Reader xmlReader = new StringReader(xmlString);
-
-		final Source xml = new StreamSource(xmlReader);
-
-		final Writer resultWriter = new StringWriter();
-
-		final Result result = new StreamResult(resultWriter);
-
-		transformer.transform(xml, result);
-
-		final String resultString = resultWriter.toString();
-
-		return resultString;
 	}
 }

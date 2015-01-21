@@ -5,6 +5,7 @@ import java.io.StringReader;
 
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.Source;
+import javax.xml.transform.TransformerException;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamSource;
 import javax.xml.xpath.XPathConstants;
@@ -29,60 +30,87 @@ public class ApiExecutor {
 
 	}
 
+//	public static String executeApi(final String interopUrl,
+//			final boolean useHttp, final String userID, final String password,
+//			final String progID, final Document testHarnessDefinition,
+//			final Document userInpDocument,
+//			final boolean verboseMode)
+//			throws ParserConfigurationException, SAXException, IOException,
+//			Exception {
+//
+//		final Node inputTransformNode = XPathUtil.selectSingleNode("ApiExecutor.executeApi",
+//				"/TestHarness/Api/Input/InputTransform/*", testHarnessDefinition);
+//
+//		final Element apiNode = (Element) XPathUtil.selectSingleNode("ApiExecutor.executeApi",
+//				"/TestHarness/Api", testHarnessDefinition);
+//
+//		final String serviceName = apiNode.getAttribute("FlowName");
+//		final String apiName = apiNode.getAttribute("Name");
+//
+//
+//		final Node outputTemplateNode = XPathUtil.selectSingleNode("ApiExecutor.executeApi",
+//				"/TestHarness/Api/Output/Template/*", testHarnessDefinition);
+//		
+//		return executeApi(interopUrl, useHttp, userID, password, progID, apiName, serviceName, 
+//				userInpDocument, inputTransformNode, outputTemplateNode, verboseMode); 
+//
+//	}
+
 	public static String executeApi(final String interopUrl,
 			final boolean useHttp, final String userID, final String password,
-			final String progID, final Document testHarnessDefinition,
-			final Document userInput, final boolean verboseMode)
-			throws ParserConfigurationException, SAXException, IOException,
-			Exception {
-
-		final Node inputTransformNode = selectNode(testHarnessDefinition,
-				"/TestHarness/Api/Input/InputTransform/*");
-
+			final String progID, final String apiName, final String serviceName,
+			final Document inputDocument, final Node inputTransformNode,
+			final Node outputTemplateNode, final Node outputTransformNode, final boolean verboseMode)
+			throws TransformerException, Exception,
+			ParserConfigurationException, SAXException, IOException {
+		
+		boolean isFlow;
+		String apiToCall;
+		
+		if (serviceName != null && serviceName.length() > 0) {
+			isFlow = true;
+			apiToCall = serviceName;
+		} else {
+			isFlow = false;
+			apiToCall = apiName;
+			
+		}
+		
 		String apiInputTransformerString = XmlUtil.getXmlString(inputTransformNode);
 		
 		final Source xsltSource = 
 				new StreamSource(new StringReader(apiInputTransformerString));
 		
-		final Source xmlSource = new DOMSource(userInput);
+		final Source xmlSource = new DOMSource(inputDocument);
 
 		// TODO: see if we can cache the transformer
 		final String apiInput = XsltTransformerManager.transformToString(
 				xsltSource, xmlSource, null);
-
-		final Element apiNode = (Element) selectNode(testHarnessDefinition,
-				"/TestHarness/Api");
-
-		final String serviceName = apiNode.getAttribute("FlowName");
-		boolean isFlow;
-		String apiName;
-
-		if (serviceName != null && serviceName.length() > 0) {
-			isFlow = true;
-			apiName = serviceName;
-		} else {
-			isFlow = false;
-			apiName = apiNode.getAttribute("Name");
-		}
-
-		final Node outputTemplateNode = selectNode(testHarnessDefinition,
-				"/TestHarness/Api/Output/Template/*");
+		
 		final String outputTemplate = XmlUtil.getXmlString(outputTemplateNode);
 
-		return executeApi(interopUrl, useHttp, userID, password, progID,
-				apiName, isFlow, apiInput, outputTemplate, verboseMode);
+		String apiResult = executeApi(interopUrl, useHttp, userID, password, progID,
+				apiToCall, isFlow, apiInput, outputTemplate, verboseMode);
+		
+		if (outputTransformNode != null) {
+			
+			String outInputTransformerString = XmlUtil.getXmlString(outputTransformNode);
+			
+			final Source outXsltSource = 
+					new StreamSource(new StringReader(outInputTransformerString));
+			
+			final Source apiResultSource = new StreamSource(new StringReader(apiResult));
+
+			// TODO: see if we can cache the transformer
+			final String transformedOutput = XsltTransformerManager.transformToString(
+					outXsltSource, apiResultSource, null);
+			
+			return transformedOutput;
+		} else {
+			return apiResult;
+		}
 	}
-
-	private static Node selectNode(final Node node, final String xpath)
-			throws XPathExpressionException {
-		final XPathExpression apiExpression = XPathUtil.getXPathExpression(
-				"ApiExector.selectNode", xpath);
-
-		final Node target = (Node) apiExpression.evaluate(node,
-				XPathConstants.NODE);
-
-		return target;
-	}
+	
 
 	public static String executeApi(final String interopUrl,
 			final boolean useHttp, final String userID, final String password,
@@ -126,6 +154,17 @@ public class ApiExecutor {
 
 	}
 
+//	private static Node selectNode(final Node node, final String xpath)
+//			throws XPathExpressionException {
+//		final XPathExpression apiExpression = XPathUtil.getXPathExpression(
+//				"ApiExector.selectNode", xpath);
+//
+//		final Node target = (Node) apiExpression.evaluate(node,
+//				XPathConstants.NODE);
+//
+//		return target;
+//	}
+	
 	private static String displayAsterix(final String stringToHide) {
 
 		if (stringToHide == null || stringToHide.length() == 0) {

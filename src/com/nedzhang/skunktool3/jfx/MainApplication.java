@@ -30,7 +30,7 @@ public class MainApplication extends Application {
     	Parent root = FXMLLoader.load(getClass().getResource("/com/nedzhang/skunktool3/apiRunner/ApiRunnerWindow.fxml"));
 
         Scene scene = new Scene(root);
-        
+        scene.getStylesheets().add(this.getClass().getResource("/DatePicker.css").toExternalForm());
         stage.setScene(scene);
         
         stage.getIcons().add(new Image(this.getClass().getResourceAsStream("/Skunk-icon.png")));

@@ -1,0 +1,1 @@
+If you want to run the tester in agent mode (connect directly to database), put jars from smcfs.ear in this folder.

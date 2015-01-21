@@ -17,6 +17,7 @@ import org.w3c.dom.Element;
 import org.xml.sax.SAXException;
 
 import com.nedzhang.skunktool3.ApplicationProperty;
+import com.nedzhang.skunktool3.SkunkSetting;
 import com.nedzhang.skunktool3.apiRunner.FileStore.MaterialStore;
 import com.nedzhang.skunktool3.apiRunner.entity.ApiMaterial;
 import com.nedzhang.skunktool3.apiRunner.entity.ApiMaterialType;
@@ -77,10 +78,7 @@ public class ApiRunnerWindow extends Window implements Initializable {
 	@FXML
 	private Button btnLoadApiTester;
 	
-	private DraggableTab currentTab = null;
-
-	private boolean testerMode = false;
-	
+	private DraggableTab currentTab = null;	
 	
 	@Override
 	public void initialize(URL paramURL, ResourceBundle paramResourceBundle) {
@@ -104,12 +102,8 @@ public class ApiRunnerWindow extends Window implements Initializable {
 				tpanConnectionSetting.setMinHeight(newValue ? CONNECTION_MIN_HEIGHT_MAXIMIZED : CONNECTION_MIN_HEIGHT_MINIMIZED);
 			}
 		});
-		
-		String verboseModeString = ApplicationProperty.get("TESTER_MODE");
-		
-		testerMode = Boolean.valueOf(verboseModeString);
 
-		if (testerMode) {
+		if (SkunkSetting.getInstance().TESTER_MODE) {
 			btnLoadApiTester.setDisable(false);
 		}
 		
@@ -130,8 +124,7 @@ public class ApiRunnerWindow extends Window implements Initializable {
 	}
 
 	private static String[] getHttpTesterUrl() {
-		String urlsInOneString = ApplicationProperty
-				.get("STERLING_INTEROP_URL");
+		String urlsInOneString = SkunkSetting.getInstance().STERLING_INTEROP_URL;
 
 		if (urlsInOneString != null && urlsInOneString.length() > 0) {
 			return urlsInOneString.split("\\s");
@@ -146,8 +139,7 @@ public class ApiRunnerWindow extends Window implements Initializable {
 		
 //		String[] harnessFiles = ResourceUtil.getResourceListing(this.getClass(), PATH_TEST_HARNESS);
 		
-		String harnessNamesInOnString = ApplicationProperty
-				.get("HARNESS_TO_LOAD");
+		String harnessNamesInOnString = SkunkSetting.getInstance().HARNESS_TO_LOAD;
 		
 		if (harnessNamesInOnString != null && harnessNamesInOnString.length() > 0) {
 			
@@ -190,26 +182,31 @@ public class ApiRunnerWindow extends Window implements Initializable {
 		boolean isAddNewSelected = tabAddNew.isSelected();
 
 		if (isAddNewSelected) {
-			if (testerMode) {
-				crateNewApiTab();
-			} else {
-				createNewApiUiForm();
-			}
+			createNewApiUiForm();
+//			if (SkunkSetting.getInstance().TESTER_MODE) {
+//				crateNewApiTab();
+//			} else {
+//				createNewApiUiForm();
+//			}
 		}
 	}
 
 	@FXML
+	/***
+	 * Load API GUI Form
+	 */
 	private void onBtnLoadFormClicked(MouseEvent event) throws IllegalArgumentException, IOException, ParserConfigurationException, SAXException {
-//		crateNewApiTab(null);
 		createNewApiUiForm();
 	}
 	
 	@FXML
+	/***
+	 * Load API Tester
+	 */
 	private void onBtnLoadTesterClicked(MouseEvent event) {
 		crateNewApiTab();
 
 	}
-	
 	
 	private void createNewApiUiForm() throws IllegalArgumentException, ParserConfigurationException, SAXException, IOException {
 		
@@ -220,6 +217,7 @@ public class ApiRunnerWindow extends Window implements Initializable {
 
 	private void createApiUIForm(String input)
 			throws ParserConfigurationException, SAXException, IOException {
+		
 		if (input != null && input.length() > 0) {
 			
 			final DraggableTab newTabToAdd = new DraggableTab();
@@ -228,12 +226,16 @@ public class ApiRunnerWindow extends Window implements Initializable {
 			
 			Element testHarnessElement = (Element) XmlUtil.getChildNodeByName(harnessDefinition, "TestHarness", false);
 			
-			String tabName = testHarnessElement.getAttribute("Label");
+			String tabLabel = testHarnessElement.getAttribute("Label");
 			
-			tabName = (tabName == null || tabName.length() == 0) ? "Api Input Form" : tabName;
+			tabLabel = (tabLabel == null || tabLabel.length() == 0) ? "Api Input Form" : tabLabel;
 			
-			newTabToAdd.setLabelText(tabName);
+			newTabToAdd.setLabelText(tabLabel);
 
+			String tabName = testHarnessElement.getAttribute("Name");
+			
+			tabName = (tabName == null || tabName.length() == 0) ? "api_form" : tabName;
+			
 			
 			ApiRunner newRunner = new ApiUIRunner(tabName, harnessDefinition);
 

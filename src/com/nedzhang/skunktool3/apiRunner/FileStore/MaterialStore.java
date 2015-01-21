@@ -15,6 +15,7 @@
 package com.nedzhang.skunktool3.apiRunner.FileStore;
 
 import com.nedzhang.skunktool3.ApplicationProperty;
+import com.nedzhang.skunktool3.SkunkSetting;
 import com.nedzhang.skunktool3.apiRunner.entity.ApiMaterial;
 import com.nedzhang.skunktool3.apiRunner.entity.ApiMaterialType;
 
@@ -28,7 +29,7 @@ import java.util.Map;
 public class MaterialStore {
 
 
-	private static String fileStorePath;
+//	private static String fileStorePath;
 
 	// private static File inputFileStoreFolder;
 	// private static File outputTemplateFileStoreFolder;
@@ -44,9 +45,8 @@ public class MaterialStore {
 	private static Map<ApiMaterialType, File> materialFolderMap;
 
 	{
-		fileStorePath = ApplicationProperty.get("FILE_STORE_PATH");
 
-		final File fileStoreFolder = new File(fileStorePath);
+		final File fileStoreFolder = new File(SkunkSetting.getInstance().FILE_STORE_PATH);
 
 		if (!fileStoreFolder.exists()) {
 			fileStoreFolder.mkdir();

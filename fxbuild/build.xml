@@ -20,479 +20,89 @@
 		<mkdir dir="externalLibs" />
 		
 		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="wmsbe.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="tools.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="ycdfop.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="cmgt-base64.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="vasbe.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="smcfsshared.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="ycdshared.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="ezmorph-1.0.4.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="sbibe.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib">
-				<filename name="AutoFillTextBox.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="commons-io-1.4.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="properties.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="install_foundation.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="ypmbe.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="smcfsiconsbe.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="ycdclientbe.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="commons-betwixt-0.8.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="saauishared.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="platform_afc.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="cmgt-ariesPorting.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="platform_afc_ui_impl_be.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="yscpbe.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="xalan.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="comm.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="owasp-esapi-full-java-1.4.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib">
-				<filename name="httpmime-4.2.5.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="commons-pool-1.4.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="ehcache-core-2.0.1.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="commons-fileupload-1.2.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="lucene-spellchecker-2.4.0.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib">
-				<filename name="httpclient-cache-4.2.5.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="uishared.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="platform_sma_app_be.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib">
-				<filename name="commons-logging-1.1.1.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="icu4j.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="xercesImpl.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="sic_appbe.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="serializer.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="platform_activity.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="yscwbe.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="slf4j-api-1.5.6.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="scecoreshared.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="commons-net-1.4.1.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="lucene-demos-2.4.0.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="jakarta-oro-2.0.8.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="commons-logging-1.0.4.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="cmgt-configuredItem.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="commons-digester-1.8.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="lucene-core-2.4.0.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="lucene-queries-2.4.0.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib">
-				<filename name="httpcore-4.2.4.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="xapi.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="platform_uifwk_ide_be.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="resources.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="backport-util-concurrent.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="ycmbe.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="dom4j.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="yompbe.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="scecoreicons.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="soap.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="commons-beanutils.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="cmgt-rulesEngine.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="yicbe.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="sbc_be.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="ydmbe.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="xml-apis.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib">
-				<filename name="commons-codec-1.6.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="entities.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="JSON4J_Apache.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="sbishared.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="ycdbe.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="sicbe.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="concurrent.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="smcfsicons.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="ycdbridge.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="lucene-snowball-2.4.0.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="platform_baseutils.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="log4j-1.2.15.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="ycdjasper.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="ycsbe.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="yimbe.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib">
-				<filename name="fluent-hc-4.2.5.jar"/>	
-			</fileset>
-		</copy>
-		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib">
+			<fileset dir="/mnt/data_disk/nzhang/workspace/com.nedzhang.sterlingUtil/lib">
 				<filename name="httpclient-4.2.5.jar"/>	
 			</fileset>
 		</copy>
 		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="platform_uifwk_be.jar"/>	
+			<fileset dir="/mnt/data_disk/nzhang/workspace/com.nedzhang.sterlingUtil/lib_ear">
+				<filename name="xapi.jar"/>	
 			</fileset>
 		</copy>
 		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="cmgt-configurator.jar"/>	
+			<fileset dir="/mnt/data_disk/nzhang/workspace/com.nedzhang.sterlingUtil/lib">
+				<filename name="httpcore-4.2.4.jar"/>	
 			</fileset>
 		</copy>
 		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="lucene-analyzers-2.4.0.jar"/>	
+			<fileset dir="/mnt/data_disk/nzhang/workspace/com.nedzhang.sterlingUtil/lib_ear">
+				<filename name="sbishared.jar"/>	
 			</fileset>
 		</copy>
 		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="commons-collections-3.2.jar"/>	
+			<fileset dir="/mnt/data_disk/nzhang/workspace/com.nedzhang.sterlingUtil/lib_ear">
+				<filename name="smcfsshared.jar"/>	
 			</fileset>
 		</copy>
 		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="platform_dv.jar"/>	
+			<fileset dir="/mnt/data_disk/nzhang/workspace/com.nedzhang.sterlingUtil/lib_ear">
+				<filename name="scecoreshared.jar"/>	
 			</fileset>
 		</copy>
 		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="commons-lang-2.1.jar"/>	
+			<fileset dir="/mnt/data_disk/nzhang/workspace/com.nedzhang.sterlingUtil/lib_ear">
+				<filename name="platform_afc_ui_impl_be.jar"/>	
 			</fileset>
 		</copy>
 		<copy todir="externalLibs">
-			<fileset dir="${basedir}/../lib_ear">
-				<filename name="mail.jar"/>	
+			<fileset dir="/mnt/data_disk/nzhang/workspace/com.nedzhang.sterlingUtil/lib_ear">
+				<filename name="platform_afc.jar"/>	
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="/mnt/data_disk/nzhang/workspace/com.nedzhang.skunktool3/lib">
+				<filename name="httpclient-4.2.5.jar"/>	
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="/mnt/data_disk/nzhang/workspace/com.nedzhang.sterlingUtil/lib_ear">
+				<filename name="ycdshared.jar"/>	
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="/mnt/data_disk/nzhang/workspace/com.nedzhang.skunktool3/lib">
+				<filename name="httpcore-4.2.4.jar"/>	
 			</fileset>
 		</copy>
 		
 		<mkdir dir="project" />
 		<copy todir="project">
-			<fileset dir="${basedir}/../">
+			<fileset dir="/mnt/data_disk/nzhang/workspace/com.nedzhang.skunktool3">
+				<include name="resource/**" />
+			</fileset>
+		</copy>
+		<copy todir="project">
+			<fileset dir="/mnt/data_disk/nzhang/workspace/com.nedzhang.skunktool3">
 				<include name="image/**" />
 			</fileset>
 		</copy>
 		<copy todir="project">
-			<fileset dir="${basedir}/../">
-				<include name="src_sterlingUtil/**" />
-			</fileset>
-		</copy>
-		<copy todir="project">
-			<fileset dir="${basedir}/../">
-				<include name="src_util/**" />
-			</fileset>
-		</copy>
-		<copy todir="project">
-			<fileset dir="${basedir}/../">
+			<fileset dir="/mnt/data_disk/nzhang/workspace/com.nedzhang.skunktool3">
 				<include name="src/**" />
 			</fileset>
 		</copy>
 		
 		<mkdir dir="projectRefs" />
+		<copy todir="projectRefs">
+			<fileset dir="/mnt/data_disk/nzhang/workspace">
+				<include name="com.nedzhang.sterlingUtil/src/**" />
+			</fileset>
+		</copy>
+		<copy todir="projectRefs">
+			<fileset dir="/mnt/data_disk/nzhang/workspace">
+				<include name="com.nedzhang.sterlingUtil/src_util/**" />
+			</fileset>
+		</copy>
 	</target>
 	<target name='do-compile'>
 		<delete dir="build" />
@@ -503,109 +113,33 @@
 		<!-- Copy project-libs references -->
 		<copy todir="build/libs">
 			<fileset dir="externalLibs">
-				<include name="yscpbe.jar"/>
-				<include name="platform_baseutils.jar"/>
-				<include name="xalan.jar"/>
-				<include name="commons-collections-3.2.jar"/>
-				<include name="ehcache-core-2.0.1.jar"/>
-				<include name="sicbe.jar"/>
-				<include name="commons-io-1.4.jar"/>
-				<include name="xapi.jar"/>
-				<include name="tools.jar"/>
-				<include name="backport-util-concurrent.jar"/>
-				<include name="wmsbe.jar"/>
 				<include name="httpclient-4.2.5.jar"/>
-				<include name="jakarta-oro-2.0.8.jar"/>
-				<include name="resources.jar"/>
-				<include name="platform_uifwk_be.jar"/>
-				<include name="httpcore-4.2.4.jar"/>
-				<include name="commons-betwixt-0.8.jar"/>
-				<include name="cmgt-rulesEngine.jar"/>
-				<include name="owasp-esapi-full-java-1.4.jar"/>
-				<include name="commons-logging-1.1.1.jar"/>
-				<include name="lucene-demos-2.4.0.jar"/>
-				<include name="ypmbe.jar"/>
-				<include name="smcfsiconsbe.jar"/>
-				<include name="cmgt-base64.jar"/>
-				<include name="lucene-snowball-2.4.0.jar"/>
-				<include name="lucene-queries-2.4.0.jar"/>
-				<include name="yicbe.jar"/>
-				<include name="commons-pool-1.4.jar"/>
-				<include name="yompbe.jar"/>
-				<include name="ycdfop.jar"/>
-				<include name="soap.jar"/>
-				<include name="commons-logging-1.0.4.jar"/>
-				<include name="slf4j-api-1.5.6.jar"/>
-				<include name="mail.jar"/>
-				<include name="smcfsicons.jar"/>
-				<include name="yscwbe.jar"/>
-				<include name="fluent-hc-4.2.5.jar"/>
-				<include name="ycdclientbe.jar"/>
-				<include name="commons-beanutils.jar"/>
-				<include name="platform_dv.jar"/>
-				<include name="lucene-spellchecker-2.4.0.jar"/>
-				<include name="commons-codec-1.6.jar"/>
-				<include name="commons-fileupload-1.2.jar"/>
-				<include name="xml-apis.jar"/>
-				<include name="concurrent.jar"/>
-				<include name="platform_activity.jar"/>
-				<include name="xercesImpl.jar"/>
-				<include name="platform_uifwk_ide_be.jar"/>
-				<include name="platform_sma_app_be.jar"/>
-				<include name="sbishared.jar"/>
-				<include name="ycmbe.jar"/>
-				<include name="commons-digester-1.8.jar"/>
-				<include name="yimbe.jar"/>
-				<include name="install_foundation.jar"/>
-				<include name="ycdbridge.jar"/>
-				<include name="lucene-core-2.4.0.jar"/>
-				<include name="httpclient-cache-4.2.5.jar"/>
-				<include name="platform_afc.jar"/>
-				<include name="smcfsshared.jar"/>
-				<include name="ezmorph-1.0.4.jar"/>
-				<include name="sbibe.jar"/>
-				<include name="JSON4J_Apache.jar"/>
-				<include name="ycdshared.jar"/>
-				<include name="commons-net-1.4.1.jar"/>
-				<include name="httpmime-4.2.5.jar"/>
-				<include name="saauishared.jar"/>
-				<include name="cmgt-configurator.jar"/>
-				<include name="ycdjasper.jar"/>
-				<include name="ydmbe.jar"/>
-				<include name="dom4j.jar"/>
-				<include name="sbc_be.jar"/>
-				<include name="commons-lang-2.1.jar"/>
-				<include name="lucene-analyzers-2.4.0.jar"/>
-				<include name="ycdbe.jar"/>
-				<include name="icu4j.jar"/>
-				<include name="uishared.jar"/>
-				<include name="ycsbe.jar"/>
-				<include name="sic_appbe.jar"/>
-				<include name="comm.jar"/>
-				<include name="log4j-1.2.15.jar"/>
 				<include name="scecoreshared.jar"/>
-				<include name="cmgt-configuredItem.jar"/>
-				<include name="entities.jar"/>
-				<include name="serializer.jar"/>
-				<include name="scecoreicons.jar"/>
-				<include name="AutoFillTextBox.jar"/>
+				<include name="xapi.jar"/>
+				<include name="sbishared.jar"/>
+				<include name="httpcore-4.2.4.jar"/>
+				<include name="platform_afc.jar"/>
+				<include name="ycdshared.jar"/>
 				<include name="platform_afc_ui_impl_be.jar"/>
-				<include name="vasbe.jar"/>
-				<include name="properties.jar"/>
-				<include name="cmgt-ariesPorting.jar"/>
+				<include name="smcfsshared.jar"/>
 			</fileset>
 		</copy>
 	
 		<!-- Copy project references -->
-	
-		<!-- Copy project sources itself -->
 		<copy todir="build/src">
-			<fileset dir="project/src_sterlingUtil">
+			<fileset dir="projectRefs/com.nedzhang.sterlingUtil/src_util">
 				<include name="**/*"/>
 			</fileset>
 		</copy>
 		<copy todir="build/src">
-			<fileset dir="project/src_util">
+			<fileset dir="projectRefs/com.nedzhang.sterlingUtil/src">
+				<include name="**/*"/>
+			</fileset>
+		</copy>
+	
+		<!-- Copy project sources itself -->
+		<copy todir="build/src">
+			<fileset dir="project/resource">
 				<include name="**/*"/>
 			</fileset>
 		</copy>
@@ -626,17 +160,14 @@
 					<include name="*"/>
 				</fileset>
 				<filelist>
-					<file name="/home/nzhang/app/jdk1.7.0_51/jre/lib/jfxrt.jar"/>
+					<file name="/mnt/data_disk/nzhang/storage/app/jdk1.7.0_51/jre/lib/jfxrt.jar"/>
 				</filelist>
 			</classpath>
 		</javac>
 		
 		<!-- Copy over none Java-Files -->
 		<copy todir="build/classes">
-		<fileset dir="project/src_sterlingUtil">
-			<exclude name="**/*.java"/>
-		</fileset>
-		<fileset dir="project/src_util">
+		<fileset dir="project/resource">
 			<exclude name="**/*.java"/>
 		</fileset>
 		<fileset dir="project/image">
@@ -647,6 +178,16 @@
 		</fileset>
 		</copy>
 	
+		<copy todir="build/classes">
+			<fileset dir="projectRefs/com.nedzhang.sterlingUtil/src_util">
+				<exclude name="**/*.java"/>
+			</fileset>
+		</copy>
+		<copy todir="build/classes">
+			<fileset dir="projectRefs/com.nedzhang.sterlingUtil/src">
+				<exclude name="**/*.java"/>
+			</fileset>
+		</copy>
 	
 	</target>
 	<target name="do-deploy" depends="setup-staging-area, do-compile, init-fx-tasks">
@@ -687,7 +228,7 @@
 			<manifest>
 				<attribute name="Implementation-Vendor" value="NZ Werk"/>
 				<attribute name="Implementation-Title" value=""/>
-				<attribute name="Implementation-Version" value="2.0"/>
+				<attribute name="Implementation-Version" value="3.0"/>
 			</manifest>
 		</fx:jar>
 		

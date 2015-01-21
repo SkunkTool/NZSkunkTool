@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ASCII"?>
 <anttasks:AntTask xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:anttasks="http://at.bestsolution.efxclipse.tooling.jdt/1.0" buildDirectory="${project}/fxbuild">
   <deploy height="400" width="600" packagingFormat="none">
-    <application name="nzskunktool2" mainclass="com.nedzhang.skunktool2.jfx.MainApplication" version="2.0" toolkit="fx"/>
+    <application name="nzskunktool3" mainclass="com.nedzhang.skunktool3.jfx.MainApplication" version="3.0" toolkit="fx"/>
     <info vendor="NZ Werk"/>
   </deploy>
   <signjar/>
