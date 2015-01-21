@@ -1,0 +1,172 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<!-- XML Schema Generated from XML Document on Mon Jan 19 2015 21:54:03 
+		GMT-0600 (CST) -->
+	<!-- with XmlGrid.net Free Online Service http://xmlgrid.net -->
+	<xs:element name="TestHarness">
+		<xs:complexType>
+			<xs:attribute name="Name" type="xs:string"></xs:attribute>
+			<xs:attribute name="Label" type="xs:string"></xs:attribute>
+			<xs:sequence>
+				<xs:element name="Api">
+					<xs:complexType>
+						<xs:attribute name="Name" type="xs:string"></xs:attribute>
+						<xs:attribute name="FlowName" type="xs:string"></xs:attribute>
+						<xs:sequence>
+							<xs:element name="Input">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="InputForm">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="Field" maxOccurs="unbounded">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="Item" maxOccurs="unbounded">
+																	<xs:complexType>
+																		<xs:attribute name="Label" type="xs:string"></xs:attribute>
+																		<xs:attribute name="Value" type="xs:string"></xs:attribute>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+															<xs:attribute name="Type" type="xs:string"></xs:attribute>
+															<xs:attribute name="Name" type="xs:string"></xs:attribute>
+															<xs:attribute name="Label" type="xs:string"></xs:attribute>
+															<xs:attribute name="Default" type="xs:string"></xs:attribute>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="InputTransform">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="xsl:stylesheet">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="xsl:template">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="Order">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element name="xsl:attribute"
+																							maxOccurs="unbounded">
+																							<xs:complexType>
+																								<xs:sequence>
+																									<xs:element name="xsl:value-of">
+																										<xs:complexType>
+																											<xs:attribute name="select"
+																												type="xs:string"></xs:attribute>
+																										</xs:complexType>
+																									</xs:element>
+																								</xs:sequence>
+																								<xs:attribute name="name" type="xs:string"></xs:attribute>
+																							</xs:complexType>
+																						</xs:element>
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																		</xs:sequence>
+																		<xs:attribute name="match" type="xs:string"></xs:attribute>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+															<xs:attribute name="xmlns:xsl" type="xs:string"></xs:attribute>
+															<xs:attribute name="version" type="xs:int"></xs:attribute>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="Output">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Template">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="OrderList">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="Order">
+																	<xs:complexType>
+																		<xs:sequence>
+																			<xs:element name="OrderLines">
+																				<xs:complexType>
+																					<xs:sequence>
+																						<xs:element name="OrderLine"></xs:element>
+																					</xs:sequence>
+																				</xs:complexType>
+																			</xs:element>
+																		</xs:sequence>
+																	</xs:complexType>
+																</xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="Transformation">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="outputTransformationGoesHere"></xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="ChainedApi">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Api">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="Input">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="InputTransform">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="useThisToCreatInputXml"></xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="Output">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="Template">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="outputTemplateGoesHere"></xs:element>
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="Name" type="xs:string"></xs:attribute>
+									<xs:attribute name="FlowName" type="xs:string"></xs:attribute>
+									<xs:attribute name="Seq" type="xs:string"></xs:attribute>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

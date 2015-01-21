@@ -1,0 +1,49 @@
+<TestHarness Name="deleteOrder" Label="Delete Order">
+
+  <Api Name="deleteOrder" FlowName="">
+
+    <Input>
+
+      <InputUI>
+      	<Field Type="List" Name="EnterpriseCode" Label="Enterprise:" Default="COSTCO" Hint="Aurora for most testing">
+      		<Item Label="Aurora E Site" Value="Aurora" />
+      		<Item Label="Costco BD" Value="COSTCO_BD" />
+      		<Item Label="Costco" Value="COSTCO" />
+      	</Field>
+      	<Field Type="List" Size="" Name="DocumentType" Label="DocumentType:"
+          Default="0001">
+          <Item Label="Sales Order" Value="0001" />
+          <Item Label="Purchase Order" Value="0002" />
+          <Item Label="Return Order" Value="0003" />
+        </Field>
+        <Field Type="String" Size="24" Name="OrderNo" Label="Order Number:" />
+      </InputUI>
+
+      <InputTransform>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+  <xsl:template match="/InputForm">
+    <Order>
+      <xsl:attribute name="EnterpriseCode"><xsl:value-of select="EnterpriseCode" /></xsl:attribute>	
+      <xsl:attribute name="OrderNo"><xsl:value-of select="OrderNo" /></xsl:attribute>
+    </Order>
+  </xsl:template>
+</xsl:stylesheet>
+      </InputTransform>
+
+    </Input>
+
+    <Output>
+
+      <Template>
+       	<OrderList><Order><OrderLines><OrderLine/></OrderLines></Order></OrderList>
+      </Template>
+
+      <OutputTransform>
+        <!-- <outputTransformationGoesHere />-->
+      </OutputTransform>
+
+    </Output>
+  </Api>
+
+
+</TestHarness>

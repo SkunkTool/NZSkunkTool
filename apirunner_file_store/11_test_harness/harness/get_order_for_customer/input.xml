@@ -1,0 +1,56 @@
+<TestHarness Name="getCustomerOrder" Label="Get Customer Order">
+
+  <Api Name="getOrderList" FlowName="">
+
+    <Input>
+
+      <InputUI>
+      	<Field Type="List" Name="EnterpriseCode" Label="Enterprise:" Default="COSTCO_BD" Hint="COSTO_BD in most cases">
+      		<Item Label="Aurora E Site" Value="Aurora" />
+      		<Item Label="Costco BD" Value="COSTCO_BD" />
+      		<Item Label="Costco" Value="COSTCO" />
+      	</Field>
+        <Field Type="String" Size="24" Name="BillToID" Label="Customer ID:" />
+      </InputUI>
+      <InputTransform>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+  <xsl:template match="/InputForm">
+    <Order>
+      <xsl:attribute name="EnterpriseCode"><xsl:value-of select="EnterpriseCode" /></xsl:attribute>	
+      <xsl:attribute name="BillToID"><xsl:value-of select="BillToID" /></xsl:attribute>
+    </Order>
+  </xsl:template>
+</xsl:stylesheet>
+      </InputTransform>
+
+    </Input>
+
+    <Output>
+
+      <Template>
+       	<OrderList><Order><OrderLines><OrderLine/></OrderLines></Order></OrderList>
+      </Template>
+      
+
+    </Output>
+  </Api>
+
+    <Api Name="" FlowName="" Seq="">
+      <Input>
+        <InputTransform>
+          <useThisToCreatInputXml />
+        </InputTransform>
+
+      </Input>
+
+      <Output>
+
+        <Template>
+          <outputTemplateGoesHere />
+        </Template>
+
+      </Output>
+    </Api>
+
+
+</TestHarness>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Licensed Materials - Property of IBM
+     (C)Copyright IBM Corp. 2010, 2012 All Rights Reserved.
+     US Government Users Restricted Rights - Use, duplication or disclosure restricted by GSA ADP Schedule Contract with IBM Corp. -->
+
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+    <appender name="AEO" class="org.apache.log4j.RollingFileAppender">
+        <param name="MaxFileSize" value="5000KB" />
+        <param name="MaxBackupIndex" value="5" />
+        <param name="file" value="/opt/sterling/logs/AEO${LOG_DIRECTORY}.log" />
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d:%-7p:%t: %-60m [%X{AppUserId}]: %-25c{1}%n"/>
+        </layout>
+    </appender>
+
+    <appender name="LOGIN_CLIENT_IP_DETAILS" class="org.apache.log4j.RollingFileAppender">
+		<param name="MaxFileSize" value="2048KB"/>
+		<param name="MaxBackupIndex" value="2"/>
+		<param name="File" value="/opt/sterling/logs/login_ip_details.log"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d:%-7p:%t: %-60m: %-25c{1}%n"/>
+		</layout>
+	</appender>
+
+	<appender name="CONSOLE" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d:%-7p:%t: %-60m [%X{AppUserId}]: %-25c{1}%n"/>
+		</layout>
+		<!-- layout class="com.sterlingcommerce.woodstock.util.frame.logex.SCILayout" / -->
+	</appender>
+
+	<appender name="SECURITY_LOG_APPENDER" class="org.apache.log4j.RollingFileAppender">
+		<param name="MaxFileSize" value="2048KB"/>
+		<param name="MaxBackupIndex" value="2"/>
+		<param name="File" value="/opt/sterling/logs/securityinfo.log"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d:%-7p:%t: %-60m [%X{AppUserId}]: %-25c{1}%n"/>
+		</layout>
+	</appender>
+	
+	<category name="com.yantra" class="com.yantra.yfc.log.YFCLogCategory" additivity="false">
+		<level class="com.yantra.yfc.log.YFCLogLevel" value="ERROR"/>
+		<appender-ref ref="AEO"/>
+		<appender-ref ref="CONSOLE"/>
+</category>
+
+	<category name="com.ibm.aeo" additivity="false">
+		<priority class="com.yantra.yfc.log.YFCLogLevel" value="ERROR"/>
+		<appender-ref ref="AEO"/>
+		<appender-ref ref="CONSOLE"/>
+		</category>
+
+	<category name="com.sterlingcommerce" class="com.yantra.yfc.log.YFCLogCategory" additivity="false">
+		<level class="com.yantra.yfc.log.YFCLogLevel" value="ERROR"/>
+		<appender-ref ref="AEO"/>
+		<appender-ref ref="CONSOLE"/>
+	</category>
+
+	<category name="com.stercomm.SecurityLogger" class="com.yantra.yfc.log.YFCLogCategory" additivity="false">
+		<priority class="com.yantra.yfc.log.YFCLogLevel" value="ERROR"/>
+		<appender-ref ref="SECURITY_LOG_APPENDER"/>
+	</category>
+
+	<category name="com.yantra.yfs.ui.backend.YFSLoginIPLogger" class="com.yantra.yfc.log.YFCLogCategory" additivity="false">
+		<priority class="com.yantra.yfc.log.YFCLogLevel" value="INFO"/>
+		<appender-ref ref="CONSOLE"/>
+		<appender-ref ref="LOGIN_CLIENT_IP_DETAILS"/>
+	</category>
+
+	<root>
+		<priority class="com.yantra.yfc.log.YFCLogLevel" value="ERROR"/>
+		<appender-ref ref="AEO"/>
+	</root>
+
+</log4j:configuration>

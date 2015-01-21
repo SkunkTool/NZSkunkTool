@@ -1,0 +1,82 @@
+<TestHarness Name="porcessOrderPayment" Label="Procesc Order Payment">
+
+  <Api Name="processOrderPayments" FlowName="" Seq="0">
+
+    <Input>
+
+      <InputUI>
+      	<Field Type="List" Name="EnterpriseCode" Label="Enterprise:" Default="COSTCO_BD">
+      		<Item Label="Aurora E Site" Value="Aurora" />
+      		<Item Label="Costco BD" Value="COSTCO_BD" />
+      		<Item Label="Costco" Value="COSTCO" />
+      	</Field>
+        <Field Type="String" Size="24" Name="OrderNo" Label="Order Number:" />
+      	<Field Type="List" Name="DocumentType" Label="Document Type:" Default="0001">
+      		<Item Label="Sales Order" Value="0001" />
+      		<Item Label="Reture Order" Value="0003" />
+      	</Field>
+	<Field Type="Boolean" Name="IgnoreCollectionDate" Label="Ignoe Colleciton Date:" Default="true" />
+	<Field Type="Boolean" Name="IgnoreTransactionDependencies" Label="Ignoe Transaction Dep:" Default="true" />
+
+      </InputUI>
+
+      <InputTransform>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+  <xsl:template match="/InputForm">
+    <Order>
+      <xsl:attribute name="EnterpriseCode"><xsl:value-of select="EnterpriseCode" /></xsl:attribute>	
+      <xsl:attribute name="OrderNo"><xsl:value-of select="OrderNo" /></xsl:attribute>
+      <xsl:attribute name="DocumentType"><xsl:value-of select="DocumentType" /></xsl:attribute>
+      <xsl:attribute name="IgnoreCollectionDate"><xsl:value-of select="IgnoreCollectionDate" /></xsl:attribute>
+      <xsl:attribute name="IgnoreTransactionDependencies"><xsl:value-of select="IgnoreTransactionDependencies" /></xsl:attribute>
+    </Order>
+  </xsl:template>
+</xsl:stylesheet>
+      </InputTransform>
+
+    </Input>
+
+    <Output>
+
+      <Template>
+ 
+      </Template>
+
+      <OutputTransform>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+  <xsl:template match="/Order">
+    <Order>
+    	<xsl:for-each select="ChargeTransactionDetails/ChargeTransactionDetail">
+    		<xsl:copy-of select="." />
+      	</xsl:for-each>
+    </Order>
+  </xsl:template>
+</xsl:stylesheet>
+      </OutputTransform>
+
+    </Output>
+  </Api>
+
+
+    <Api Name="" FlowName="" Seq="">
+      <Input>
+        <InputTransform>
+          <useThisToCreatInputXml />
+        </InputTransform>
+
+      </Input>
+
+      <Output>
+
+        <Template>
+          <!-- <outputTemplateGoesHere /> -->
+        </Template>
+        <OutputTransform>
+        	<!--<outputTransformationGoesHere />-->
+        </OutputTransform>
+
+      </Output>
+    </Api>
+
+
+</TestHarness>

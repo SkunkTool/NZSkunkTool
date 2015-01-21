@@ -1,15 +1,4 @@
 /bin
-/dist
-/sterlingenv_to_del
-/util_to_del
 /.settings
 /properties/*
-/build/ear_download
-/fxbuild/build
-/fxbuild/deploy
-/fxbuild/dist
-/fxbuild/externalLibs
-/fxbuild/project
-/fxbuild/projectRefs
 /lib_ear
-/apirunner_file_store

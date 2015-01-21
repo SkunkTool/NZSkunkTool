@@ -1,0 +1,128 @@
+<TestHarness Name="getGetList" Label="Get Order List">
+
+  <Api Name="getOrderList" FlowName="" Seq="0">
+
+    <Input>
+
+      <InputUI>
+      	<Field Type="List" Name="EnterpriseCode" Label="Enterprise:" Default="Aurora">
+      		<Item Label="Aurora E Site" Value="Aurora" />
+      		<Item Label="Costco BD" Value="COSTCO_BD" />
+      		<Item Label="Costco" Value="COSTCO" />
+      	</Field>
+        <Field Type="String" Size="24" Name="OrderNo" Label="Order Number:" />
+        <Field Type="Date" Size="" Name="OrderDate" Label="Order After:"
+          Default="01/02/15" />
+        <Field Type="Number" Size="" Name="MaximumRecords" Label="Max Num Records:"
+          Default="100" />
+        <Field Type="List" Size="" Name="DocumentType" Label="DocumentType:"
+          Default="0001">
+          <Item Label="Sales Order" Value="0001" />
+          <Item Label="Purchase Order" Value="0002" />
+          <Item Label="Return Order" Value="0003" />
+        </Field>
+        <Field Type="Boolean" Size="" Name="ReadFromHistory" Label="Read From History:"
+          Default="false" />
+
+      </InputUI>
+
+      <InputTransform>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+  <xsl:template match="/InputForm">
+    <Order>
+      <xsl:attribute name="EnterpriseCode"><xsl:value-of select="EnterpriseCode" /></xsl:attribute>	
+      <xsl:attribute name="OrderNo"><xsl:value-of select="OrderNo" /></xsl:attribute>
+      <xsl:attribute name="DocumentType"><xsl:value-of select="DocumentType" /></xsl:attribute>
+      <xsl:attribute name="OrderDateQryType">GE</xsl:attribute>
+      <xsl:attribute name="OrderDate"><xsl:value-of select="OrderDate" /></xsl:attribute>
+      <xsl:attribute name="ReadFromHistory"><xsl:value-of select="ReadFromHistory" /></xsl:attribute>
+      <xsl:attribute name="MaximumRecords"><xsl:value-of select="MaximumRecords" /></xsl:attribute>
+    </Order>
+  </xsl:template>
+</xsl:stylesheet>
+      </InputTransform>
+
+    </Input>
+
+    <Output>
+
+      <Template>
+       	<!-- <OrderList><Order><OrderLines><OrderLine/></OrderLines></Order></OrderList> -->
+      </Template>
+      
+      <OutputTransform> 
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+  <xsl:template match="/OrderList">
+    <OrderList>
+    	<xsl:attribute name="TotalNumberOfRecords"><xsl:value-of select="@TotalNumberOfRecords"/></xsl:attribute>
+    	<xsl:attribute name="TotalOrderList"><xsl:value-of select="@TotalOrderList"/></xsl:attribute>
+		<xsl:for-each select="Order">
+			<Order>
+			 <xsl:attribute name="EnterpriseCode"><xsl:value-of select="@EnterpriseCode"/></xsl:attribute>
+			 <xsl:attribute name="SellerOrganizationCode"><xsl:value-of select="@SellerOrganizationCode"/></xsl:attribute>
+			 <xsl:attribute name="OrderHeaderKey"><xsl:value-of select="@OrderHeaderKey"/></xsl:attribute>
+			 <xsl:attribute name="OrderNo"><xsl:value-of select="@OrderNo"/></xsl:attribute>
+			 <xsl:attribute name="EntryType"><xsl:value-of select="@EntryType"/></xsl:attribute>
+			 <xsl:attribute name="Status"><xsl:value-of select="@Status"/></xsl:attribute>
+			 <xsl:attribute name="GrandTotal"><xsl:value-of select="OverallTotals/@GrandTotal"/></xsl:attribute>
+			 <xsl:attribute name="GrandTax"><xsl:value-of select="OverallTotals/@GrandTax"/></xsl:attribute>
+			 <xsl:attribute name="GrandCharges"><xsl:value-of select="OverallTotals/@GrandCharges"/></xsl:attribute>
+			 </Order>
+		</xsl:for-each>
+    </OrderList>
+  </xsl:template>
+</xsl:stylesheet>
+	  </OutputTransform>
+      
+    </Output>
+  </Api>
+
+<!-- 
+    <Api Name="multiApi" FlowName="" Seq="1">
+      <Input>
+        <InputTransform>
+<xsl:stylesheet  version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+	xmlns:xalan="http://xml.apache.org/xslt">
+	<xsl:output method="xml" indent="yes" xalan:indent-amount="2" />
+	<xsl:template match="/OrderList">
+		<MultiApi>
+			<xsl:for-each select="Order">
+				<API FlowName="" IsExtendedDbApi="" Name="getShipmentListForOrder" Version="">
+					<Input>
+						<Order>
+							<xsl:attribute name="OrderHeaderKey">
+								<xsl:value-of select="@OrderHeaderKey" />
+							</xsl:attribute>
+						</Order>
+					</Input>
+				</API>
+			</xsl:for-each>
+		</MultiApi>
+	</xsl:template>
+</xsl:stylesheet>
+        </InputTransform>
+
+      </Input>
+
+      <Output>
+
+        <Template>
+        </Template>
+        
+        <OutputTransform>
+        <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+  <xsl:template match="/MultiApi">
+    <ShipmentList>
+		<xsl:for-each select="API/Output/ShipmentList/Shipment">
+			<xsl:copy-of select="." />
+		</xsl:for-each>
+    </ShipmentList>
+  </xsl:template>
+</xsl:stylesheet>
+        </OutputTransform>
+
+      </Output>
+    </Api>
+
+ -->
+</TestHarness>
