@@ -1,7 +1,6 @@
 package com.nedzhang.skunktool3.widget;
 
 import java.io.IOException;
-import java.util.Collection;
 
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.StringProperty;
@@ -42,34 +41,34 @@ public class ConnectionSetter extends VBox {
 		} catch (final IOException exception) {
 			throw new RuntimeException(exception);
 		}
-		
+
 		cbxHttpTesterUrl.getItems().clear();
 	}
 
 	@FXML
-	private void onChkHttpClientClicked(MouseEvent event) {
-		boolean isHttpClient = chkHttpClient.isSelected();
+	private void onChkHttpClientClicked(final MouseEvent event) {
+		final boolean isHttpClient = chkHttpClient.isSelected();
 		cbxHttpTesterUrl.setDisable(!isHttpClient);
 	}
-	
+
 	public StringProperty getUserIDProperty() {
-		return this.txtUserName.textProperty();
+		return txtUserName.textProperty();
 	}
 
 	public StringProperty getPasswordProperty() {
-		return this.txtPassword.textProperty();
+		return txtPassword.textProperty();
 	}
 
 	public SingleSelectionModel<String> getInteropUrlProperty() {
-		return this.cbxHttpTesterUrl.selectionModelProperty().get();
+		return cbxHttpTesterUrl.selectionModelProperty().get();
 
 	}
 
 	public BooleanProperty getIsHttpClientProperty() {
-		return this.chkHttpClient.selectedProperty();
+		return chkHttpClient.selectedProperty();
 	}
-	
-	public boolean addConnectionUrl(String... items) {
+
+	public boolean addConnectionUrl(final String... items) {
 		return cbxHttpTesterUrl.getItems().addAll(items);
 	}
 

@@ -26,8 +26,9 @@ public class ChainedApi implements Comparable<ChainedApi> {
 		flowName = apiDefintion.getAttribute("FlowName");
 		seq = NumberUtil.parseInt(apiDefintion.getAttribute("Seq"));
 
-		inputUI = XPathUtil.selectSingleNode("ChainedApi", "Input/InputUI", apiDefintion);
-		
+		inputUI = XPathUtil.selectSingleNode("ChainedApi", "Input/InputUI",
+				apiDefintion);
+
 		final Node inputTransformNode = XPathUtil.selectSingleNode(
 				"ChainedApi", "Input/InputTransform/*", apiDefintion);
 

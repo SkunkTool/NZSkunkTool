@@ -3,46 +3,16 @@
  */
 package com.nedzhang.skunktool3.widget;
 
-
-import com.nedzhang.skunktool3.ApplicationProperty;
-import com.nedzhang.skunktool3.SkunkSetting;
-import com.nedzhang.skunktool3.apiRunner.DialogMaterialManager;
-import com.nedzhang.skunktool3.apiRunner.entity.ApiMaterialType;
-import com.nedzhang.skunktool3.apiRunner.entity.MultiApiElement;
-import com.nedzhang.skunktool3.control.ValidatedTextField;
-import com.nedzhang.skunktool3.jfx.AutoCompleteComboBoxListener;
-import com.nedzhang.skunktool3.jfx.SterApiDesc;
-import com.nedzhang.skunktool3.widget.MaterialPanel;
-import com.nedzhang.sterlingUtil.SterlingApiUtil;
-import com.nedzhang.sterlingUtil.SterlingHttpTesterUtil;
-import com.nedzhang.util.DesktopApi;
-import com.nedzhang.util.KeyValueSet;
-import com.nedzhang.util.Pair;
-import com.nedzhang.util.TextFileUtil;
-import com.nedzhang.util.XPathUtil;
-import com.nedzhang.util.XmlUtil;
-import com.sun.glass.ui.Application;
-
-import java.awt.TextArea;
-import java.awt.im.InputContext;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.Reader;
-import java.io.StringReader;
-import java.io.StringWriter;
-import java.io.Writer;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.util.ArrayList;
-import java.util.Hashtable;
 import java.util.LinkedHashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import javafx.animation.KeyValue;
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.StringProperty;
 import javafx.beans.value.ChangeListener;
@@ -54,76 +24,63 @@ import javafx.event.EventHandler;
 import javafx.event.EventType;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.HPos;
-import javafx.geometry.Insets;
-import javafx.geometry.VPos;
-import javafx.scene.Parent;
 import javafx.scene.control.Accordion;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.Control;
 import javafx.scene.control.Hyperlink;
-import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
-import javafx.scene.control.PasswordField;
 import javafx.scene.control.SingleSelectionModel;
 import javafx.scene.control.TabPane;
 import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
 import javafx.scene.control.TitledPane;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
-import javafx.scene.layout.VBox;
 
-import javax.swing.plaf.RootPaneUI;
-import javax.xml.namespace.QName;
 import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.Result;
-import javax.xml.transform.Source;
-import javax.xml.transform.Transformer;
-import javax.xml.transform.TransformerException;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.stream.StreamResult;
-import javax.xml.transform.stream.StreamSource;
 import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathExpression;
 import javax.xml.xpath.XPathExpressionException;
 
 import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
+
+import com.nedzhang.skunktool3.SkunkSetting;
+import com.nedzhang.skunktool3.apiRunner.DialogMaterialManager;
+import com.nedzhang.skunktool3.apiRunner.entity.ApiMaterialType;
+import com.nedzhang.skunktool3.apiRunner.entity.MultiApiElement;
+import com.nedzhang.skunktool3.jfx.AutoCompleteComboBoxListener;
+import com.nedzhang.skunktool3.jfx.SterApiDesc;
+import com.nedzhang.util.DesktopApi;
+import com.nedzhang.util.TextFileUtil;
+import com.nedzhang.util.XPathUtil;
+import com.nedzhang.util.XmlUtil;
 
 /**
  * FXML Controller class
  * 
  * @author nzhang
  */
-public class ApiTextRunner extends ApiRunner{
+public class ApiTextRunner extends ApiRunner {
 
-
-//	private static enum RunnerMode {
-//		ApiTester,UserForm
-//	}
+	// private static enum RunnerMode {
+	// ApiTester,UserForm
+	// }
 	// @FXML
 	// private ComboBox lstApiName;
 
-//	@FXML
-//	private TextField txtUserName;
-//
-//	@FXML
-//	private PasswordField txtPassword;
-//
-//	@FXML
-//	private CheckBox chkHttpClient;
-//	
-//	@FXML
-//	private ComboBox<String> cbxHttpTesterUrl;
-	
+	// @FXML
+	// private TextField txtUserName;
+	//
+	// @FXML
+	// private PasswordField txtPassword;
+	//
+	// @FXML
+	// private CheckBox chkHttpClient;
+	//
+	// @FXML
+	// private ComboBox<String> cbxHttpTesterUrl;
+
 	@FXML
 	private ComboBox<String> cbxApiName;
 
@@ -131,11 +88,9 @@ public class ApiTextRunner extends ApiRunner{
 
 	@FXML
 	private CheckBox chkIsService;
-	
+
 	@FXML
 	private Hyperlink lnkApiDoc;
-
-
 
 	// @FXML
 	// private MaterialPanel materialPanelInput;
@@ -146,7 +101,7 @@ public class ApiTextRunner extends ApiRunner{
 
 	@FXML
 	private MaterialPanel mpnlInput;
-	
+
 	@FXML
 	private Region tpnlInput;
 
@@ -165,9 +120,9 @@ public class ApiTextRunner extends ApiRunner{
 	@FXML
 	private MaterialPanel mpnlMultipApiResult;
 
-//	@FXML
-//	private TitledPane accordInputForm;
-	
+	// @FXML
+	// private TitledPane accordInputForm;
+
 	@FXML
 	private TitledPane accordInput;
 
@@ -197,16 +152,16 @@ public class ApiTextRunner extends ApiRunner{
 
 	@FXML
 	private GridPane gridHarnessInput;
-	
+
 	// private final ApiRunnerData dataModel;
 
-//	private final String apiJavaDocBasePath;
+	// private final String apiJavaDocBasePath;
 
 	private EventHandler<CbxApiNameLostFocusEvent> cbxApiLostEventHandler;
-	
-//	private final Document testHarnessDefinition;
-	
-//	private final ArrayList<Control> userInputControls;
+
+	// private final Document testHarnessDefinition;
+
+	// private final ArrayList<Control> userInputControls;
 
 	@SuppressWarnings("unused")
 	private AutoCompleteComboBoxListener<String> cbxApiNameAutoCompleteListener;
@@ -216,7 +171,6 @@ public class ApiTextRunner extends ApiRunner{
 	private SingleSelectionModel<String> interopUrlProperty;
 	private BooleanProperty isHttpClientProperty;
 
-	
 	public class CbxApiNameLostFocusEvent extends Event {
 
 		private static final long serialVersionUID = 5517979107723107384L;
@@ -227,102 +181,110 @@ public class ApiTextRunner extends ApiRunner{
 			return text;
 		}
 
-		public void setText(String text) {
+		public void setText(final String text) {
 			this.text = text;
 		}
 
 		public CbxApiNameLostFocusEvent(
-				EventType<? extends Event> paramEventType) {
+				final EventType<? extends Event> paramEventType) {
 			this(paramEventType, null);
 		}
 
-		public CbxApiNameLostFocusEvent(EventType<? extends Event> eventType,
-				String text) {
+		public CbxApiNameLostFocusEvent(
+				final EventType<? extends Event> eventType, final String text) {
 			super(eventType);
 			this.text = text;
 		}
 
 	}
 
-//	public ApiTextRunner() {
-//		this(null);
-//	}
-	
+	// public ApiTextRunner() {
+	// this(null);
+	// }
+
 	public ApiTextRunner() {
-		
-//		testHarnessDefinition = testHarnessDoc;
 
-//		apiJavaDocBasePath = SkunkSetting.getInstance().STERLING_API_JAVADOC_URL;
+		// testHarnessDefinition = testHarnessDoc;
 
-//		userInputControls = new ArrayList<Control>();
-		
-		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(
+		// apiJavaDocBasePath =
+		// SkunkSetting.getInstance().STERLING_API_JAVADOC_URL;
+
+		// userInputControls = new ArrayList<Control>();
+
+		final FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(
 				"ApiTextRunner.fxml"));
-		
+
 		fxmlLoader.setRoot(this);
 		fxmlLoader.setController(this);
-		
+
 		try {
 			fxmlLoader.load();
-		} catch (IOException exception) {
+		} catch (final IOException exception) {
 			throw new RuntimeException(exception);
 		}
 
-		try {	
+		try {
 			initializeFormData();
 
-		} catch (Exception ex) {
+		} catch (final Exception ex) {
 			Logger.getLogger(ApiTextRunner.class.getName()).log(Level.SEVERE,
 					null, ex);
 		}
 	}
-	
-	public void setUserIDProperty(StringProperty userIDProperty) {
+
+	@Override
+	public void setUserIDProperty(final StringProperty userIDProperty) {
 		this.userIDProperty = userIDProperty;
 	}
-	
-	public void setPasswordProperty(StringProperty passwordProperty) {
+
+	@Override
+	public void setPasswordProperty(final StringProperty passwordProperty) {
 		this.passwordProperty = passwordProperty;
 	}
-	
-	public void setInteropUrlProperty(SingleSelectionModel<String> singleSelectionModel) {
-		this.interopUrlProperty = singleSelectionModel;
+
+	@Override
+	public void setInteropUrlProperty(
+			final SingleSelectionModel<String> singleSelectionModel) {
+		interopUrlProperty = singleSelectionModel;
 	}
-	
-	public void setIsHttpClientProperty(BooleanProperty isHttpClientProperty) {
+
+	@Override
+	public void setIsHttpClientProperty(
+			final BooleanProperty isHttpClientProperty) {
 		this.isHttpClientProperty = isHttpClientProperty;
 	}
-//	public String getUserID() {
-//		return txtUserName.getText();
-//	}
-//
-//	public void setUserID(String userID) {
-//		txtUserName.setText(userID);
-//	}
-//
-//	public String getPassword() {
-//		return txtPassword.getText();
-//	}
-//
-//	public void setPassword(String password) {
-//		txtPassword.setText(password);
-//	}
-//
-//	public boolean isUseHttp() {
-//		return chkHttpClient.isSelected();
-//	}
-//
-//	public void setUseHttp(boolean useHttp) {
-//		chkHttpClient.setSelected(useHttp);
-//	}
-//
-//	public String getInterOpUrl() {
-//		return cbxHttpTesterUrl.getValue();
-//	}
-//
-//	public void setInterOpUrl(String interOpUrl) {
-//		cbxHttpTesterUrl.setValue(interOpUrl);
-//	}
+
+	// public String getUserID() {
+	// return txtUserName.getText();
+	// }
+	//
+	// public void setUserID(String userID) {
+	// txtUserName.setText(userID);
+	// }
+	//
+	// public String getPassword() {
+	// return txtPassword.getText();
+	// }
+	//
+	// public void setPassword(String password) {
+	// txtPassword.setText(password);
+	// }
+	//
+	// public boolean isUseHttp() {
+	// return chkHttpClient.isSelected();
+	// }
+	//
+	// public void setUseHttp(boolean useHttp) {
+	// chkHttpClient.setSelected(useHttp);
+	// }
+	//
+	// public String getInterOpUrl() {
+	// return cbxHttpTesterUrl.getValue();
+	// }
+	//
+	// public void setInterOpUrl(String interOpUrl) {
+	// cbxHttpTesterUrl.setValue(interOpUrl);
+	// }
 
 	public String getApiName() {
 		return cbxApiName.getValue();
@@ -330,57 +292,57 @@ public class ApiTextRunner extends ApiRunner{
 
 	private void initializeFormData() throws XPathExpressionException,
 			SAXException, IOException, ParserConfigurationException {
-		
-//		if (testHarnessDoc != null ) {
-//			
-//			accordInput.setVisible(false);
-//			accordInput.resize(0, 0);
-//			
-//			accordTemplate.setVisible(false);
-//			accordTemplate.resize(0, 0);
-//			
-//			cbxApiName.setVisible(false);
-//			chkIsService.setVisible(false);
-//			lnkApiDoc.setVisible(false);
-//			
-//			createInputForm(gridHarnessInput, testHarnessDoc, userInputControls);
-//			
-//			accordionMain.setExpandedPane(accordInputForm);
-//			
-//		} else {
-			
-//			accordInputForm.setVisible(false);
-	
-			apiList = getApiListImp();
-	
-			ObservableList<String> data = FXCollections.observableArrayList();
-			data.addAll(apiList.keySet());
-	
-			// txtApiName.setData(data);
-			// txtApiName.setFilterMode(true);
-	
-			cbxApiName.setItems(data);
-	
-			cbxApiNameAutoCompleteListener = new AutoCompleteComboBoxListener<String>(
-					cbxApiName);
-	
-			cbxApiName.getEditor().focusedProperty()
-					.addListener(new ChangeListener<Boolean>() {
-						@Override
-						public void changed(ObservableValue<? extends Boolean> ov,
-								Boolean t, Boolean t1) {
-							onTxtApiNameFocusChange(ov, t, t1);
-						}
-					});
-			
-			accordionMain.setExpandedPane(accordInput);
-//		}
+
+		// if (testHarnessDoc != null ) {
+		//
+		// accordInput.setVisible(false);
+		// accordInput.resize(0, 0);
+		//
+		// accordTemplate.setVisible(false);
+		// accordTemplate.resize(0, 0);
+		//
+		// cbxApiName.setVisible(false);
+		// chkIsService.setVisible(false);
+		// lnkApiDoc.setVisible(false);
+		//
+		// createInputForm(gridHarnessInput, testHarnessDoc, userInputControls);
+		//
+		// accordionMain.setExpandedPane(accordInputForm);
+		//
+		// } else {
+
+		// accordInputForm.setVisible(false);
+
+		apiList = getApiListImp();
+
+		final ObservableList<String> data = FXCollections.observableArrayList();
+		data.addAll(apiList.keySet());
+
+		// txtApiName.setData(data);
+		// txtApiName.setFilterMode(true);
+
+		cbxApiName.setItems(data);
+
+		cbxApiNameAutoCompleteListener = new AutoCompleteComboBoxListener<String>(
+				cbxApiName);
+
+		cbxApiName.getEditor().focusedProperty()
+				.addListener(new ChangeListener<Boolean>() {
+					@Override
+					public void changed(
+							final ObservableValue<? extends Boolean> ov,
+							final Boolean t, final Boolean t1) {
+						onTxtApiNameFocusChange(ov, t, t1);
+					}
+				});
+
+		accordionMain.setExpandedPane(accordInput);
+		// }
 	}
 
-
 	public void setTxtApiNameLostFocusEventHandler(
-			EventHandler<CbxApiNameLostFocusEvent> eventHandler) {
-		this.cbxApiLostEventHandler = eventHandler;
+			final EventHandler<CbxApiNameLostFocusEvent> eventHandler) {
+		cbxApiLostEventHandler = eventHandler;
 	}
 
 	private Map<String, SterApiDesc> getApiListImp()
@@ -395,7 +357,7 @@ public class ApiTextRunner extends ApiRunner{
 
 		if (apiListDoc != null) {
 
-			XPathExpression xpathExApi = XPathUtil.getXPathExpression(
+			final XPathExpression xpathExApi = XPathUtil.getXPathExpression(
 					"ApiRunnerWindow->getApiListImp->GetApi", "/apiList/api");
 
 			final NodeList apiNodes = (NodeList) xpathExApi.evaluate(
@@ -428,21 +390,21 @@ public class ApiTextRunner extends ApiRunner{
 	}
 
 	@FXML
-	private void onLnkApiDocClicked(MouseEvent event) throws IOException,
+	private void onLnkApiDocClicked(final MouseEvent event) throws IOException,
 			URISyntaxException {
 		System.out.println("API doc clicked");
 
-		String apiName = cbxApiName.getValue();
+		final String apiName = cbxApiName.getValue();
 
 		if (apiList.containsKey(apiName)) {
 
-			String docPath = SkunkSetting.getInstance().STERLING_API_JAVADOC_URL
+			final String docPath = SkunkSetting.getInstance().STERLING_API_JAVADOC_URL
 					+ apiList.get(apiName).getDocPage();
 
 			if (docPath.toLowerCase().startsWith("http://")) {
 				DesktopApi.browse(new URI(docPath));
 			} else {
-				File htmlFile = new File(docPath);
+				final File htmlFile = new File(docPath);
 
 				DesktopApi.browse(htmlFile.toURI());
 			}
@@ -452,7 +414,7 @@ public class ApiTextRunner extends ApiRunner{
 	}
 
 	@FXML
-	private void onBtnLoginOkClicked(MouseEvent event) {
+	private void onBtnLoginOkClicked(final MouseEvent event) {
 		tabOverall.getSelectionModel().selectNext();
 	}
 
@@ -465,8 +427,9 @@ public class ApiTextRunner extends ApiRunner{
 	// System.out.println("*************93240409474094*************");
 	// materialPanelInput.setContent(alert);
 	// }
-	private void onTxtApiNameFocusChange(ObservableValue<? extends Boolean> ov,
-			Boolean focusBefore, Boolean focusNow) {
+	private void onTxtApiNameFocusChange(
+			final ObservableValue<? extends Boolean> ov,
+			final Boolean focusBefore, final Boolean focusNow) {
 
 		// String alert = "focusBefore: " + focusBefore + "| focusNow: "
 		// + focusNow + " | txtApiNameFocue: "
@@ -478,7 +441,7 @@ public class ApiTextRunner extends ApiRunner{
 
 		if (focusBefore && !focusNow) {
 			// txtApiName just lost focus
-			if (this.cbxApiLostEventHandler != null) {
+			if (cbxApiLostEventHandler != null) {
 
 				cbxApiLostEventHandler.handle(new CbxApiNameLostFocusEvent(
 						new EventType<CbxApiNameLostFocusEvent>(), cbxApiName
@@ -488,9 +451,9 @@ public class ApiTextRunner extends ApiRunner{
 	}
 
 	@FXML
-	private void onInputLoadContent(MouseEvent event) {
+	private void onInputLoadContent(final MouseEvent event) {
 
-		String apiInput = DialogMaterialManager.showLoadMaterialDialog(
+		final String apiInput = DialogMaterialManager.showLoadMaterialDialog(
 				"Load Material", new StringBuilder("Load Input Material for ")
 						.append(cbxApiName.getValue()).toString(), cbxApiName
 						.getValue(), ApiMaterialType.ApiInput);
@@ -501,7 +464,7 @@ public class ApiTextRunner extends ApiRunner{
 	}
 
 	@FXML
-	private void onInputSaveContent(MouseEvent event) {
+	private void onInputSaveContent(final MouseEvent event) {
 
 		DialogMaterialManager.showSaveMaterialDialog(
 				"Save Material",
@@ -512,13 +475,15 @@ public class ApiTextRunner extends ApiRunner{
 	}
 
 	@FXML
-	private void onTemplateLoadContent(MouseEvent event) {
+	private void onTemplateLoadContent(final MouseEvent event) {
 
-		String outputTemplate = DialogMaterialManager.showLoadMaterialDialog(
-				"Load Output Template",
-				new StringBuilder("Load Output Template for ").append(
-						cbxApiName.getValue()).toString(), cbxApiName
-						.getValue(), ApiMaterialType.ApiOutputTemplate);
+		final String outputTemplate = DialogMaterialManager
+				.showLoadMaterialDialog(
+						"Load Output Template",
+						new StringBuilder("Load Output Template for ").append(
+								cbxApiName.getValue()).toString(),
+						cbxApiName.getValue(),
+						ApiMaterialType.ApiOutputTemplate);
 
 		if (outputTemplate != null) {
 			mpnlTemplate.setContent(outputTemplate);
@@ -526,7 +491,7 @@ public class ApiTextRunner extends ApiRunner{
 	}
 
 	@FXML
-	private void onTemplateSaveContent(MouseEvent event) {
+	private void onTemplateSaveContent(final MouseEvent event) {
 
 		DialogMaterialManager.showSaveMaterialDialog(
 				"Save Output Template",
@@ -537,9 +502,9 @@ public class ApiTextRunner extends ApiRunner{
 	}
 
 	@FXML
-	private void onResultLoadContent(MouseEvent event) {
+	private void onResultLoadContent(final MouseEvent event) {
 
-		String apiOutput = DialogMaterialManager.showLoadMaterialDialog(
+		final String apiOutput = DialogMaterialManager.showLoadMaterialDialog(
 				"Load Result",
 				new StringBuilder("Load Result for ").append(
 						cbxApiName.getValue()).toString(),
@@ -551,7 +516,7 @@ public class ApiTextRunner extends ApiRunner{
 	}
 
 	@FXML
-	private void onResultSaveContent(MouseEvent event) {
+	private void onResultSaveContent(final MouseEvent event) {
 
 		DialogMaterialManager.showSaveMaterialDialog(
 				"Save Result",
@@ -562,9 +527,9 @@ public class ApiTextRunner extends ApiRunner{
 	}
 
 	@FXML
-	private void onTransformLoadContent(MouseEvent event) {
+	private void onTransformLoadContent(final MouseEvent event) {
 
-		String outputTransformation = DialogMaterialManager
+		final String outputTransformation = DialogMaterialManager
 				.showLoadMaterialDialog(
 						"Load Transformation",
 						new StringBuilder("Load Transformation for ").append(
@@ -578,7 +543,7 @@ public class ApiTextRunner extends ApiRunner{
 	}
 
 	@FXML
-	private void onTransformSaveContent(MouseEvent event) {
+	private void onTransformSaveContent(final MouseEvent event) {
 
 		DialogMaterialManager.showSaveMaterialDialog(
 				"Save Transformation",
@@ -587,7 +552,6 @@ public class ApiTextRunner extends ApiRunner{
 				cbxApiName.getValue(), ApiMaterialType.ApiOutputTransformation,
 				mpnlTransform.getContent());
 	}
-
 
 	private void populateMultiApiTable() throws Exception {
 
@@ -602,16 +566,16 @@ public class ApiTextRunner extends ApiRunner{
 		//
 		// data.add(observableRowToAdd);
 
-		Document multipApiDoc = XmlUtil.getDocument(mpnlMultipApiInput
+		final Document multipApiDoc = XmlUtil.getDocument(mpnlMultipApiInput
 				.getContent());
 
-		XPathExpression xpath = XPathUtil.getXPathExpression(
+		final XPathExpression xpath = XPathUtil.getXPathExpression(
 				"ApiRunnerWindow.runTest.GetApi", "/MultiApi/API");
 
-		NodeList apiNodes = (NodeList) xpath.evaluate(multipApiDoc,
+		final NodeList apiNodes = (NodeList) xpath.evaluate(multipApiDoc,
 				XPathConstants.NODESET);
 
-		ObservableList<MultiApiElement> rowToAdd = FXCollections
+		final ObservableList<MultiApiElement> rowToAdd = FXCollections
 				.observableArrayList(MultiApiElement
 						.createMultiApiElmentList(apiNodes));
 
@@ -624,12 +588,12 @@ public class ApiTextRunner extends ApiRunner{
 	}
 
 	@FXML
-	public void onBtnRunApiClicked(MouseEvent event)
+	public void onBtnRunApiClicked(final MouseEvent event)
 			throws IllegalArgumentException, ParserConfigurationException,
 			SAXException, IOException, Exception {
 
-		String progID = programID;
-		
+		final String progID = programID;
+
 		final String output = runApi(progID);
 
 		mpnlResult.setContent(output);
@@ -637,65 +601,70 @@ public class ApiTextRunner extends ApiRunner{
 		accordionMain.setExpandedPane(accordResult);
 	}
 
-	private String runApi(String progID) throws Exception,
+	private String runApi(final String progID) throws Exception,
 			ParserConfigurationException, SAXException, IOException {
-		
-		String apiName = cbxApiName.getValue();
-		boolean isFlow = chkIsService.isSelected();
-		String input = mpnlInput.getContent();
-		String outputTemplate = mpnlTemplate.getContent();
+
+		final String apiName = cbxApiName.getValue();
+		final boolean isFlow = chkIsService.isSelected();
+		final String input = mpnlInput.getContent();
+		final String outputTemplate = mpnlTemplate.getContent();
 
 		// pnlWait.setVisible(true);
 		// pnlWait.toFront();
 
-		final String output = ApiExecutor.executeApi(interopUrlProperty.getSelectedItem(), isHttpClientProperty.get(), userIDProperty.get(), passwordProperty.get(),
-				progID, apiName, isFlow, input, outputTemplate, verboseMode);
-				
+		final String output = ApiExecutor.executeApi(
+				interopUrlProperty.getSelectedItem(),
+				isHttpClientProperty.get(), userIDProperty.get(),
+				passwordProperty.get(), progID, apiName, isFlow, input,
+				outputTemplate, verboseMode);
+
 		return output;
 	}
 
-//	@SuppressWarnings("unchecked")
-//	private Document createUserInputForm(List<Control> userInputs) throws IllegalArgumentException, ParserConfigurationException, SAXException, IOException {
-//		
-//		Document userInpDocument = XmlUtil.getDocument("<InputForm />");
-//		
-//		Node rootNode = userInpDocument.getFirstChild();
-//		
-//		for (Control input : userInputs) {
-//			String value;
-//			if (input instanceof CheckBox) {
-//				value = ((CheckBox) input).isSelected() ? "Y" : "N";
-//			} else if (input instanceof ComboBox<?>) {
-//				
-//				value = ((ComboBox<KeyValueSet<String, String>>) input).getValue().key;
-//				
-//			} else if (input instanceof TextField){
-//				value = ((TextField)input).getText();
-//			} else {
-//				value = null;
-//			}
-//			
-//			String inputId = (String) input.getUserData();
-//			
-//			XmlUtil.createChildTextNode(rootNode, inputId, value);
-//			
-//		}
-//		
-//		
-//		return userInpDocument;
-//	}
+	// @SuppressWarnings("unchecked")
+	// private Document createUserInputForm(List<Control> userInputs) throws
+	// IllegalArgumentException, ParserConfigurationException, SAXException,
+	// IOException {
+	//
+	// Document userInpDocument = XmlUtil.getDocument("<InputForm />");
+	//
+	// Node rootNode = userInpDocument.getFirstChild();
+	//
+	// for (Control input : userInputs) {
+	// String value;
+	// if (input instanceof CheckBox) {
+	// value = ((CheckBox) input).isSelected() ? "Y" : "N";
+	// } else if (input instanceof ComboBox<?>) {
+	//
+	// value = ((ComboBox<KeyValueSet<String, String>>) input).getValue().key;
+	//
+	// } else if (input instanceof TextField){
+	// value = ((TextField)input).getText();
+	// } else {
+	// value = null;
+	// }
+	//
+	// String inputId = (String) input.getUserData();
+	//
+	// XmlUtil.createChildTextNode(rootNode, inputId, value);
+	//
+	// }
+	//
+	//
+	// return userInpDocument;
+	// }
 
 	@FXML
-	public void onBtnResultTransformClicked(MouseEvent event) {
+	public void onBtnResultTransformClicked(final MouseEvent event) {
 		try {
-			String apiRunXml = transformImp(mpnlResult.getContent(),
+			final String apiRunXml = transformImp(mpnlResult.getContent(),
 					mpnlTransform.getContent());
 			mpnlMultipApiInput.setContent(apiRunXml);
 
 			tabMultiApi.getSelectionModel().select(2);
 
 			populateMultiApiTable();
-		} catch (Exception e) {
+		} catch (final Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -703,14 +672,14 @@ public class ApiTextRunner extends ApiRunner{
 	}
 
 	@FXML
-	public void onBtnNewResultTransformClicked(MouseEvent event) {
+	public void onBtnNewResultTransformClicked(final MouseEvent event) {
 		mpnlTransform.setContent(null);
 
 		try {
-			String template = TextFileUtil.readResourceTextFile(
+			final String template = TextFileUtil.readResourceTextFile(
 					"/MultiApiMakerTemplate.xslt", "UTF-8");
 			mpnlTransform.setContent(template);
-		} catch (IOException e) {
+		} catch (final IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -718,13 +687,15 @@ public class ApiTextRunner extends ApiRunner{
 	}
 
 	@FXML
-	public void onBtnRunMultiApiClicked(MouseEvent event)
+	public void onBtnRunMultiApiClicked(final MouseEvent event)
 			throws ParserConfigurationException, SAXException, IOException,
 			Exception {
 
-		String multiApiOutput = ApiExecutor.executeApi(interopUrlProperty.getSelectedItem(), isHttpClientProperty.get(), userIDProperty.get(), passwordProperty.get(),
-				programID, "multiApi", false, mpnlMultipApiInput.getContent(),
-				null, verboseMode);
+		final String multiApiOutput = ApiExecutor.executeApi(
+				interopUrlProperty.getSelectedItem(),
+				isHttpClientProperty.get(), userIDProperty.get(),
+				passwordProperty.get(), programID, "multiApi", false,
+				mpnlMultipApiInput.getContent(), null, verboseMode);
 
 		mpnlMultipApiResult.setContent(multiApiOutput);
 

@@ -14,22 +14,18 @@
  *******************************************************************************/
 package com.nedzhang.skunktool3.apiRunner.FileStore;
 
-import com.nedzhang.skunktool3.ApplicationProperty;
-import com.nedzhang.skunktool3.SkunkSetting;
-import com.nedzhang.skunktool3.apiRunner.entity.ApiMaterial;
-import com.nedzhang.skunktool3.apiRunner.entity.ApiMaterialType;
-
 import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-
+import com.nedzhang.skunktool3.SkunkSetting;
+import com.nedzhang.skunktool3.apiRunner.entity.ApiMaterial;
+import com.nedzhang.skunktool3.apiRunner.entity.ApiMaterialType;
 
 public class MaterialStore {
 
-
-//	private static String fileStorePath;
+	// private static String fileStorePath;
 
 	// private static File inputFileStoreFolder;
 	// private static File outputTemplateFileStoreFolder;
@@ -46,7 +42,8 @@ public class MaterialStore {
 
 	{
 
-		final File fileStoreFolder = new File(SkunkSetting.getInstance().FILE_STORE_PATH);
+		final File fileStoreFolder = new File(
+				SkunkSetting.getInstance().FILE_STORE_PATH);
 
 		if (!fileStoreFolder.exists()) {
 			fileStoreFolder.mkdir();
@@ -56,26 +53,24 @@ public class MaterialStore {
 
 		materialFolderMap.put(ApiMaterialType.ApiInput,
 				getStoreFolder(fileStoreFolder, "10_input"));
-		
+
 		materialFolderMap.put(ApiMaterialType.TestHarness,
 				getStoreFolder(fileStoreFolder, "11_test_harness"));
-
 
 		materialFolderMap.put(ApiMaterialType.ApiOutputTemplate,
 				getStoreFolder(fileStoreFolder, "20_outputTemplate"));
 
 		materialFolderMap.put(ApiMaterialType.ApiOutput,
 				getStoreFolder(fileStoreFolder, "30_output"));
-		
+
 		materialFolderMap.put(ApiMaterialType.ApiOutputTransformation,
 				getStoreFolder(fileStoreFolder, "40_output_transform"));
-
 
 		materialFolderMap.put(ApiMaterialType.ApiOutputExecution,
 				getStoreFolder(fileStoreFolder, "50_output_transform_result"));
 
-//		materialFolderMap.put(ApiMaterialType.ApiOutputExecution,
-//				getStoreFolder(fileStoreFolder, "80_execution"));
+		// materialFolderMap.put(ApiMaterialType.ApiOutputExecution,
+		// getStoreFolder(fileStoreFolder, "80_execution"));
 
 	}
 
@@ -94,7 +89,6 @@ public class MaterialStore {
 	//
 	// }
 
-	
 	public void saveMaterial(final String apiName,
 			final ApiMaterialType materialType, final String materialName,
 			final String materialDescription, final String materialContent)
@@ -110,7 +104,7 @@ public class MaterialStore {
 		apiInputStore.saveMaterial(inputToSave, true);
 
 	}
-        
+
 	public String[] getMaterialList(final String apiName,
 			final ApiMaterialType materialType) {
 
@@ -121,7 +115,6 @@ public class MaterialStore {
 
 	}
 
-
 	public ApiMaterial getMaterial(final String apiName,
 			final ApiMaterialType materialType, final String materialName)
 			throws IOException {
@@ -130,8 +123,7 @@ public class MaterialStore {
 
 		return apiMaterialFolder.loadMaterial(materialName);
 	}
-	
-	
+
 	private ApiMaterialFolder getApiMaterialFolder(final String apiName,
 			final ApiMaterialType materialType) {
 		final File materialTypeFolder = materialFolderMap.get(materialType);
@@ -140,7 +132,7 @@ public class MaterialStore {
 				materialTypeFolder, apiName);
 		return apiMaterialFolder;
 	}
-	
+
 	private File getStoreFolder(final File fileStoreFolder,
 			final String sectionName) {
 

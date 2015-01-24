@@ -114,7 +114,7 @@ public class ApiUIRunner extends ApiRunner {
 	@FXML
 	private GridPane gridHarnessInput;
 
-//	private final Document testHarnessDefinition;
+	// private final Document testHarnessDefinition;
 
 	private final ArrayList<Node> userInputControls;
 
@@ -124,7 +124,7 @@ public class ApiUIRunner extends ApiRunner {
 	private BooleanProperty isHttpClientProperty;
 
 	private final String harnessName;
-	
+
 	private List<ChainedApi> apiList;
 
 	private static SimpleDateFormat yyyymmdd_HHMMSS_formater = new SimpleDateFormat(
@@ -138,7 +138,7 @@ public class ApiUIRunner extends ApiRunner {
 
 		this.harnessName = harnessName;
 
-//		testHarnessDefinition = testHarnessDoc;
+		// testHarnessDefinition = testHarnessDoc;
 
 		userInputControls = new ArrayList<Node>();
 
@@ -191,27 +191,29 @@ public class ApiUIRunner extends ApiRunner {
 			ParserConfigurationException, ParseException {
 
 		if (testHarnessDoc != null) {
-			final NodeList chainedApiNodes = XPathUtil.selectNode("ApiUIRunner.initializeFormData",
-					"/TestHarness/Api", testHarnessDoc);
-	
+			final NodeList chainedApiNodes = XPathUtil.selectNode(
+					"ApiUIRunner.initializeFormData", "/TestHarness/Api",
+					testHarnessDoc);
+
 			apiList = new ArrayList<>();
-			
+
 			if (chainedApiNodes != null && chainedApiNodes.getLength() > 0) {
-				
-				for (int i=0; i<chainedApiNodes.getLength(); i++) {
-					org.w3c.dom.Node apiNode = chainedApiNodes.item(i);
-					
+
+				for (int i = 0; i < chainedApiNodes.getLength(); i++) {
+					final org.w3c.dom.Node apiNode = chainedApiNodes.item(i);
+
 					if (apiNode.getNodeType() == org.w3c.dom.Node.ELEMENT_NODE) {
-						ChainedApi api = new ChainedApi((Element) apiNode);
+						final ChainedApi api = new ChainedApi((Element) apiNode);
 						if (api.name != null && api.name.length() > 0) {
 							apiList.add(api);
 						}
 					}
 				}
-				
+
 				if (apiList.size() > 0) {
 					Collections.sort(apiList);
-					createInputForm(gridHarnessInput, apiList.get(0), userInputControls);
+					createInputForm(gridHarnessInput, apiList.get(0),
+							userInputControls);
 				}
 			}
 		}
@@ -226,14 +228,15 @@ public class ApiUIRunner extends ApiRunner {
 
 		panel.setPadding(new Insets(8));
 
-//		final XPathExpression inputFieldExpression = XPathUtil
-//				.getXPathExpression("ApiRunner.creaeInputForm",
-//						"/TestHarness/Api/Input/InputForm/Field");
-//
+		// final XPathExpression inputFieldExpression = XPathUtil
+		// .getXPathExpression("ApiRunner.creaeInputForm",
+		// "/TestHarness/Api/Input/InputForm/Field");
+		//
 		final XPathExpression itemExpress = XPathUtil.getXPathExpression(
 				"ApiRunner.creaeInputForm", "Item");
 
-		final NodeList inputFieldNodes = XPathUtil.selectNode("ApiRunner.createInputForm", "Field", apiDefintion.inputUI);
+		final NodeList inputFieldNodes = XPathUtil.selectNode(
+				"ApiRunner.createInputForm", "Field", apiDefintion.inputUI);
 
 		final Insets cellMargin = new Insets(4);
 
@@ -327,9 +330,10 @@ public class ApiUIRunner extends ApiRunner {
 							now.add(Calendar.DAY_OF_MONTH, offset);
 							datePicker.setSelectedDate(now.getTime());
 						} else {
-							
-							final DateFormat dateFormatter = new SimpleDateFormat("mm/dd/yy");
-							
+
+							final DateFormat dateFormatter = new SimpleDateFormat(
+									"mm/dd/yy");
+
 							datePicker.setSelectedDate(dateFormatter
 									.parse(defaultValue));
 						}
@@ -437,7 +441,6 @@ public class ApiUIRunner extends ApiRunner {
 			throws IllegalArgumentException, ParserConfigurationException,
 			SAXException, IOException, Exception {
 
-
 		final String output = executeChainedApi();
 
 		setResult(output);
@@ -446,60 +449,63 @@ public class ApiUIRunner extends ApiRunner {
 
 	}
 
-//	private String runApi() throws Exception,
-//			ParserConfigurationException, SAXException, IOException {
-//
-//		final Document userInpDocument = createUserInputForm(userInputControls);
-//
-//		String output = ApiExecutor.executeApi(
-//				interopUrlProperty.getSelectedItem(),
-//				isHttpClientProperty.get(), userIDProperty.get(),
-//				passwordProperty.get(), programID, testHarnessDefinition,
-//				userInpDocument, verboseMode);
-//
-//		output = executeChainedApi(testHarnessDefinition, output);
-//		
-//		final org.w3c.dom.Node outputXslNode = XPathUtil.selectSingleNode("ApiUIRunner.runApi",
-//						"/TestHarness/Output/Transformation/*", testHarnessDefinition);
-//
-//		if (outputXslNode != null && outputXslNode.getNodeName() != null
-//				&& outputXslNode.getNodeName().contains("stylesheet")) {
-//			// We have an output transformation stylesheet
-//			output = transformImp(output, XmlUtil.getXmlString(outputXslNode));
-//
-//		}
-//
-//		return output;
-//
-//	}
+	// private String runApi() throws Exception,
+	// ParserConfigurationException, SAXException, IOException {
+	//
+	// final Document userInpDocument = createUserInputForm(userInputControls);
+	//
+	// String output = ApiExecutor.executeApi(
+	// interopUrlProperty.getSelectedItem(),
+	// isHttpClientProperty.get(), userIDProperty.get(),
+	// passwordProperty.get(), programID, testHarnessDefinition,
+	// userInpDocument, verboseMode);
+	//
+	// output = executeChainedApi(testHarnessDefinition, output);
+	//
+	// final org.w3c.dom.Node outputXslNode =
+	// XPathUtil.selectSingleNode("ApiUIRunner.runApi",
+	// "/TestHarness/Output/Transformation/*", testHarnessDefinition);
+	//
+	// if (outputXslNode != null && outputXslNode.getNodeName() != null
+	// && outputXslNode.getNodeName().contains("stylesheet")) {
+	// // We have an output transformation stylesheet
+	// output = transformImp(output, XmlUtil.getXmlString(outputXslNode));
+	//
+	// }
+	//
+	// return output;
+	//
+	// }
 
-	private String executeChainedApi() throws IllegalArgumentException, TransformerException, ParserConfigurationException, SAXException, IOException, Exception {
-		
+	private String executeChainedApi() throws IllegalArgumentException,
+			TransformerException, ParserConfigurationException, SAXException,
+			IOException, Exception {
 
-		
 		if (apiList != null && apiList.size() > 0) {
-			
-//			Collections.sort(apiList);
-			
+
+			// Collections.sort(apiList);
+
 			final Document userInpDocument = createUserInputForm(userInputControls);
-			
+
 			// The user input is the first input
 			String output = XmlUtil.getXmlString(userInpDocument);
-			
-			for (ChainedApi chainedApi : apiList) {
+
+			for (final ChainedApi chainedApi : apiList) {
 				output = ApiExecutor.executeApi(
 						interopUrlProperty.getSelectedItem(),
 						isHttpClientProperty.get(), userIDProperty.get(),
-						passwordProperty.get(), programID, chainedApi.name, chainedApi.flowName, XmlUtil.getDocument(output), chainedApi.inputTransformation, 
-						chainedApi.outputTemplate, chainedApi.outputTransformation, verboseMode);
+						passwordProperty.get(), programID, chainedApi.name,
+						chainedApi.flowName, XmlUtil.getDocument(output),
+						chainedApi.inputTransformation,
+						chainedApi.outputTemplate,
+						chainedApi.outputTransformation, verboseMode);
 			}
-			
-			
+
 			return output;
 		} else {
 			return null;
 		}
-		
+
 	}
 
 	private void setResult(final String output)

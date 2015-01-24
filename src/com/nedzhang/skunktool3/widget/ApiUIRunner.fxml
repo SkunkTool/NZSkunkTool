@@ -80,20 +80,22 @@
     </HBox>
     <Accordion fx:id="accordionMain" VBox.vgrow="ALWAYS">
       <panes>
-        <TitledPane fx:id="accordInputForm" animated="false" expanded="false" styleClass="first-titled-pane" text="Input Form">
+        <TitledPane fx:id="accordInputForm" animated="false" expanded="true" styleClass="first-titled-pane" text="Input Form">
           <content>
-            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="-1.0" prefWidth="-1.0">
               <children>
-                <VBox fx:id="tpnlInput" prefHeight="239.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                  <ScrollPane prefHeight="261.0" prefWidth="577.0">
-                    <GridPane fx:id="gridHarnessInput" />
-                  </ScrollPane>
-                </VBox>
+                <ScrollPane prefHeight="-1.0" prefWidth="-1.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <GridPane fx:id="gridHarnessInput">
+                    <padding>
+                      <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                    </padding>
+                  </GridPane>
+                </ScrollPane>
               </children>
             </AnchorPane>
           </content>
         </TitledPane>
-        <TitledPane fx:id="accordResult" animated="false" expanded="true" text="Result">
+        <TitledPane fx:id="accordResult" animated="false" expanded="false" text="Result">
           <content>
             <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
               <TabPane prefHeight="-1.0" prefWidth="-1.0" side="BOTTOM" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -104,13 +106,13 @@
                     </content>
                   </Tab>
                   <Tab text="Xml Viewer">
-                  	<content>
+                    <content>
                       <AnchorPane prefHeight="-1.0" prefWidth="-1.0">
                         <children>
                           <XmlViewer fx:id="xmlViewerResult" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                         </children>
                       </AnchorPane>
-                      </content>
+                    </content>
                   </Tab>
                 </tabs>
               </TabPane>

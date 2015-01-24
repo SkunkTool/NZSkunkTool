@@ -1,6 +1,5 @@
 package com.nedzhang.skunktool3.apiRunner.entity;
 
-
 import java.io.Serializable;
 
 public class SterApiDesc implements Serializable {
@@ -18,7 +17,7 @@ public class SterApiDesc implements Serializable {
 	private String docPage;
 
 	public String getName() {
-		return this.name;
+		return name;
 	}
 
 	public void setName(final String name) {
@@ -26,7 +25,7 @@ public class SterApiDesc implements Serializable {
 	}
 
 	public String getTitle() {
-		return this.title;
+		return title;
 	}
 
 	public void setTitle(final String title) {
@@ -34,7 +33,7 @@ public class SterApiDesc implements Serializable {
 	}
 
 	public String getDocPage() {
-		return this.docPage;
+		return docPage;
 	}
 
 	public void setDocPage(final String docPage) {

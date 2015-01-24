@@ -1,11 +1,10 @@
 package com.nedzhang.skunktool3.apiRunner.FileStore;
 
-import com.nedzhang.skunktool3.apiRunner.entity.ApiMaterial;
-
 import java.io.File;
 import java.io.FilenameFilter;
 import java.io.IOException;
 
+import com.nedzhang.skunktool3.apiRunner.entity.ApiMaterial;
 import com.nedzhang.util.TextFileUtil;
 
 /***
@@ -48,14 +47,14 @@ public class ApiMaterialFolder {
 	public ApiMaterialFolder(final File materialStoreFolder,
 			final String apiName) {
 
-		this.apiMaterialFolder = new File(materialStoreFolder, apiName);
+		apiMaterialFolder = new File(materialStoreFolder, apiName);
 		this.apiName = apiName;
 	}
 
 	public String[] getMaterialList() {
 
-		if (this.apiMaterialFolder.exists()) {
-			return this.apiMaterialFolder.list(new FilenameFilter() {
+		if (apiMaterialFolder.exists()) {
+			return apiMaterialFolder.list(new FilenameFilter() {
 
 				@Override
 				public boolean accept(final File dir, final String name) {
@@ -83,7 +82,7 @@ public class ApiMaterialFolder {
 	private ApiMaterial loadMaterial(final String materialName,
 			final boolean loadOnlyDescription) throws IOException {
 
-		if (this.apiMaterialFolder.exists()) {
+		if (apiMaterialFolder.exists()) {
 
 			final File apiMaterialFolder = getMaterialFolder(materialName);
 
@@ -91,7 +90,7 @@ public class ApiMaterialFolder {
 
 				final ApiMaterial material = new ApiMaterial();
 
-				material.setApiName(this.apiName);
+				material.setApiName(apiName);
 
 				material.setName(materialName);
 
@@ -121,8 +120,8 @@ public class ApiMaterialFolder {
 
 	public void saveMaterial(final ApiMaterial materialToSave,
 			final boolean overwriteExistingFile) throws IOException {
-		if (!this.apiMaterialFolder.exists()) {
-			this.apiMaterialFolder.mkdir();
+		if (!apiMaterialFolder.exists()) {
+			apiMaterialFolder.mkdir();
 		}
 
 		if (materialToSave == null) {
@@ -183,8 +182,7 @@ public class ApiMaterialFolder {
 	 * @return
 	 */
 	private File getMaterialFolder(final String materialName) {
-		final File materialFolder = new File(this.apiMaterialFolder,
-				materialName);
+		final File materialFolder = new File(apiMaterialFolder, materialName);
 		return materialFolder;
 	}
 

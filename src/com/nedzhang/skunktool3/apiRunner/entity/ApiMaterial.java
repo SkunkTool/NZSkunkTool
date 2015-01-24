@@ -36,7 +36,7 @@ public class ApiMaterial implements Serializable {
 	}
 
 	public String getApiName() {
-		return this.apiName;
+		return apiName;
 	}
 
 	public void setApiName(final String apiName) {
@@ -44,7 +44,7 @@ public class ApiMaterial implements Serializable {
 	}
 
 	public ApiMaterialType getType() {
-		return this.type;
+		return type;
 	}
 
 	public void setType(final ApiMaterialType type) {
@@ -52,7 +52,7 @@ public class ApiMaterial implements Serializable {
 	}
 
 	public String getName() {
-		return this.name;
+		return name;
 	}
 
 	public void setName(final String name) {
@@ -60,7 +60,7 @@ public class ApiMaterial implements Serializable {
 	}
 
 	public String getDescription() {
-		return this.description;
+		return description;
 	}
 
 	public void setDescription(final String description) {
@@ -68,7 +68,7 @@ public class ApiMaterial implements Serializable {
 	}
 
 	public String getContent() {
-		return this.content;
+		return content;
 	}
 
 	public void setContent(final String content) {

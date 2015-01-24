@@ -1,0 +1,51 @@
+<TestHarness Name="listTraces" Label="List Traces">
+
+  <Api Name="getTraceList" FlowName="">
+
+    <Input>
+
+      <InputUI>
+
+      	<Field Type="List" Name="Type" Label="Trace Type:" Default="ALL" Hint="Type of tracing">
+          <Item Label="All" Value="ALL" />
+      		<Item Label="API" Value="API" />
+      		<Item Label="User Exit" Value="UE" />
+      		<Item Label="Agent" Value="AGENTS" />
+          <Item Label="Service" Value="FLOWS" />
+          <Item Label="Web Console" Value="YantraConsole" />
+          <Item Label="WUFConsole" Value="WUFConsole" />
+          <Item Label="ActivityTracking" Value="ActivityTracking" />
+          <Item Label="HealthMonitor" Value="HealthMonitor" />
+      	</Field>
+
+      </InputUI>
+
+      <InputTransform>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+  <xsl:template match="/InputForm">
+    <Traces>
+      <xsl:if test="Type != 'ALL'">
+        <xsl:attribute name="Type"><xsl:value-of select="Type" /></xsl:attribute>
+      </xsl:if>
+    </Traces>
+  </xsl:template>
+</xsl:stylesheet>
+      </InputTransform>
+
+    </Input>
+
+    <Output>
+
+      <Template>
+       	<!-- <outputTemplateGoesHere /> -->
+      </Template>
+
+      <OutputTransform>
+        <!-- <outputTransformationGoesHere />-->
+      </OutputTransform>
+
+    </Output>
+  </Api>
+
+
+</TestHarness>

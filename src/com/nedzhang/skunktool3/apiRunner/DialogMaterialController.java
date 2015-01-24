@@ -2,10 +2,6 @@ package com.nedzhang.skunktool3.apiRunner;
 
 import java.io.IOException;
 
-import com.nedzhang.skunktool3.apiRunner.FileStore.MaterialStore;
-import com.nedzhang.skunktool3.apiRunner.entity.ApiMaterial;
-import com.nedzhang.skunktool3.apiRunner.entity.ApiMaterialType;
-
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
@@ -18,6 +14,10 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.stage.Window;
+
+import com.nedzhang.skunktool3.apiRunner.FileStore.MaterialStore;
+import com.nedzhang.skunktool3.apiRunner.entity.ApiMaterial;
+import com.nedzhang.skunktool3.apiRunner.entity.ApiMaterialType;
 
 public class DialogMaterialController extends Window {
 
@@ -33,7 +33,7 @@ public class DialogMaterialController extends Window {
 
 	private String apiName;
 
-	private MaterialStore materialStorage;
+	private final MaterialStore materialStorage;
 
 	private String materialContent;
 
@@ -71,8 +71,8 @@ public class DialogMaterialController extends Window {
 	// }
 
 	private void closeWindow() {
-		Scene scene = lblTitle.getScene();
-		Stage stage = (Stage) scene.getWindow();
+		final Scene scene = lblTitle.getScene();
+		final Stage stage = (Stage) scene.getWindow();
 		stage.close();
 	}
 
@@ -100,11 +100,11 @@ public class DialogMaterialController extends Window {
 	}
 
 	protected void onLstMaterialNameSelectionChange(
-			ObservableValue<? extends String> observableValue, String oldValue,
-			String newValue) {
+			final ObservableValue<? extends String> observableValue,
+			final String oldValue, final String newValue) {
 
 		try {
-			ApiMaterial material = materialStorage.getMaterial(apiName,
+			final ApiMaterial material = materialStorage.getMaterial(apiName,
 					materialType, newValue);
 
 			txtMaterialName.setText(material.getName());
@@ -113,32 +113,32 @@ public class DialogMaterialController extends Window {
 
 			txtMaterialContent.setText(material.getContent());
 
-			this.materialContent = material.getContent();
+			materialContent = material.getContent();
 
-		} catch (IOException e) {
+		} catch (final IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 
-	public void prepareToLoad(String caption, String apiName,
-			ApiMaterialType materialType) {
+	public void prepareToLoad(final String caption, final String apiName,
+			final ApiMaterialType materialType) {
 
 		mode = MaterialDialogMode.LoadMode;
 
 		init(caption, apiName, materialType, null);
 	}
 
-	public void prepareToSave(String caption, String apiName,
-			ApiMaterialType materialType, String materialToSave) {
+	public void prepareToSave(final String caption, final String apiName,
+			final ApiMaterialType materialType, final String materialToSave) {
 
 		mode = MaterialDialogMode.SaveMode;
 
 		init(caption, apiName, materialType, materialToSave);
 	}
 
-	private void init(String caption, String apiName,
-			ApiMaterialType materialType, String materialToSave) {
+	private void init(final String caption, final String apiName,
+			final ApiMaterialType materialType, final String materialToSave) {
 		// Reset the okCicked to false
 		okClicked = false;
 
@@ -156,8 +156,8 @@ public class DialogMaterialController extends Window {
 
 		txtMaterialContent.setVisible(mode == MaterialDialogMode.LoadMode);
 
-		String[] materilaNameList = materialStorage.getMaterialList(apiName,
-				materialType);
+		final String[] materilaNameList = materialStorage.getMaterialList(
+				apiName, materialType);
 
 		lstMaterialName.getItems().clear();
 
@@ -172,10 +172,10 @@ public class DialogMaterialController extends Window {
 
 						@Override
 						public void changed(
-								ObservableValue<? extends String> observableValue,
-								String oldValue, String newValue) {
-//							System.out
-//									.println("((((((((lstMaterialName change!!!!)))))))))))");
+								final ObservableValue<? extends String> observableValue,
+								final String oldValue, final String newValue) {
+							// System.out
+							// .println("((((((((lstMaterialName change!!!!)))))))))))");
 							onLstMaterialNameSelectionChange(observableValue,
 									oldValue, newValue);
 						}
@@ -185,7 +185,7 @@ public class DialogMaterialController extends Window {
 	}
 
 	@FXML
-	public void onBtnOkClicked(MouseEvent event) throws IOException {
+	public void onBtnOkClicked(final MouseEvent event) throws IOException {
 		okClicked = true;
 
 		if (mode == MaterialDialogMode.SaveMode) {
@@ -197,7 +197,7 @@ public class DialogMaterialController extends Window {
 	}
 
 	@FXML
-	public void onBtnCancelClicked(MouseEvent event) {
+	public void onBtnCancelClicked(final MouseEvent event) {
 		okClicked = false;
 		closeWindow();
 	}

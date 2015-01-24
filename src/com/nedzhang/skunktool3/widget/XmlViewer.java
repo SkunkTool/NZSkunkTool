@@ -2,28 +2,21 @@ package com.nedzhang.skunktool3.widget;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 
 import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.EventHandler;
-import javafx.scene.control.Label;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
-import javafx.scene.control.ScrollPane;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableColumn.CellDataFeatures;
 import javafx.scene.control.TableView;
-import javafx.scene.control.TitledPane;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
@@ -42,7 +35,6 @@ import com.nedzhang.util.XmlUtil;
 
 public class XmlViewer extends VBox {
 
-	
 	private static class XmlViewerCell extends
 			TableCell<Map<String, Object>, Object> {
 
@@ -54,27 +46,29 @@ public class XmlViewer extends VBox {
 			if (item != null && item instanceof Element) {
 
 				try {
-					
-					Element[] childElements = getChildElements((Element) item);
-					
+
+					final Element[] childElements = getChildElements((Element) item);
+
 					Element[] elements;
-					
+
 					if (((Element) item).hasAttributes()) {
-						
-						elements = new Element[childElements == null ? 1 : childElements.length+1];
+
+						elements = new Element[childElements == null ? 1
+								: childElements.length + 1];
 						elements[0] = (Element) item;
-						
-						for (int i=0; childElements!=null && i<childElements.length; i++) {
-							elements[i+1] = childElements[i];
+
+						for (int i = 0; childElements != null
+								&& i < childElements.length; i++) {
+							elements[i + 1] = childElements[i];
 						}
 					} else {
 						elements = childElements;
 					}
-					
+
 					if (elements != null && elements.length > 0) {
 						createXmlViewerCell(item, elements);
 					}
-				} catch (IllegalArgumentException e) {
+				} catch (final IllegalArgumentException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
@@ -82,39 +76,36 @@ public class XmlViewer extends VBox {
 			}
 		}
 
-		private void createXmlViewerCell(final Object item, Element[] elements) {
-			
-			XmlViewer itemViewer = new XmlViewer(elements);
+		private void createXmlViewerCell(final Object item,
+				final Element[] elements) {
 
-		
-			
+			final XmlViewer itemViewer = new XmlViewer(elements);
+
 			final AnchorPane apane = new AnchorPane();
-			
+
 			AnchorPane.setBottomAnchor(itemViewer, 0.0);
 			AnchorPane.setTopAnchor(itemViewer, 0.0);
 			AnchorPane.setLeftAnchor(itemViewer, 0.0);
 			AnchorPane.setRightAnchor(itemViewer, 0.0);
-			
+
 			apane.getChildren().add(itemViewer);
-			
+
 			apane.setPrefHeight(-1.0);
 			apane.setPrefWidth(-1.0);
-//						final TitledPane wrapper = new TitledPane();
-//						wrapper.setExpanded(false);
-//						wrapper.setContent(apane);
-//						wrapper.setText(((Element)item).getNodeName());
-			
-			
-			final MenuItem wizPopup = new MenuItem();
-				wizPopup.setGraphic(apane);
+			// final TitledPane wrapper = new TitledPane();
+			// wrapper.setExpanded(false);
+			// wrapper.setContent(apane);
+			// wrapper.setText(((Element)item).getNodeName());
 
-			final MenuButton popupButton = new MenuButton(((Element)item).getNodeName());
-				popupButton.getItems().setAll(
-					wizPopup            
-			);
-			
+			final MenuItem wizPopup = new MenuItem();
+			wizPopup.setGraphic(apane);
+
+			final MenuButton popupButton = new MenuButton(
+					((Element) item).getNodeName());
+			popupButton.getItems().setAll(wizPopup);
+
 			setGraphic(popupButton);
-			
+
 		}
 	}
 
@@ -141,26 +132,26 @@ public class XmlViewer extends VBox {
 
 	}
 
-//	public static XmlViewer createXmlViwer(final Document dataDocument)
-//			throws IllegalArgumentException, ParserConfigurationException,
-//			SAXException, IOException {
-//
-//
-//	}
-//
-//	public static XmlViewer createXmlViwer(final Element dataFragement)
-//			throws IllegalArgumentException, ParserConfigurationException,
-//			SAXException, IOException {
-//
-//		return new XmlViewer(dataFragement);
-//	}
+	// public static XmlViewer createXmlViwer(final Document dataDocument)
+	// throws IllegalArgumentException, ParserConfigurationException,
+	// SAXException, IOException {
+	//
+	//
+	// }
+	//
+	// public static XmlViewer createXmlViwer(final Element dataFragement)
+	// throws IllegalArgumentException, ParserConfigurationException,
+	// SAXException, IOException {
+	//
+	// return new XmlViewer(dataFragement);
+	// }
 
-	private static Element[] getChildElements(Node node) {
+	private static Element[] getChildElements(final Node node) {
 
 		if (node != null && node.hasChildNodes()) {
-			ArrayList<Element> elements = new ArrayList<>();
+			final ArrayList<Element> elements = new ArrayList<>();
 
-			NodeList childNodeList = node.getChildNodes();
+			final NodeList childNodeList = node.getChildNodes();
 
 			for (int i = 0; i < childNodeList.getLength(); i++) {
 
@@ -170,7 +161,7 @@ public class XmlViewer extends VBox {
 			}
 
 			if (elements != null && elements.size() > 0) {
-				Element[] returnArray = new Element[elements.size()];
+				final Element[] returnArray = new Element[elements.size()];
 
 				elements.toArray(returnArray);
 
@@ -184,24 +175,22 @@ public class XmlViewer extends VBox {
 
 	public XmlViewer() throws IllegalArgumentException,
 			ParserConfigurationException, SAXException, IOException {
-		
-//		Document sampleDoc = XmlUtil.getDocument(this.getClass().getResourceAsStream("user_list.xml"));
-//		loadXmlData(sampleDoc);
-		
+
+		// Document sampleDoc =
+		// XmlUtil.getDocument(this.getClass().getResourceAsStream("user_list.xml"));
+		// loadXmlData(sampleDoc);
+
 	}
 
-	public XmlViewer(Document dataDoc) {
+	public XmlViewer(final Document dataDoc) {
 		loadXmlData(dataDoc);
 	}
-	
-	
+
 	private XmlViewer(final Element... nodes) {
 		loadXmlData(nodes);
 	}
-	
-	
-	public void loadXmlData(Document dataDoc) {
-		
+
+	public void loadXmlData(final Document dataDoc) {
 
 		final Element firstChild = XmlUtil.getRootElement(dataDoc);
 
@@ -210,27 +199,26 @@ public class XmlViewer extends VBox {
 		} else {
 			this.loadXmlData(firstChild);
 		}
-		
+
 	}
-	
+
 	public void loadXmlData(final Element... nodes) {
 
-		
-		TableView<Map<String, Object>> table = createTable(nodes);
-		
+		final TableView<Map<String, Object>> table = createTable(nodes);
+
 		getChildren().clear();
-		
+
 		if (table != null) {
 			VBox.setVgrow(table, Priority.ALWAYS);
 			getChildren().add(table);
-//			getChildren().add(new Label("End of the vbox"));
+			// getChildren().add(new Label("End of the vbox"));
 		}
 
 	}
 
-//	private XmlViewer(TableView<Map<String, Object>> tableView) {
-//		getChildren().add(tableView);
-//	}
+	// private XmlViewer(TableView<Map<String, Object>> tableView) {
+	// getChildren().add(tableView);
+	// }
 
 	// private static Map<String, List<Element>> processNode(
 	// final Element nodeToProcess) {
@@ -276,16 +264,16 @@ public class XmlViewer extends VBox {
 		// "*").
 
 		if (childElements != null && childElements.length > 0) {
-			
+
 			final ArrayList<String> columnList = new ArrayList<>();
 
 			final ObservableList<Map<String, Object>> allData = FXCollections
 					.observableArrayList();
 
 			for (int row = 0; row < childElements.length; row++) {
-				
+
 				final Element element = childElements[row];
-				
+
 				// element.setUserData(KEY_CHILD_PATH, childPathMap, null);
 
 				Map<String, Object> valueMap = mapAttributes(columnList,
@@ -313,7 +301,7 @@ public class XmlViewer extends VBox {
 				// if the column represents a childNode. Set the viewer to be
 				// XmlViwerCell;
 				if (colName.startsWith("*")) {
-					
+
 					column.setCellFactory(new Callback<TableColumn<Map<String, Object>, Object>, TableCell<Map<String, Object>, Object>>() {
 						@Override
 						public TableCell<Map<String, Object>, Object> call(
@@ -332,7 +320,7 @@ public class XmlViewer extends VBox {
 			}
 
 			table.getColumns().addAll(columns);
-			
+
 			table.getSelectionModel().setCellSelectionEnabled(true);
 			table.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
 
@@ -394,17 +382,17 @@ public class XmlViewer extends VBox {
 				}
 			}
 		}
-		
-		NodeList childNodes = element.getChildNodes();
-		
+
+		final NodeList childNodes = element.getChildNodes();
+
 		if (childNodes != null && childNodes.getLength() > 0) {
 			for (int i = 0; i < childNodes.getLength(); i++) {
 
-				Node child = childNodes.item(i);
+				final Node child = childNodes.item(i);
 
 				final String attributName = child.getNodeName();
 
-				String attributValue = XmlUtil.getNodeValue(child);
+				final String attributValue = XmlUtil.getNodeValue(child);
 
 				if (attributValue != null && attributValue.length() > 0) {
 					valueMap.put(attributName, attributValue);
